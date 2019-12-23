@@ -19,11 +19,11 @@
 const arr = [5, 3, 4, 1, 2];
 
 function selectionSort(arr) {
+  
   let minIdx; 
-
   for(let i = 0; i < arr.length; i++) {
     minIdx = i;
-    for(let j = i + 1; j < arr.lenth; j++){
+    for(let j = i + 1; j < arr.length; j++){
       if(arr[j] < arr[minIdx]){
         minIdx = j;
       }
@@ -33,7 +33,6 @@ function selectionSort(arr) {
     arr[i] = arr[minIdx];
     arr[minIdx] = temp; 
   }
-
   return arr;
 }
 
