@@ -44,24 +44,27 @@ console.log(
 // Create a loop that goes from the beginning of the array. 
 // Create a nested loop that goes from the beginning of the array. 
 
+// time Complexity = On^2
+// space Complexity = On
+
 // const arr = [5, 3, 4, 1, 2];
 // const arr2 = [5, 5, 4, 1, 2];
 
 // function selectionSort(arr) {
-  
-//   let minIdx; 
 
 //   for(let i = 0; i < arr.length; i++) {
-//     minIdx = i;
+//     let minIdx = i;
 //     for(let j = i + 1; j < arr.length; j++){
 //       if(arr[j] < arr[minIdx]){
 //         minIdx = j;
 //       }
 //     }
-
+//   if(minIdx !=== i){
 //     let temp = arr[i];
 //     arr[i] = arr[minIdx];
 //     arr[minIdx] = temp; 
+//    }
+
 //   }
 //   return arr;
 // }
