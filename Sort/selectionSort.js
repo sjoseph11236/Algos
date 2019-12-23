@@ -2,7 +2,7 @@
 
 //Sort the small values into sorted position
 
-let arr = [5, 3, 4, 1, 2];
+
 
 
 // Create a variable for the smallest value intialized with the first value 
@@ -16,13 +16,15 @@ let arr = [5, 3, 4, 1, 2];
 // Create a loop that goes from the beginning of the array. 
 // Create a nested loop that goes from the beginning of the array. 
 
-fucntion selctionSort(arr) {
+const arr = [5, 3, 4, 1, 2];
+
+function selectionSort(arr) {
   let minIdx; 
 
   for(let i = 0; i < arr.length; i++) {
     minIdx = i;
     for(let j = i + 1; j < arr.lenth; j++){
-      if(arr[j] < arr[minidx]){
+      if(arr[j] < arr[minIdx]){
         minIdx = j;
       }
     }
@@ -35,4 +37,6 @@ fucntion selctionSort(arr) {
   return arr;
 }
 
-selctionSort(arr);
+console.log(
+  selectionSort(arr) //[1, 2, 3, 4, 5];
+);
