@@ -1,6 +1,8 @@
 // Notes
 // Break up the array into halve until you have arrays that are empty or have one element
-// 
+// BIG O of MergeSort: 
+// Time = O(n log n)
+// Space = O(n)
 
 // --------MY ANSWER-----//
 // 
