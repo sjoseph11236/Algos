@@ -36,7 +36,7 @@ console.log(
   merge([1, 10, 50], [2, 14, 99, 100])
 );
 
-
+// ------COLT SOlUTION ------///
 
 // function merge(arr1, arr2 ) {
 //   let result = [];
