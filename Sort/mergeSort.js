@@ -1,5 +1,6 @@
 // Notes
-
+// Break up the array into halve until you have arrays that are empty or have one element
+// 
 
 // --------MY ANSWER-----//
 // 
@@ -31,10 +32,10 @@ function merge(arr1, arr2) {
   return result; 
 }
 
-console.log(
-  merge([1, 3, 5], [2, 4, 7]),
-  merge([1, 10, 50], [2, 14, 99, 100])
-);
+// console.log(
+//   merge([1, 3, 5], [2, 4, 7]),
+//   merge([1, 10, 50], [2, 14, 99, 100])
+// );
 
 // ------COLT SOlUTION ------///
 
@@ -71,3 +72,23 @@ console.log(
 //   merge([1, 3, 5], [2, 4, 7]),
 //   merge([1, 10, 50], [2, 14, 99, 100])
 // );
+
+//_________-
+
+function mergeSort(arr) {
+  // base case:
+  if(arr.length <= 1) return arr; 
+
+  // Findt he midpoing of the array
+  let midPoint = Math.floor(arr.length/ 2);
+  // Split arr into left and right
+  let left = mergeSort(arr.slice(0, midPoint));
+  let right = mergeSort(arr.slice(midPoint));
+  
+  return merge(left, right);
+}
+
+console.log(
+  mergeSort([10, 24, 76, 73, 72, 1, 9]),
+  mergeSort([10, 24, 76, 73,])
+);
