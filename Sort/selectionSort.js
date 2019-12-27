@@ -30,7 +30,6 @@ console.log(
 
 
 
-
 // --------FIRST ANSWER ----\\
 
 // Create a variable for the smallest value intialized with the first value 
@@ -45,7 +44,7 @@ console.log(
 // Create a nested loop that goes from the beginning of the array. 
 
 // time Complexity = On^2
-// space Complexity = On
+// space Complexity = OnpJ
 
 // const arr = [5, 3, 4, 1, 2];
 // const arr2 = [5, 5, 4, 1, 2];
