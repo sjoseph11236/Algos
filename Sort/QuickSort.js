@@ -35,12 +35,10 @@ function pivot(array, startIdx = 0, endIdx = array.length  - 1 ) {
   for(let i = startIdx + 1; i <= endIdx; i++) {
     if(pivot > array[i]) {
       swapIdx++;
-      // swap(array, swapIdx, i);
-      // console.log("TCL: pivot -> IF STATEMENT", array);
+      
     }
   }
-  // swap(array, startIdx, swapIdx);
-  // console.log("TCL: pivot -> BEFORE RETURN", array);
+
   
   return swapIdx;
 }
