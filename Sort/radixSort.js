@@ -22,23 +22,32 @@
 function getDigit(num, place) {
   return Math.floor(Math.abs(num) / Math.pow(10, place) % 10);
 }
-console.log(
-    getDigit(12345, 0), //5 
-    getDigit(12345, 1), //4
-    getDigit(12345, 2), //3 
-    getDigit(12345, 3), //2 
-    getDigit(12345, 4), //1 
-    getDigit(12345, 5) //0
-);
+// console.log(
+//     getDigit(12345, 0), //5 
+//     getDigit(12345, 1), //4
+//     getDigit(12345, 2), //3 
+//     getDigit(12345, 3), //2 
+//     getDigit(12345, 4), //1 
+//     getDigit(12345, 5) //0
+// );
 
 // turn the number into a string and find length; 
 
+// --- MY digit count solution ------//
 function digitCount(num) {
+  let place  = 0; 
+  let count  = 1; 
 
+  while( count <= num ) {
+    place++;
+    count *=10; 
+  }
+  return place; 
 }
 
 console.log(
   digitCount(1), //1
   digitCount(25), // 2
-  digitCount(314) // 3
+  digitCount(314),// 3
+  digitCount(314000) // 6
 );
