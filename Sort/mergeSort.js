@@ -6,46 +6,11 @@
 
 
 function merge(left, right) { 
-  // Create an empty array to store sorted values
-  let sorted = [];
-  // Create a right and left pointer to iterate in while loop throguh left and right arrays to compare values
-  let pointerL = 0; 
-  let pointerR = 0; 
 
-  while( pointerL < left.length && pointerR < right.length) {
-    // Check which array has the smallest value to be stored in sorted
-    if(left[pointerL] < right[pointerR]){
-      sorted.push(left[pointerL]);
-      // increment pointer to compaare with value in the other array
-      pointerL++;
-    }
-    else { 
-      sorted.push(right[pointerR]);
-      pointerR;
-    }
-  }
-
-  // Check if either array has remaining values
-  if(pointerL !== left.length){
-    sorted.push(...left.slice(pointerL));
-  }
-
-  if(pointerR !== right.length){ 
-    sorted.push(...right.slice(pointerR));
-  }
-
-  
-  return sorted; 
 }
 
 function mergeSort(arr) {
-  if(arr.length <= 1) return arr; 
-  
-  let midIdx = Math.floor(arr.length / 2 );
-  let left = mergeSort(arr.slice(0, midIdx));
-  let right = mergeSort(arr.slice(midIdx));
 
-  return merge(left, right);
 }
 
 
