@@ -77,9 +77,43 @@ function mostDigits(arr) {
   return mostDigit;
 }
 
+// console.log(
+//   mostDigits([1234, 56, 7]), //4
+//   mostDigits([1, 1, 11111, 1]), //5
+//   mostDigits([12, 34, 56, 78]), //2
+//   mostDigits([23, 567, 89, 122312451, 90]) //9
+// );
+
+// Define a functon that accepts list of numbers 
+function radixSort(arr) {
+  // Create a varaible to store the largest Digit to determine how many times to loop through the arr. 
+  const largest = mostDigits(arr);
+  // Create a bucket of 9 empty arrays; 
+  let bucket =  [[],[],[],[],[],[],[],[],[]];
+  // create for loop for the total amount of times to sort the arr. 
+  for(let i = 0; i < largest; i++) {
+    // iterate through the array
+    for(let j = 0; j < arr.length; j++){
+      let elem = arr[j];
+      console.log("TCL: radixSort -> elem ", elem );
+      // store the value at each place for each element;
+      let placeValue = getDigit(elem, i);
+      console.log("TCL: radixSort -> placeValue", placeValue)
+      let place = placeValue - 1;
+      if(place < 0) {
+        place = 0; 
+      }
+      bucket[place].push(elem); 
+    }
+  }
+
+  console.log('BUXKET ', bucket);
+}
+// figure out how many digits the largeest number has
+// loop the to the total of the largest number of digits 
+// fir each iteration of the loop creat buckets fof each 0 to 9 digit
+
+
 console.log(
-  mostDigits([1234, 56, 7]), //4
-  mostDigits([1, 1, 11111, 1]), //5
-  mostDigits([12, 34, 56, 78]), //2
-  mostDigits([23, 567, 89, 122312451, 90]) //9
+  radixSort([215, 16, 31256]) // [16, 215, 31256]
 );
