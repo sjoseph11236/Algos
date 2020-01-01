@@ -84,6 +84,14 @@ function mostDigits(arr) {
 //   mostDigits([23, 567, 89, 122312451, 90]) //9
 // );
 
+function bucketFlattener(arr) {
+  let result = [];
+
+  for(let i = 0; i < arr.length; i++) {
+    
+  }
+}
+
 // Define a functon that accepts list of numbers 
 function radixSort(arr) {
   // Create a varaible to store the largest Digit to determine how many times to loop through the arr. 
