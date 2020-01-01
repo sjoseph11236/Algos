@@ -34,20 +34,51 @@ function getDigit(num, place) {
 // turn the number into a string and find length; 
 
 // --- MY digit count solution ------//
-function digitCount(num) {
-  let place  = 0; 
-  let count  = 1; 
+// function digitCount(num) {
+//   let place  = 0; 
+//   let count  = 1; 
 
-  while( count <= num ) {
-    place++;
-    count *=10; 
-  }
-  return place; 
+//   while( count <= Math.abs(num)) {
+//     place++;
+//     count *=10; 
+//   }
+//   return place; 
+// }
+
+//---COLT STEELE SOLUTION -----///
+
+function digitCount(num) {
+  if(num === 0) return 1; 
+  return Math.floor(Math.log10(Math.abs(num))) + 1; 
+}
+
+// console.log(
+//   digitCount(1), //1
+//   digitCount(25), // 2
+//   digitCount(314),// 3
+//   digitCount(-314),// 3
+//   digitCount(314000), // 6
+//   digitCount(-314000) // 6
+// );
+
+
+function mostDigits(arr) {
+  // Create a variable called mostDigit set to zero; 
+  let mostDigit = 0; 
+  // Use forEach to check to compare each element digit length to mostDigit. 
+  arr.forEach(element => { 
+    // Create a varaible called current Count  
+    let currentCount = digitCount(element);
+    if(mostDigit < currentCount){
+      mostDigit = currentCount;
+    }
+  });
+
+  return mostDigit;
 }
 
 console.log(
-  digitCount(1), //1
-  digitCount(25), // 2
-  digitCount(314),// 3
-  digitCount(314000) // 6
+  mostDigits([1234, 56, 7]), //4
+  mostDigits([1, 1, 11111, 1]), //5
+  mostDigits([12, 34, 56, 78]) //2
 );
