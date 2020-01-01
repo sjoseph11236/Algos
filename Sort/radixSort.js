@@ -80,5 +80,6 @@ function mostDigits(arr) {
 console.log(
   mostDigits([1234, 56, 7]), //4
   mostDigits([1, 1, 11111, 1]), //5
-  mostDigits([12, 34, 56, 78]) //2
+  mostDigits([12, 34, 56, 78]), //2
+  mostDigits([23, 567, 89, 122312451, 90]) //9
 );
