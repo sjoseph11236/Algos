@@ -88,8 +88,11 @@ function bucketFlattener(arr) {
   let result = [];
 
   for(let i = 0; i < arr.length; i++) {
-    
+    let inner = arr[i];
+    result.push(...inner);
   }
+  console.log("RESULT ", result);
+  return result;
 }
 
 // Define a functon that accepts list of numbers 
@@ -113,9 +116,11 @@ function radixSort(arr) {
       }
       bucket[place].push(elem); 
     }
+    // flatten bucket and reassign array
+    let arr = bucketFlattener(bucket);
   }
 
-  console.log('BUXKET ', bucket);
+  console.log('ARR ', arr);
 }
 // figure out how many digits the largeest number has
 // loop the to the total of the largest number of digits 
