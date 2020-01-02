@@ -95,43 +95,59 @@ function bucketFlattener(arr) {
   return result;
 }
 
-// Define a functon that accepts list of numbers 
-function radixSort(arr) {
-  // Create a varaible to store the largest Digit to determine how many times to loop through the arr. 
-  const largest = mostDigits(arr);
-  // Create a bucket of 9 empty arrays; 
-  let bucket =  [[],[],[],[],[],[],[],[],[]];
-  // create for loop for the total amount of times to sort the arr. 
-  for(let i = 0; i < largest; i++) {
-    // iterate through the array
-    for(let j = 0; j < arr.length; j++){
-      let elem = arr[j];
-      console.log("TCL: radixSort -> elem ", elem );
-      // store the value at each place for each element;
-      let placeValue = getDigit(elem, i);
-      console.log("TCL: radixSort -> placeValue", placeValue);
-      let place = placeValue;
-      if(place < 0) {
-        place = 0; 
-      }
-      bucket[place].push(elem); 
-      console.log('BUCKET ', bucket);
-    }
-    // flatten bucket and reassign array
-    arr = bucketFlattener(bucket);
-    // Empty bucket
-    bucket = [[],[],[],[],[],[],[],[],[]];
-  }
+// -------MY SOLUTION --------///
+// // Define a functon that accepts list of numbers 
+// function radixSort(arr) {
+//   // Create a varaible to store the largest Digit to determine how many times to loop through the arr. 
+//   const largest = mostDigits(arr);
+//   // Create a bucket of 9 empty arrays; 
+//   let bucket =  [[],[],[],[],[],[],[],[],[], []];
+//   // create for loop for the total amount of times to sort the arr. 
+//   for(let i = 0; i < largest; i++) {
+//     // iterate through the array
+//     for(let j = 0; j < arr.length; j++){
+//       let elem = arr[j];
+//       console.log("TCL: radixSort -> elem ", elem );
+//       // store the value at each place for each element;
+//       let placeValue = getDigit(elem, i);
+//       console.log("TCL: radixSort -> placeValue", placeValue);
+//       let place = placeValue;
+//       bucket[place].push(elem); 
+//       console.log('BUCKET ', bucket);
+//     }
+//     // flatten bucket and reassign array
+//     arr = bucketFlattener(bucket);
+//     // Empty bucket
+//     bucket = [[],[],[],[],[],[],[],[],[],[]];
+//   }
 
-  return arr; 
-}
+//   return arr; 
+// }
 // figure out how many digits the largeest number has
 // loop the to the total of the largest number of digits 
 // for each iteration of the loop creat buckets fof each 0 to 9 digit
+// ------COLT STEELE SOLUTION------///
+
+function radixSort(nums) {
+  let maxDigits = mostDigits(nums);
+
+  for(let i = 0; i < maxDigits; i++){
+    let digitBuckets = Array.from({length: 10}, () => []);
+    for(let j = 0; j < nums.length; j++) {
+      let elem = nums[j];
+      const digit = getDigit(elem, i);
+      digitBuckets[digit].push(elem);
+    }
+    nums = [].concat(...digitBuckets);
+  }
+
+  return nums;
+}
 
 
 console.log(
   radixSort([215, 16, 31256]), // [16, 215, 31256]
-  radixSort([10, 5, 7, 4, 3, 2, 1, 8, 6]), // [16, 215, 31256]
-  radixSort([10, 5, 7, 4, 3, 2, 1, 8, 6, 6]) // [16, 215, 31256]
+  radixSort([10, 5, 7, 4, 3, 2, 1, 8, 6]), // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  radixSort([10, 5, 7, 4, 3, 2, 1, 8, 6, 6]), // [1, 2, 3, 4, 5, 6, 6, 7, 8, 9, 10]
+  radixSort([23, 345, 5467, 12, 2345, 9852]) // [12, 23, 345, 2345, 5467, 9852]
 );
