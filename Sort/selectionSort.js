@@ -2,8 +2,8 @@
 
 //Sort the small values into sorted position
 
-const arr = [5, 3, 4, 1, 2];
-const arr2 = [5, 5, 4, 1, 2];
+const arr = ;
+const arr2 = ;
 
 function selectionSort(arr) {
   
@@ -11,8 +11,8 @@ function selectionSort(arr) {
 }
 
 console.log(
-  selectionSort(arr),//[1, 2, 3, 4, 5];
-  selectionSort(arr2) //[1, 2, 4, 5, 5];
+  selectionSort([5, 3, 4, 1, 2]),//[1, 2, 3, 4, 5];
+  selectionSort([5, 5, 4, 1, 2]) //[1, 2, 4, 5, 5, 5];
 );
 
 

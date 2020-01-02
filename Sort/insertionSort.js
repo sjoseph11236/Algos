@@ -7,7 +7,6 @@
 // Continue to the next and ig 
 
 
-const arr = [5, 3, 4, 1, 2];
 function insertionSort(arr) {
   for(let  i = 1; i < arr.length; i++) {
     let currentVal = arr[i];
@@ -21,5 +20,5 @@ function insertionSort(arr) {
 }
 
 console.log(
-  insertionSort(arr)
+  insertionSort([5, 3, 4, 1, 2])
 );
