@@ -91,7 +91,7 @@ function bucketFlattener(arr) {
     let inner = arr[i];
     result.push(...inner);
   }
-  console.log("RESULT ", result);
+
   return result;
 }
 
@@ -117,14 +117,16 @@ function radixSort(arr) {
       bucket[place].push(elem); 
     }
     // flatten bucket and reassign array
-    let arr = bucketFlattener(bucket);
+    arr = bucketFlattener(bucket);
+    // Empty bucket
+    bucket = [[],[],[],[],[],[],[],[],[]];
   }
 
-  console.log('ARR ', arr);
+  return arr; 
 }
 // figure out how many digits the largeest number has
 // loop the to the total of the largest number of digits 
-// fir each iteration of the loop creat buckets fof each 0 to 9 digit
+// for each iteration of the loop creat buckets fof each 0 to 9 digit
 
 
 console.log(
