@@ -4,6 +4,11 @@
 
 // It looks at the number of digits by there place values to determine the order from smalledst to largest 
 
+// -------BIG O ------///
+
+// Time Complexity: O(nk)
+// Space Complexity: O(n + k)
+
 //-----MY SOLUTION --------------//
 // function getDigit(num, place) {
 //   // convert the num into string
