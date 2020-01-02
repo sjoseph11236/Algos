@@ -18,7 +18,7 @@
 //   // convert the target string into a num
 //   if(!targetPlace){
 //     return 0;
-//   }
+//   } 
 
 //   return targetPlace;
 // }
