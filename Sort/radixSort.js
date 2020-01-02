@@ -109,12 +109,13 @@ function radixSort(arr) {
       console.log("TCL: radixSort -> elem ", elem );
       // store the value at each place for each element;
       let placeValue = getDigit(elem, i);
-      console.log("TCL: radixSort -> placeValue", placeValue)
-      let place = placeValue - 1;
+      console.log("TCL: radixSort -> placeValue", placeValue);
+      let place = placeValue;
       if(place < 0) {
         place = 0; 
       }
       bucket[place].push(elem); 
+      console.log('BUCKET ', bucket);
     }
     // flatten bucket and reassign array
     arr = bucketFlattener(bucket);
@@ -130,5 +131,7 @@ function radixSort(arr) {
 
 
 console.log(
-  radixSort([215, 16, 31256]) // [16, 215, 31256]
+  radixSort([215, 16, 31256]), // [16, 215, 31256]
+  radixSort([10, 5, 7, 4, 3, 2, 1, 8, 6]), // [16, 215, 31256]
+  radixSort([10, 5, 7, 4, 3, 2, 1, 8, 6, 6]), // [16, 215, 31256]
 );
