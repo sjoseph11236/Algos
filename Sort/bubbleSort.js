@@ -22,14 +22,19 @@ function bubbleSort(arr) {
   //repeat the sort as much the lenght of the array decrementing. 
   for(let i = arr.length; i >  0; i--) {
     // loop through all elements in the arr not including the sorted element on each pass. 
+    // create variavle to update if there was a swap
+    let noSwaps = true;
     for(let j = 0; j < i - 1;  j++){
       // SWAP for the larger element
       if(arr[j] > arr[j + 1]) { 
         let temp = arr[j];
         arr[j] = arr[j + 1];
         arr[j + 1] = temp; 
+        noSwaps = false;
       }
     }
+    // check if the pass made swap
+    if(noSwaps) break;
   }
   return arr;
 }
