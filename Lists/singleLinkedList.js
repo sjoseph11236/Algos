@@ -21,6 +21,7 @@ class SinglyLinkedList{
     this.length = 0;
   }
   
+  // add node to the list
   push(val) {
     // Create a new node with Node constructor.
     let node = new Node(val);
@@ -37,19 +38,49 @@ class SinglyLinkedList{
     // increment length by one. 
     this.length++; 
   }
+
+  pop() {
+    // check if no nodes to return undefined. 
+    if(!this.head){
+      return undefined;
+    }
+    // Loop through the list until you reach the tail. 
+    let current = this.head; 
+    // set the next property of the 2nd to last node to be null.  
+    let newTail = null; 
+    while(current.next) {
+     // set the tail to be the 2nd to last node.  
+      newTail = current;
+      current = current.next; 
+    }
+
+    this.tail = newTail;
+    //rest tail to null
+    if(this.tail){
+      this.tail.next = null;
+    }
+    // Decrement the length of the list by 1. 
+    this.length --;
+    // Return the value od the node removed. 
+    if(!this.length) {
+      this.head = null; 
+      this.tail = null;
+    }
+    return current;
+  }
 }
 
 class Node {
   constructor(val) {
     this.val = val;
-    this. next = null; 
+    this.next = null; 
   }
 }
 const list = new SinglyLinkedList();
 list.push('Hello');
 list.push('Bye');
 console.log("TCL: list", list);
-console.log('TAIL ', list.tail);
+
 
 // first.next = new Node('there');
 // first.next.next = new Node('how');
