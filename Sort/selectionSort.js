@@ -2,12 +2,32 @@
 
 //Sort the small values into sorted position
 
-const arr = ;
-const arr2 = ;
+
+// Store the first element position as the smallest value intially.
+// check smallest val with successive lements. 
+// if new smallest cal update 
+// check if the index is the same  as the intial if not swap the val. 
+// repeat with next element until arrau is sorted. 
+
 
 function selectionSort(arr) {
-  
-
+  for( let i = 0; i < arr.length; i++) {
+    // store the position of the smallest variable.
+    let lowest = i;
+    for(let j = i + 1; j < arr.length; j++) {
+      if(arr[lowest] > arr[j]) {
+        lowest = j; 
+      }
+    }
+    // check if lowest is not the same as current i 
+    if(lowest !== i){
+       //  swap
+      let temp = arr[i];
+      arr[i] = arr[lowest];
+      arr[lowest] = temp;
+    }
+  }
+  return arr; 
 }
 
 console.log(
