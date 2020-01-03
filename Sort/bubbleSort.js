@@ -13,9 +13,14 @@
 
 // Pseudocode
 
-// Create a for loop with i intialized going from the beginning to the end.
+// Create a for loop with i intialized going from the end to the beginning. 
+// Create a varaible to check for swaps. 
 // Create an inner for loop with j initialized at the beginning going to the end.
-// if arr[j]
+// Check if the current element is larger than the next element
+// Swap the element 
+// update the swap variable
+// check if there was swap after a complete pass and break.
+// return arr. 
 
 function bubbleSort(arr) {
 
@@ -30,6 +35,7 @@ function bubbleSort(arr) {
         let temp = arr[j];
         arr[j] = arr[j + 1];
         arr[j + 1] = temp; 
+        // update noSwaps
         noSwaps = false;
       }
     }
