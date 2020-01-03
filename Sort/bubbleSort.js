@@ -17,13 +17,21 @@
 // Create an inner for loop with j initialized at the beginning going to the end.
 // if arr[j]
 
-function bubbleSort(array) {
-  for(let i = 0; i < array.length; i++) {
-    for(let j = i + 1; j < array.length; j++){
-      
+function bubbleSort(arr) {
+
+  //repeat the sort as much the lenght of the array decrementing. 
+  for(let i = arr.length; i >  0; i--) {
+    // loop through all elements in the arr not including the sorted element on each pass. 
+    for(let j = 0; j < i - 1;  j++){
+      // SWAP for the larger element
+      if(arr[j] > arr[j + 1]) { 
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp; 
+      }
     }
   }
-  return array;
+  return arr;
 }
 console.log(bubbleSort(
   [5, 3, 4, 1, 2])// [1, 2, 3, 4, 5]
