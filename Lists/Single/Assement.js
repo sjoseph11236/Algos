@@ -1,7 +1,14 @@
-
 class SinglyLinkedList { 
   constructor() { 
 
+  }
+
+  push() {
+
+  }
+
+  pop() {
+    
   }
 }
 
