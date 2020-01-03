@@ -24,7 +24,7 @@ class SinglyLinkedList{
   push(val) {
     // Create a new node with Node constructor.
     let node = new Node(val);
-    // Check for head. if not add the node as head. 
+    // Check for head. if not add the node as head and tail;s
     if(!this.head){
       this.head = node; 
       this.tail = node; 
@@ -34,8 +34,8 @@ class SinglyLinkedList{
       this.tail.next = node; 
       this.tail = node; 
     }
-    // increment lenght by one. 
-    this.length ++; 
+    // increment length by one. 
+    this.length++; 
   }
 }
 
