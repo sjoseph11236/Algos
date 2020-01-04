@@ -91,18 +91,45 @@ console.log(
 );
 
 //------Radix Sort-----//
+// helper function to determine what number is in certina place. 
+function getDigit(num, place) { 
+  // floor the Dived the absolute value of the num by 10 raised to the place number and find the mud when divided by 10.
+  return Math.floor(Math.abs(num) / Math.pow(10, place) % 10);
+}
 
-// function radixSort() {
+// helper function to determine the length of a digit. 
+function digitCount(num) { 
 
-// }
+}
 
-// console.log(
-//     "RADIX ",
-//   radixSort([215, 16, 31256]), // [16, 215, 31256]
-//   radixSort([10, 5, 7, 4, 3, 2, 1, 8, 6]), // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-//   radixSort([10, 5, 7, 4, 3, 2, 1, 8, 6, 6]), // [1, 2, 3, 4, 5, 6, 6, 7, 8, 9, 10]
-//   radixSort([23, 345, 5467, 12, 2345, 9852]) // [12, 23, 345, 2345, 5467, 9852]
-// );
+// helper function to determine the length of the longest digit in the arr.  
+function mostDigits(arr) { 
+  // Set teh mostDigit to zero. 
+  let mostDigit = 0; 
+  // compare each element length to mostDigit 
+  // if currentCount of element if geater update modstDigit. 
+  // return mostDigit. 
+}
+
+// function to flatten the bucket 
+function bucketFlattener(arr) { 
+
+}
+
+// sorting nimbers by place values.
+function radixSort(arr) {
+  // Store the largest Digit in the arr. 
+  const largest = mostDigits(arr);
+}
+
+console.log(
+    "RADIX ",
+  radixSort([215, 16, 31256]), // [16, 215, 31256]
+  radixSort([10, 5, 7, 4, 3, 2, 1, 8, 6]), // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  radixSort([10, 5, 7, 4, 3, 2, 1, 8, 6, 6]), // [1, 2, 3, 4, 5, 6, 6, 7, 8, 9, 10]
+  radixSort([23, 345, 5467, 12, 2345, 9852]) // [12, 23, 345, 2345, 5467, 9852]
+);
+
 //------Selection Sort-----//
 // sort by moving the smallest value to front of on each pass.
 function selectionSort(arr) {
@@ -289,6 +316,26 @@ console.log(
 //   quickSort([4, 6, 9, 1, 2, 5, 3])
 // );
 // //------Radix Sort-----//
+
+// // helper function to determine what number is in certina place. 
+// function getDigit(num, place) { 
+
+// }
+
+// // helper function to determine the length of a digit. 
+// function digitCount(num) { 
+
+// }
+
+// // helper function to determine the length of the longest digit in the arr.  
+// function mostDigits(arr) { 
+
+// }
+
+// // function to flatten the bucket 
+// function bucketFlattener(arr) { 
+
+// }
 
 // function radixSort() {
 
