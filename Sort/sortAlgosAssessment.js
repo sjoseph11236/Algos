@@ -114,8 +114,6 @@ function digitCount(num) {
   return length;
 }
 
-
-
 // helper function to determine the length of the longest digit in the arr.  
 function mostDigits(arr) { 
   // Set teh mostDigit to zero. 
@@ -150,9 +148,24 @@ function radixSort(arr) {
   // Store the largest Digit in the arr. 
   const largest = mostDigits(arr);
   // create a bucket with 10 empty arrs inside an arr. 
-  // Create a for loop that repats to the largest. 
-  // create a nested for loop that iterates therought hte arr.
-  // 
+  let bucket = [[], [], [], [], [], [], [], [], [], []];
+  // Create a for loop that repats to the largest.
+  for(let i = 0; i < largest; i++) {
+  // create a nested for loop that iterates therought the arr.
+    for(let j = 0; j < arr.length; j++) {
+  // check for digit at the place specific to i. 
+      let num = arr[j];
+      let currentDigit = getDigit(num, i);
+  // add that elem to that digit bucket. 
+      bucket[currentDigit].push(num);
+    }
+  // Reassign arr to flattened bucket arr. 
+    arr = bucketFlattener(bucket);
+  // reset the bucket arr. 
+    bucket =[[], [], [], [], [], [], [], [], [], []];
+  }
+  // return arr. 
+  return arr;
 }
 
 console.log(
