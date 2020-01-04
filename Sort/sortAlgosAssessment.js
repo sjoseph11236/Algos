@@ -104,17 +104,17 @@ function digitCount(num) {
   // set a count vairavle to 1; 
   let count = 1; 
   // Create a while loop that  check if num is greater than count. 
-  while(count < Math.abs(num)) { 
+  while(count <= Math.abs(num)) { 
   // increase lenght by 1. 
     length++;
   // multiple count by 10. 
-    count * 10; 
+    count *= 10; 
   }
   // return length.
   return length;
 }
 
-console.log('DIGIT COUNT ', digitCount(266781));//6
+
 
 // helper function to determine the length of the longest digit in the arr.  
 function mostDigits(arr) { 
@@ -123,6 +123,7 @@ function mostDigits(arr) {
   // compare each element length to mostDigit 
   // if currentCount of element if geater update modstDigit. 
   // return mostDigit. 
+  return mostDigit;
 }
 
 // function to flatten the bucket 
