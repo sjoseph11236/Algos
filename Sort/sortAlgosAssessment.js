@@ -121,20 +121,38 @@ function mostDigits(arr) {
   // Set teh mostDigit to zero. 
   let mostDigit = 0; 
   // compare each element length to mostDigit 
+  arr.forEach(elem => { 
+    const current = digitCount(elem);
   // if currentCount of element if geater update modstDigit. 
+    if(current > mostDigit) { 
+      mostDigit = current; 
+    }
+  });
   // return mostDigit. 
   return mostDigit;
 }
 
 // function to flatten the bucket 
 function bucketFlattener(arr) { 
-
+  // create an empty arr called result. 
+  const result = [];
+  // loop thorugh the arr.
+  arr.forEach(elem => { 
+  // spread and push each elem to the result; 
+    result.push(...elem);
+  });
+  // return result. 
+  return result; 
 }
 
 // sorting nimbers by place values.
 function radixSort(arr) {
   // Store the largest Digit in the arr. 
   const largest = mostDigits(arr);
+  // create a bucket with 10 empty arrs inside an arr. 
+  // Create a for loop that repats to the largest. 
+  // create a nested for loop that iterates therought hte arr.
+  // 
 }
 
 console.log(
