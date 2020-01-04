@@ -1,14 +1,31 @@
 // ---------------JAN 3.20 --------------------------------------------------------\\\
+// // sort by moving the larger values to the end of the arr. 
+// function bubbleSort(arr) {
+//   // Create a for decrementing loop  for the number of times loop through the arr. 
+//   for(let i = arr.length; i > 0 ; i--) { 
+//   // Create a for loop that iterates through the arr
+//     for (let j = 0; j < i - 1; j++) {
+//       let current = arr[j];
+//       let next = arr[j + 1];
+//   // check if current element is larger than than next element
+//       if(current > next) { 
+//         // Swap 
+//         let temp =  arr[j];
+//         arr[j] = arr[j + 1];
+//         arr[j + 1] = temp;
+//       }
+//     }
+//   }
 
-// function bubbleSort() {
-
+//   // retunr arr. 
+//   return arr;
 // }
 
 // console.log(bubbleSort(
 //   [5, 3, 4, 1, 2])// [1, 2, 3, 4, 5]
 // );
 
-// //------Merge Sort-----//
+//------Merge Sort-----//
 
 // function mergeSort(){
 
@@ -19,7 +36,7 @@
 //   mergeSort([10, 24, 76, 73])
 // );
 
-// //------Radix Sort-----//
+//------Radix Sort-----//
 
 // function radixSort() {
 
@@ -31,16 +48,37 @@
 //   radixSort([10, 5, 7, 4, 3, 2, 1, 8, 6, 6]), // [1, 2, 3, 4, 5, 6, 6, 7, 8, 9, 10]
 //   radixSort([23, 345, 5467, 12, 2345, 9852]) // [12, 23, 345, 2345, 5467, 9852]
 // );
-// //------Selection Sort-----//
+//------Selection Sort-----//
+// sort by moving the smallest value to front of on each pass.
+function selectionSort(arr) {
+  // create a for loop that iterates throgh the arr. 
+  for(let i = 0; i < arr.length; i++) {
+  // create a varaible smallestest positon intially set to first element.
+  let smallestPos = i; 
+  // Create a nest loop that iterates from the  i + 1. 
+    for(let j = i + 1; j < arr.length; j++) {
+      let current = arr[j];
+  // Check if current element is smalled than that smalles position element.
+      if(arr[smallestPos] > current) {
+        smallestPos = j; 
+      }
+    }
+  // check if i is not equal to the smallest position.
+    if(smallestPos !== i) {
+  // swap
+      let temp = arr[i];
+      arr[i] = arr[smallestPos];
+      arr[smallestPos] = temp;
+    }
+  }
+  // return the arr. 
+  return arr;
+}
 
-// function selectionSort() {
-
-// }
-
-// console.log(
-//   selectionSort([5, 3, 4, 1, 2]),//[1, 2, 3, 4, 5];
-//   selectionSort([5, 5, 4, 1, 2]) //[1, 2, 4, 5, 5, 5];
-// );
+console.log(
+  selectionSort([5, 3, 4, 1, 2]),//[1, 2, 3, 4, 5];
+  selectionSort([5, 5, 4, 1, 2]) //[1, 2, 4, 5, 5, 5];
+);
 
 // ---------------JAN 2.20 --------------------------------------------------------\\\
 
