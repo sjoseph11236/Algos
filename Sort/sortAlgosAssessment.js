@@ -1,3 +1,47 @@
+// ---------------JAN 3.20 --------------------------------------------------------\\\
+
+// function bubbleSort() {
+
+// }
+
+// console.log(bubbleSort(
+//   [5, 3, 4, 1, 2])// [1, 2, 3, 4, 5]
+// );
+
+// //------Merge Sort-----//
+
+// function mergeSort(){
+
+// }
+
+// console.log(
+//   mergeSort([10, 24, 76, 73, 72, 1, 9]),
+//   mergeSort([10, 24, 76, 73])
+// );
+
+// //------Radix Sort-----//
+
+// function radixSort() {
+
+// }
+
+// console.log(
+//   radixSort([215, 16, 31256]), // [16, 215, 31256]
+//   radixSort([10, 5, 7, 4, 3, 2, 1, 8, 6]), // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+//   radixSort([10, 5, 7, 4, 3, 2, 1, 8, 6, 6]), // [1, 2, 3, 4, 5, 6, 6, 7, 8, 9, 10]
+//   radixSort([23, 345, 5467, 12, 2345, 9852]) // [12, 23, 345, 2345, 5467, 9852]
+// );
+// //------Selection Sort-----//
+
+// function selectionSort() {
+
+// }
+
+// console.log(
+//   selectionSort([5, 3, 4, 1, 2]),//[1, 2, 3, 4, 5];
+//   selectionSort([5, 5, 4, 1, 2]) //[1, 2, 4, 5, 5, 5];
+// );
+
 // ---------------JAN 2.20 --------------------------------------------------------\\\
 
 //------Bubble Sort-----//
@@ -77,34 +121,34 @@
 // );
 // //------Selection Sort-----//
 
-// Find the positon of the smallest value and move it to the front.  
-function selectionSort(arr) {
-  // set the amount of repeats to the arr  equal to the arr length. 
-  for(let i = 0; i < arr.length; i++) {
-    // Intialize the position of the smallest value to i. 
-    let smallest = i; 
-    for( let j = i + 1; j < arr.length; j++) {
-      // check if the value at the current positon is smaller than value at the smallest
-      if(arr[smallest] > arr[j]) { 
-        // updated smallest position
-        smallest = j;
-      }
-    }
-    // cheack if the smallest position is equal to current i
-    if(smallest !== i){
-      let temp = arr[i];
-      arr[i] = arr[smallest];
-      arr[smallest] = temp; 
-    }
-  }
+// // Find the positon of the smallest value and move it to the front.  
+// function selectionSort(arr) {
+//   // set the amount of repeats to the arr  equal to the arr length. 
+//   for(let i = 0; i < arr.length; i++) {
+//     // Intialize the position of the smallest value to i. 
+//     let smallest = i; 
+//     for( let j = i + 1; j < arr.length; j++) {
+//       // check if the value at the current positon is smaller than value at the smallest
+//       if(arr[smallest] > arr[j]) { 
+//         // updated smallest position
+//         smallest = j;
+//       }
+//     }
+//     // cheack if the smallest position is equal to current i
+//     if(smallest !== i){
+//       let temp = arr[i];
+//       arr[i] = arr[smallest];
+//       arr[smallest] = temp; 
+//     }
+//   }
 
-  return arr; 
-}
+//   return arr; 
+// }
 
-console.log(
-  selectionSort([23, 345, 5467, 12, 2345, 9852]), // [12, 23, 345, 2345, 5467, 9852]
-  selectionSort([5, 5, 4, 1, 2]) //[1, 2, 4, 5, 5, 5];
-);
+// console.log(
+//   selectionSort([23, 345, 5467, 12, 2345, 9852]), // [12, 23, 345, 2345, 5467, 9852]
+//   selectionSort([5, 5, 4, 1, 2]) //[1, 2, 4, 5, 5, 5];
+// );
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
