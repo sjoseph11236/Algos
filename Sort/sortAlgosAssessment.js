@@ -140,9 +140,14 @@ function mostDigits(arr) {
 // function to flatten the bucket 
 function bucketFlattener(arr) { 
   // create an empty arr called result; 
+  const result = [];
   // Run forEach
+  arr.forEach(innerArr => {
   // spread each innereArr to empty arr. 
+    result.push(...innerArr);
+  });
   // return result. 
+  return result; 
 }
 
 // sorting nimbers by place values.
