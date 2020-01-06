@@ -31,7 +31,36 @@ class SinglyLinkedList {
   }
 
   pop() {
-    
+    // check if there is no head. 
+    if(!this.head) {
+    // return undefined. 
+      return undefined;
+    }
+    // keep track of currrent node set this.head
+    let current = this.head;
+    // keep track of pervious node set to null. 
+    let prev = null;
+    // create while loop check for current to be null. 
+    while(!current.next) {  
+    // update prev to be the current and update current to be the next. 
+      prev = current;
+      current = current.next;
+    }
+
+    console.log('PREV ', prev);
+    console.log('CURRENT ', current);
+    // decrease the length by 1. 
+    this.length--;
+    // check if the length is 1. 
+    if(this.length === 1) {
+    // set the head as the tail. 
+      this.tail = this.head; 
+    }
+
+    this.tail = prev;
+    // this.tail.next = null;
+    // return previous
+    return current;
   }
 }
 
@@ -47,6 +76,7 @@ class Node {
 const list = new SinglyLinkedList();
 list.push('ONE');
 list.push('TWO');
+list.pop();
 console.log('LIST ', list);
 
 
