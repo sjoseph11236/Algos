@@ -65,6 +65,27 @@ class SinglyLinkedList {
     // return previous
     return current;
   }
+
+  shift() {
+    // check if there not  is head.
+    if(!this.head) {
+    // return undefined.
+      return undefined;
+    }
+    // set oldHead to the current head. 
+    const oldHead = this.head;
+    // set this.head to oldHead.next.
+    this.head = oldHead.next;
+    // decrease the length.
+    this.length--;
+    // check if length is 0.
+    if(!this.length) {
+    // update this.tail to be null.
+      this.tail = null;
+    }
+    // return oldHead.
+    return oldHead;
+  }
 }
 
 class Node { 
@@ -100,10 +121,10 @@ const list = new SinglyLinkedList();
 // SHIFT__________
 list.push('Hello');
 list.push('Bye');
-list.shift();
-console.log("TCL: list", list);
-
-
+const callOne = list.shift();
+console.log("TCL: callOne ", callOne );
+const callTwo = list.shift();
+console.log("TCL: callTwo ", callTwo );
 
 // ---
 console.log('LIST ', list);

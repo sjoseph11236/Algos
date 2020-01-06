@@ -103,12 +103,16 @@ const list = new SinglyLinkedList();
 // list.push('Hello');
 // list.push('Bye');
 
-// shift
+// SHIFT__________
 list.push('Hello');
 list.push('Bye');
-list.shift();
-list.shift();
-console.log("TCL: list", list);
+const callOne = list.shift();
+console.log("TCL: callOne ", callOne );
+const callTwo = list.shift();
+console.log("TCL: callTwo ", callTwo );
+
+console.log('LIST ', list);
+
 
 // first.next = new Node('there');
 // first.next.next = new Node('how');
