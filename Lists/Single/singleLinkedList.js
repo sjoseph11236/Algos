@@ -99,11 +99,22 @@ class Node {
 }
 const list = new SinglyLinkedList();
 
-// push
+// PUSH_______
 // list.push('Hello');
 // list.push('Bye');
 
-// SHIFT__________
+// // SHIFT__________
+// list.push('Hello');
+// list.push('Bye');
+// const callOne = list.shift();
+// console.log("TCL: callOne ", callOne );
+// const callTwo = list.shift();
+// console.log("TCL: callTwo ", callTwo );
+
+// console.log('LIST ', list);
+
+
+// UNSHIFT__________
 list.push('Hello');
 list.push('Bye');
 const callOne = list.shift();
@@ -112,7 +123,6 @@ const callTwo = list.shift();
 console.log("TCL: callTwo ", callTwo );
 
 console.log('LIST ', list);
-
 
 // first.next = new Node('there');
 // first.next.next = new Node('how');
