@@ -41,24 +41,27 @@ class SinglyLinkedList {
     // keep track of pervious node set to null. 
     let prev = null;
     // create while loop check for current to be null. 
-    while(!current.next) {  
+    while(current.next) {  
     // update prev to be the current and update current to be the next. 
       prev = current;
       current = current.next;
     }
 
-    console.log('PREV ', prev);
-    console.log('CURRENT ', current);
-    // decrease the length by 1. 
-    this.length--;
-    // check if the length is 1. 
-    if(this.length === 1) {
-    // set the head as the tail. 
-      this.tail = this.head; 
+    this.tail = prev;
+
+    // check if there is a this.tail 
+    if(this.tail) {
+    // update next to be null; 
+      this.tail.next  = null; 
     }
 
-    this.tail = prev;
-    // this.tail.next = null;
+    this.length--;
+    // check if the length is 0. 
+    if(!this.length) {
+    // set the head as the tail. 
+      this.head = null;
+      this.tail = null;
+    }
     // return previous
     return current;
   }
@@ -76,7 +79,15 @@ class Node {
 const list = new SinglyLinkedList();
 list.push('ONE');
 list.push('TWO');
+const callOne = list.pop(); 
+console.log("TCL: callOne", callOne);// 'TWO'
+list.push('TWO');
+list.push('THREE');
+const callTwo =list.pop();
+console.log("TCL: callTwo", callTwo); //'THREE'
 list.pop();
+const callThree =list.pop();
+console.log("TCL: callThree ", callThree );//undefined
 console.log('LIST ', list);
 
 
@@ -103,3 +114,17 @@ console.log('LIST ', list);
 
 //   }
 // }
+
+
+// const list = new SinglyLinkedList();
+// list.push('ONE');
+// list.push('TWO');
+// list.pop(); // 'TWO'
+// console.log('LIST CALL 1 ', list);//length  = 1 
+// list.push('TWO');
+// list.push('THREE');
+// list.pop(); //'THREE'
+// console.log('LIST CALL 2 ', list);//length  = 2 
+// list.pop();
+// list.pop();//undefined
+// console.log('LIST  CALL 3 ', list); //length = 0;
