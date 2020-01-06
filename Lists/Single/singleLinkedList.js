@@ -70,6 +70,7 @@ class SinglyLinkedList{
   }
 }
 
+
 class Node {
   constructor(val) {
     this.val = val;
@@ -80,7 +81,6 @@ const list = new SinglyLinkedList();
 list.push('Hello');
 list.push('Bye');
 console.log("TCL: list", list);
-
 
 // first.next = new Node('there');
 // first.next.next = new Node('how');
