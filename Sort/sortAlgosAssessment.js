@@ -152,7 +152,27 @@ function bucketFlattener(arr) {
 
 // sorting nimbers by place values.
 function radixSort(arr) {
-
+  // find the length of the longest arr element with mostDigit. 
+  const longest = mostDigits(arr);
+  // Create a bucket arr of 10 empty arrs.
+  let bucket = [[], [], [], [], [], [], [], [], [], []];
+  // Create a for loop to run the number of times of the longest arr element. 
+  for( let i = 0; i < longest; i++ ) {
+  // iterate through the arr. 
+    for(let j = 0; j < arr.length; j++) {
+      let num = arr[j];
+  // get the digit at the i place. 
+      let digitBucket = getDigit(num, i);
+  // push that digit to the corresponding bucket.
+      bucket[digitBucket].push(num);
+    }
+  // reassign arr to flattened bucket. 
+    arr = bucketFlattener(bucket);
+  // empty the bucket. 
+    bucket = [[], [], [], [], [], [], [], [], [], []];
+  }
+  // return the arr. 
+  return arr;
 }
 
 console.log(
