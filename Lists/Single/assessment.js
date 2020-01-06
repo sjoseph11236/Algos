@@ -78,13 +78,13 @@ class Node {
 
 const list = new SinglyLinkedList();
 
-// // PUSH-------
+// // PUSH_________
 // list.push('ONE');
 // list.push('TWO');
 // console.log('LIST ', list);
 
 
-// // POP--------
+// // POP__________
 // list.push('ONE');
 // list.push('TWO');
 // const callOne = list.pop(); 
@@ -96,6 +96,13 @@ const list = new SinglyLinkedList();
 // list.pop();
 // const callThree =list.pop();
 // console.log("TCL: callThree ", callThree );//undefined
+
+// SHIFT__________
+list.push('Hello');
+list.push('Bye');
+list.shift();
+console.log("TCL: list", list);
+
 
 
 // ---

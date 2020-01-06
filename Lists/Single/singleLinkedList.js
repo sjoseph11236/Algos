@@ -70,7 +70,18 @@ class SinglyLinkedList{
   }
   // remove a node from the beginning the linked list
   shift() { 
-
+    // check if there is length.
+    if(!this.length){
+      return undefined;
+    }
+    // store the current head in target variable.
+    const target = this.head; 
+    // set the head prop. the currents next prop.
+    this.head = this.head.next;
+    // decrement the lenght by 1. 
+    this.length--;
+    // return the target.
+    return target;
   }
 }
 
@@ -82,8 +93,15 @@ class Node {
   }
 }
 const list = new SinglyLinkedList();
+
+// push
+// list.push('Hello');
+// list.push('Bye');
+
+// shift
 list.push('Hello');
 list.push('Bye');
+list.shift();
 console.log("TCL: list", list);
 
 // first.next = new Node('there');
