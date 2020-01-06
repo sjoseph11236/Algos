@@ -61,7 +61,30 @@ console.log(
 //------Selection Sort-----//
 // // sort by moving the smallest value to front of on each pass.
 function selectionSort(arr) {
-
+  // Create a for loop that goes to the length of the arr. 
+  for(let i = 0; i < arr.length; i++ ) {
+  // Set a varaible to check for smallestPos.
+  // Set smallestPost to i. 
+    let smallestPos  = i; 
+  // Create nest loop that goes the length of the arr. 
+    for(let j = i + 1; j < arr.length; j++ ) {
+      const current = arr[j];
+  // check if the current element is smaller than element at the smallestPos. 
+      if(current < arr[smallestPos]) {
+  // if it is update the smallestPos. 
+        smallestPos = j;
+      }
+    }
+  // check if the smallestPos is not the same as i. 
+    if(smallestPos !== i ) {
+  // swap. 
+      let temp = arr[i];
+      arr[i] = arr[smallestPos];
+      arr[smallestPos] = temp;
+    }
+  }
+  // return arr. 
+  return arr;
 }
 
 console.log(
