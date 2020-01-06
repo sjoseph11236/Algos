@@ -121,12 +121,28 @@ function digitCount(num) {
 
 // helper function to determine the length of the longest digit in the arr.  
 function mostDigits(arr) { 
-
+  // set longest to zero 
+  let longest = 0; 
+  // loop through arr
+  arr.forEach(num => { 
+  // check for element length with digitCount. 
+    let currentLen = digitCount(num);
+  // compsre length with longest. 
+    if(currentLen > longest) {
+  // if longer update longest. 
+      longest = currentLen;
+    }
+  });
+  // retun longest. 
+  return longest; 
 }
 
 // function to flatten the bucket 
 function bucketFlattener(arr) { 
-
+  // create an empty arr called result; 
+  // Run forEach
+  // spread each innereArr to empty arr. 
+  // return result. 
 }
 
 // sorting nimbers by place values.
