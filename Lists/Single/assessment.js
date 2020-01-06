@@ -77,17 +77,28 @@ class Node {
 }
 
 const list = new SinglyLinkedList();
-list.push('ONE');
-list.push('TWO');
-const callOne = list.pop(); 
-console.log("TCL: callOne", callOne);// 'TWO'
-list.push('TWO');
-list.push('THREE');
-const callTwo =list.pop();
-console.log("TCL: callTwo", callTwo); //'THREE'
-list.pop();
-const callThree =list.pop();
-console.log("TCL: callThree ", callThree );//undefined
+
+// // PUSH-------
+// list.push('ONE');
+// list.push('TWO');
+// console.log('LIST ', list);
+
+
+// // POP--------
+// list.push('ONE');
+// list.push('TWO');
+// const callOne = list.pop(); 
+// console.log("TCL: callOne", callOne);// 'TWO'
+// list.push('TWO');
+// list.push('THREE');
+// const callTwo =list.pop();
+// console.log("TCL: callTwo", callTwo); //'THREE'
+// list.pop();
+// const callThree =list.pop();
+// console.log("TCL: callThree ", callThree );//undefined
+
+
+// ---
 console.log('LIST ', list);
 
 
