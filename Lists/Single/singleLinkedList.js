@@ -68,6 +68,10 @@ class SinglyLinkedList{
     }
     return current;
   }
+  // remove a node from the beginning the linked list
+  shift() { 
+
+  }
 }
 
 
