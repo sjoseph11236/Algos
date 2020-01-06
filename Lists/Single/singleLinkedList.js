@@ -75,13 +75,18 @@ class SinglyLinkedList{
       return undefined;
     }
     // store the current head in target variable.
-    const target = this.head; 
+    const oldHead = this.head; 
     // set the head prop. the currents next prop.
-    this.head = this.head.next;
+    this.head = oldHead.next;
     // decrement the lenght by 1. 
     this.length--;
+    // check ig lenght is zero.
+    if(!this.length) {
+      // 
+      this.tail = null;
+    }
     // return the target.
-    return target;
+    return oldHead;
   }
 }
 
@@ -101,6 +106,7 @@ const list = new SinglyLinkedList();
 // shift
 list.push('Hello');
 list.push('Bye');
+list.shift();
 list.shift();
 console.log("TCL: list", list);
 
