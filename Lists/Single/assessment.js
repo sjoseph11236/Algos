@@ -31,7 +31,38 @@ class SinglyLinkedList {
   }
 
   pop() {
-
+    //check if therer is head. 
+    if(!this.head) {
+    // return undefined
+      return undefined;
+    }
+    // crete a vairable called renove set to the head.
+    let remove = this.head;
+    // create a prev variable.  set to null.
+    let prev = null; 
+    // create a while loop checking for remove.next
+    while(remove.next) {
+    // update prev to be remove. 
+      prev = remove;
+    // remove update to remove.next. 
+      remove = remove.next;
+    }
+    // set the tail to prev.
+    this.tail = prev;
+    // reset tail.next to null.
+    if(this.tail) { 
+      this.tail.next = null;
+    }
+    // decrease the length by; 
+    this.length--;
+    // check if the lenght is 1
+    if(!this.length){
+    // set the tail the same as the head.   
+      this.head = null;
+      this. tail = null;
+    }
+    // return remove
+    return remove;
   }
 
   shift() {
@@ -50,25 +81,25 @@ class Node {
 
 const list = new SinglyLinkedList();
 
-// // PUSH_________
-list.push('ONE');
-list.push('TWO');
-list.push('THREE');
-console.log('LIST ', list);
-
-
-// // POP__________
+// // // PUSH_________
 // list.push('ONE');
 // list.push('TWO');
-// const callOne = list.pop(); 
-// console.log("TCL: callOne", callOne);// 'TWO'
-// list.push('TWO');
 // list.push('THREE');
-// const callTwo =list.pop();
-// console.log("TCL: callTwo", callTwo); //'THREE'
-// list.pop();
-// const callThree =list.pop();
-// console.log("TCL: callThree ", callThree );//undefined
+// console.log('LIST ', list);
+
+
+// POP__________
+list.push('ONE');
+list.push('TWO');
+const callOne = list.pop(); 
+console.log("TCL: callOne", callOne);// 'TWO'
+list.push('TWO');
+list.push('THREE');
+const callTwo =list.pop();
+console.log("TCL: callTwo", callTwo); //'THREE'
+list.pop();
+const callThree =list.pop();
+console.log("TCL: callThree ", callThree );//'ONE'
 
 // // SHIFT__________
 // list.push('Hello');
