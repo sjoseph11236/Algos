@@ -66,7 +66,25 @@ class SinglyLinkedList {
   }
 
   shift() {
+    // check if there is length
+    if(!this.length) {
+    // return undefined; 
+      return undefined;      
+    }
+    // store the head in result variable, 
+    const result = this.head; 
+    // update the head as th current tail.
+    this.head = result.next; 
+    // reduce the length by 1. 
+    this.length--;  
 
+    // check for no length
+    // update head and tail to null; 
+    if(!this.length) {
+      this.tail = null;
+    }
+    // return result
+    return result;
   }
 }
 
@@ -88,31 +106,31 @@ const list = new SinglyLinkedList();
 // console.log('LIST ', list);
 
 
-// POP__________
-list.push('ONE');
-list.push('TWO');
-const callOne = list.pop(); 
-console.log("TCL: callOne", callOne);// 'TWO'
-list.push('TWO');
-list.push('THREE');
-const callTwo =list.pop();
-console.log("TCL: callTwo", callTwo); //'THREE'
-list.pop();
-const callThree =list.pop();
-const callFour =list.pop();
-console.log("TCL: callThree ", callThree );//'ONE'
-console.log("TCL: callFour", callFour); // undefined
+// // POP__________
+// list.push('ONE');
+// list.push('TWO');
+// const callOne = list.pop(); 
+// console.log("TCL: callOne", callOne);// 'TWO'
+// list.push('TWO');
+// list.push('THREE');
+// const callTwo =list.pop();
+// console.log("TCL: callTwo", callTwo); //'THREE'
+// list.pop();
+// const callThree =list.pop();
+// const callFour =list.pop();
+// console.log("TCL: callThree ", callThree );//'ONE'
+// console.log("TCL: callFour", callFour); // undefined
 
-// // SHIFT__________
-// list.push('Hello');
-// list.push('Bye');
-// const callOne = list.shift();
-// console.log("TCL: callOne ", callOne );
-// const callTwo = list.shift();
-// console.log("TCL: callTwo ", callTwo );
+// SHIFT__________
+list.push('Hello');
+list.push('Bye');
+const callOne = list.shift();
+console.log("TCL: callOne ", callOne );
+const callTwo = list.shift();
+console.log("TCL: callTwo ", callTwo );
 
 // ---
-// console.log('LIST ', list)
+console.log('LIST ', list);
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
