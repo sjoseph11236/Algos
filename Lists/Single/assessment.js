@@ -12,7 +12,12 @@ class SinglyLinkedList {
   }
 
   push(val) {
-
+    // create a new node with value. 
+    // check if there is no head. 
+    // set the head and tail to the new node. 
+    // set this head.next to new node. 
+    // else set the tail to new node. 
+    // increse the length by 1. 
   }
 
   pop() {
