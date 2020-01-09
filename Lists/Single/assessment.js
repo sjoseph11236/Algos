@@ -99,7 +99,9 @@ const callTwo =list.pop();
 console.log("TCL: callTwo", callTwo); //'THREE'
 list.pop();
 const callThree =list.pop();
+const callFour =list.pop();
 console.log("TCL: callThree ", callThree );//'ONE'
+console.log("TCL: callFour", callFour); // undefined
 
 // // SHIFT__________
 // list.push('Hello');
