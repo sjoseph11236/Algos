@@ -114,15 +114,15 @@ const list = new SinglyLinkedList();
 // console.log('LIST ', list);
 
 
-// UNSHIFT__________
-list.push('Hello');
-list.push('Bye');
-const callOne = list.shift();
-console.log("TCL: callOne ", callOne );
-const callTwo = list.shift();
-console.log("TCL: callTwo ", callTwo );
+// // UNSHIFT__________
+// list.push('Hello');
+// list.push('Bye');
+// const callOne = list.shift();
+// console.log("TCL: callOne ", callOne );
+// const callTwo = list.shift();
+// console.log("TCL: callTwo ", callTwo );
 
-console.log('LIST ', list);
+// console.log('LIST ', list);
 
 // first.next = new Node('there');
 // first.next.next = new Node('how');
