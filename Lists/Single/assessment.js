@@ -23,10 +23,8 @@ class SinglyLinkedList {
     else{ 
     // set this tail.next to new node. 
       this.tail.next = node; 
-      console.log('HEAD >>>>>>>',this.head.next);
-      console.log('TAIL >> ', this.tail.next);
     // else set the tail to new node. 
-      this.tail = node; 
+      this.tail = node;
     }
     // increse the length by 1. 
     this.length++;
@@ -55,6 +53,7 @@ const list = new SinglyLinkedList();
 // // PUSH_________
 list.push('ONE');
 list.push('TWO');
+list.push('THREE');
 console.log('LIST ', list);
 
 
