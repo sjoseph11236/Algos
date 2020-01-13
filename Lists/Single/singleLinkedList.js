@@ -88,6 +88,11 @@ class SinglyLinkedList{
     // return the target.
     return oldHead;
   }
+
+    // Adding a new node to the beginning of the Linked List
+    unshift() {
+
+    }
 }
 
 
