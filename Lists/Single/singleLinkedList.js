@@ -99,11 +99,14 @@ class SinglyLinkedList{
       this.head = newHead;
       this.tail = newHead;
     }
-
+    else{
     // set the new node next prop to the current head prop
-    newHead.next = this.head; 
-    // set the head prop on the list to be the new node
-    this.head = newHead;
+      newHead.next = this.head; 
+      // set the head prop on the list to be the new node
+      this.head = newHead;
+    }
+
+
     // incremenet the length by 1. 
     this.length++;
     // return the linked list.
