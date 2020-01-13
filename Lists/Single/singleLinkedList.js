@@ -39,6 +39,7 @@ class SinglyLinkedList{
     this.length++; 
   }
 
+  // remove node from the end of the linked list
   pop() {
     // check if no nodes to return undefined. 
     if(!this.head){
@@ -68,6 +69,7 @@ class SinglyLinkedList{
     }
     return current;
   }
+  
   // remove a node from the beginning the linked list
   shift() { 
     // check if there is length.
