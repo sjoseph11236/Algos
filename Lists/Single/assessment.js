@@ -86,7 +86,13 @@ class SinglyLinkedList {
     // return result
     return result;
   }
+
+  // Adding a new node to the beginning of the Linked List
+  unshifting() {
+
+  }
 }
+
 
 class Node { 
   constructor(val) {
