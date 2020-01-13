@@ -143,7 +143,7 @@ const list = new SinglyLinkedList();
 // const callTwo = list.unshift('WHO');
 // console.log("TCL: callTwo ", callTwo );
 
-// console.log('LIST ', list);
+console.log('LIST ', list);
 
 // first.next = new Node('there');
 // first.next.next = new Node('how');
