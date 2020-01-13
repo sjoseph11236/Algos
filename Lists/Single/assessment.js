@@ -88,7 +88,7 @@ class SinglyLinkedList {
   }
 
   // Adding a new node to the beginning of the Linked List
-  unshifting() {
+  unshift() {
 
   }
 }
