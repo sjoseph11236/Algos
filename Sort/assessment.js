@@ -11,7 +11,20 @@
 //------Merge Sort-----//
 
 function merge(left, right) {
-
+  // Create a empty arr called result. 
+  let result = [];
+  // Create a left Pointer
+  // Create a right Pointer
+  // Iterate thorugh a while loop check if left or right is eaqul to length. 
+  // check which arr value is less. 
+  // push that element to the result arr. 
+  // else Push the right element to the result.
+  // check if there is any elements left in the left arr. 
+  // Spread thre remaining values. 
+  // Push to the result arr. 
+  // check if there is any elements left in the right arr. 
+  // Push to the result arr. 
+  //  return result. 
 }
 
 function mergeSort(arr){
