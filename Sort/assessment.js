@@ -14,21 +14,59 @@ function merge(left, right) {
   // Create a empty arr called result. 
   let result = [];
   // Create a left Pointer
+  let leftIdx = 0; 
   // Create a right Pointer
+  let rightIdx = 0; 
   // Iterate thorugh a while loop check if left or right is eaqul to length. 
+  while(leftIdx !== left.length && rightIdx !== right.length) {
   // check which arr value is less. 
-  // push that element to the result arr. 
-  // else Push the right element to the result.
+    if(left[leftIdx] < right[rightIdx]) {
+    // push that element to the result arr. 
+      result.push(left[leftIdx]);
+      // increase the left Idx.
+      leftIdx++;
+    }
+    else{
+    // else Push the right element to the result.
+      result.push(right[rightIdx]);
+      // increase the right Idx.
+      rightIdx++;
+    }
+  }
   // check if there is any elements left in the left arr. 
+  if(leftIdx !== left.length) {
+  // Spread thre remaining values. 
+    let leftRemaining = left.slice(leftIdx);
   // Spread thre remaining values. 
   // Push to the result arr. 
+    result.push(...leftRemaining);
+  }
+
   // check if there is any elements left in the right arr. 
+  if(rightIdx !== right.length) {
+    let rightRemaining = right.slice(rightIdx);
   // Push to the result arr. 
+    result.push(...rightRemaining);
+  }
+
   //  return result. 
+  return result;
 }
 
 function mergeSort(arr){
-
+  // check if the arr is less than or equal to 1 return arr. 
+  if(arr.length <= 1) {
+    return arr;
+  }
+  // find the midpoint
+  let mid = Math.floor(arr.length / 2);
+  // create a left arr. 
+  let left = mergeSort(arr.slice(0, mid));
+  // call the merge left arr. 
+  // create a right and call merge on the right arr. 
+  let right = mergeSort(arr.slice(mid));
+  // return merge call with left and right
+  return merge(left, right);
 }
 
 console.log(
