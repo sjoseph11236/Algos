@@ -90,14 +90,24 @@ class SinglyLinkedList{
   }
 
   // Adding a new node to the beginning of the Linked List
-  unshift() {
+  unshift(val) {
     // accepts a value
     // create a new node.
+    let newHead = new Node(val);
     // if no head set head and tail to be new node. 
+    if(!this.head) {
+      this.head = newHead;
+      this.tail = newHead;
+    }
+
     // set the new node next prop to the current head prop
+    newHead.next = this.head; 
     // set the head prop on the list to be the new node
+    this.head = newHead;
     // incremenet the length by 1. 
+    this.length++;
     // return the linked list.
+    return this;
   }
 }
 
@@ -125,12 +135,12 @@ const list = new SinglyLinkedList();
 // console.log('LIST ', list);
 
 
-// // UNSHIFT__________
+// UNSHIFT__________
 // list.push('Hello');
 // list.push('Bye');
-// const callOne = list.shift();
+// const callOne = list.unshift('WHAT');
 // console.log("TCL: callOne ", callOne );
-// const callTwo = list.shift();
+// const callTwo = list.unshift('WHO');
 // console.log("TCL: callTwo ", callTwo );
 
 // console.log('LIST ', list);

@@ -128,12 +128,23 @@ const list = new SinglyLinkedList();
 // console.log("TCL: callFour", callFour); // undefined
 
 // SHIFT__________
-list.push('Hello');
-list.push('Bye');
-const callOne = list.shift();
-console.log("TCL: callOne ", callOne );
-const callTwo = list.shift();
-console.log("TCL: callTwo ", callTwo );
+// list.push('Hello');
+// list.push('Bye');
+// const callOne = list.shift();
+// console.log("TCL: callOne ", callOne );
+// const callTwo = list.shift();
+// console.log("TCL: callTwo ", callTwo );
+
+
+// UNSHIFT____________
+// list.push('Hello');
+// list.push('Bye');
+// const callOne = list.unshift('WHAT');
+// console.log("TCL: callOne ", callOne );
+// const callTwo = list.unshift('WHO');
+// console.log("TCL: callTwo ", callTwo );
+
+
 
 // ---
 console.log('LIST ', list);
