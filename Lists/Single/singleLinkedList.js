@@ -89,10 +89,16 @@ class SinglyLinkedList{
     return oldHead;
   }
 
-    // Adding a new node to the beginning of the Linked List
-    unshift() {
-
-    }
+  // Adding a new node to the beginning of the Linked List
+  unshift() {
+    // accepts a value
+    // create a new node.
+    // if no head set head and tail to be new node. 
+    // set the new node next prop to the current head prop
+    // set the head prop on the list to be the new node
+    // incremenet the length by 1. 
+    // return the linked list.
+  }
 }
 
 
