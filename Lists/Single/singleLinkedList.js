@@ -233,12 +233,13 @@ const list = new SinglyLinkedList();
 // console.log("TCL: callTwo ", callTwo );
 
 // INSERT___________
-// list.push('Hello');
-// list.push('Bye');
-// const callOne = list.set(1, 'STAY');
-// console.log("TCL: callOne ", callOne );
-// const callTwo = list.set(3, 'FOR');
-// console.log("TCL: callTwo ", callTwo );
+list.push('Hello');
+list.push('Bye');
+list.push('HEY');
+const callOne = list.insert(1, 'STAY');
+console.log("TCL: callOne ", callOne );
+const callTwo = list.insert(7, 'FOR');
+console.log("TCL: callTwo ", callTwo );
 
 console.log('LIST ', list);
 
