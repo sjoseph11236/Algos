@@ -134,6 +134,11 @@ class SinglyLinkedList{
 
     return result;
   }
+
+  // changing the value of a node based on it's position in the linked list
+  set(position, newValue) {
+
+  }
 }
 
 
