@@ -272,10 +272,12 @@ const list = new SinglyLinkedList();
 list.push('Hello');
 list.push('Bye');
 list.push('HEY');
-const callOne = list.insert(1, 'STAY');
+const callOne = list.remove(1);
 console.log("TCL: callOne ", callOne );
-const callTwo = list.insert(7, 'FOR');
+const callTwo = list.remove(7);
 console.log("TCL: callTwo ", callTwo );
+const callThree = list.remove(-1);
+console.log("TCL: callThree ", callThree );
 
 console.log('LIST ', list);
 
