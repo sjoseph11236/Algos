@@ -69,7 +69,7 @@ class SinglyLinkedList{
     }
     return current;
   }
-  
+
   // remove a node from the beginning the linked list
   shift() { 
     // check if there is length.
@@ -113,6 +113,11 @@ class SinglyLinkedList{
     this.length++;
     // return the linked list.
     return this;
+  }
+
+  // Retriving a node by its position in the linked list. 
+  get(index) {
+
   }
 }
 
