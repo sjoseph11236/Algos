@@ -136,7 +136,7 @@ class SinglyLinkedList{
   }
 
   // changing the value of a node based on it's position in the linked list
-  set(position, newValue) {
+  set(index, newValue) {
 
   }
 }
