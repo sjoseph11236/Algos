@@ -150,6 +150,11 @@ class SinglyLinkedList{
       return true;
     }
   }
+
+  // Adding a node to the linked list at a specific position
+  insert(index, val) {
+    
+  }
 }
 
 
@@ -197,8 +202,8 @@ list.push('Hello');
 list.push('Bye');
 const callOne = list.set(1, 'STAY');
 console.log("TCL: callOne ", callOne );
-// const callTwo = list.get(0);
-// console.log("TCL: callTwo ", callTwo );
+const callTwo = list.set(3, 'FOR');
+console.log("TCL: callTwo ", callTwo );
 
 console.log('LIST ', list);
 
