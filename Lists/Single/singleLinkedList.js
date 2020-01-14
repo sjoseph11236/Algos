@@ -153,7 +153,34 @@ class SinglyLinkedList{
 
   // Adding a node to the linked list at a specific position
   insert(index, val) {
-    
+    // check if the index less than zero ang greater than the length.
+    if(index < 0 || index > this.length) {
+      return false;
+    }
+    // if the index is the same as length use push.
+    if(index === this.length){
+      this.push(val);
+      return true;
+    }
+    // if the index is zero use unshift. 
+    if(index === 0) {
+      this.unshift(val);
+      return true;
+    }
+    // get the node at the target position
+    let targetNode = this.get(index);
+    // find the node before the target index.
+    let beforeTargetNode = this.get(index - 1);
+    // Create new Node  with val. 
+    let newNode = new Node(val);
+    // set the next prop on the node be the new node. 
+    newNode.next = targetNode;
+    // set the before target node next prop to the new Node. 
+    beforeTargetNode.next = newNode;
+    // increment the length
+    this.length++;
+    // return true.
+    return true;
   }
 }
 
@@ -198,12 +225,20 @@ const list = new SinglyLinkedList();
 // console.log("TCL: callTwo ", callTwo );
 
 // SET___________
-list.push('Hello');
-list.push('Bye');
-const callOne = list.set(1, 'STAY');
-console.log("TCL: callOne ", callOne );
-const callTwo = list.set(3, 'FOR');
-console.log("TCL: callTwo ", callTwo );
+// list.push('Hello');
+// list.push('Bye');
+// const callOne = list.set(1, 'STAY');
+// console.log("TCL: callOne ", callOne );
+// const callTwo = list.set(3, 'FOR');
+// console.log("TCL: callTwo ", callTwo );
+
+// INSERT___________
+// list.push('Hello');
+// list.push('Bye');
+// const callOne = list.set(1, 'STAY');
+// console.log("TCL: callOne ", callOne );
+// const callTwo = list.set(3, 'FOR');
+// console.log("TCL: callTwo ", callTwo );
 
 console.log('LIST ', list);
 
