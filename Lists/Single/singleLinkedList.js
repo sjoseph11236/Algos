@@ -187,6 +187,27 @@ class SinglyLinkedList{
   // Remove a node from the linked list at a specific position.
   remove(index) {
     // accept an index.
+    // check if the index is less than zero greate than the length and return undefined. 
+    if(index < 0 || index > this.length) { 
+      return undefined;
+    }
+    // if this index is the same as the length - -1 pop
+    if(index === this.length - 1 ) { 
+      return this.pop();
+    }
+    // if the index is 0 shift. 
+    if(index === 0) {
+      return this.shift();
+    }
+    // get the node before the target index. 
+    let beforeTargetNode = this.get(index - 1);
+    // set the nedxt prop to the beforeNode  to the next of the removednNode. 
+    let targetNode = this.get(index);
+    beforeTargetNode.next = targetNode.next;
+    // Decrement the length
+    this.length--;
+    // return the value of the removedNode
+    return targetNode;
   }
 }
 
@@ -239,6 +260,15 @@ const list = new SinglyLinkedList();
 // console.log("TCL: callTwo ", callTwo );
 
 // INSERT___________
+// list.push('Hello');
+// list.push('Bye');
+// list.push('HEY');
+// const callOne = list.insert(1, 'STAY');
+// console.log("TCL: callOne ", callOne );
+// const callTwo = list.insert(7, 'FOR');
+// console.log("TCL: callTwo ", callTwo );
+
+// REMOVE___________
 list.push('Hello');
 list.push('Bye');
 list.push('HEY');
