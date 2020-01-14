@@ -125,8 +125,10 @@ class SinglyLinkedList{
     // loop through the list for until you reach the index and return the node at the specific index. 
     let count = 0;
     let result = this.head;
+
     while(count !== index) {
       result = result.next;
+      // increment counter
       count++;
     }
 
