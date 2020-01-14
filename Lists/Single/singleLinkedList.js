@@ -183,6 +183,11 @@ class SinglyLinkedList{
     // return true.
     return true;
   }
+
+  // Remove a node from the linked list at a specific position.
+  remove(index) {
+    // accept an index.
+  }
 }
 
 
