@@ -117,7 +117,20 @@ class SinglyLinkedList{
 
   // Retriving a node by its position in the linked list. 
   get(index) {
+    // accept an index
+    // check if the index is less than zero or greater than or equal to the length of the list, return null
+    if(index < 0 || index >= this.length) {
+      return null;
+    }
+    // loop through the list for until you reach the index and return the node at the specific index. 
+    let count = 0;
+    let result = this.head;
+    while(count !== index) {
+      result = result.next;
+      count++;
+    }
 
+    return result;
   }
 }
 
@@ -152,6 +165,14 @@ const list = new SinglyLinkedList();
 // console.log("TCL: callOne ", callOne );
 // const callTwo = list.unshift('WHO');
 // console.log("TCL: callTwo ", callTwo );
+
+// GET___________
+list.push('Hello');
+list.push('Bye');
+const callOne = list.get(1);
+console.log("TCL: callOne ", callOne );
+const callTwo = list.get(0);
+console.log("TCL: callTwo ", callTwo );
 
 console.log('LIST ', list);
 
