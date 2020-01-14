@@ -136,8 +136,11 @@ class SinglyLinkedList{
   }
 
   // changing the value of a node based on it's position in the linked list
-  set(index, newValue) {
-
+  set(index, val) {
+    // accept a value and index 
+    // use get function to find the specific node 
+    // if no node is found return false
+    // if node is found set the value of the node to be the value of the passsed ot function and return true. 
   }
 }
 
@@ -174,6 +177,14 @@ const list = new SinglyLinkedList();
 // console.log("TCL: callTwo ", callTwo );
 
 // GET___________
+// list.push('Hello');
+// list.push('Bye');
+// const callOne = list.get(1);
+// console.log("TCL: callOne ", callOne );
+// const callTwo = list.get(0);
+// console.log("TCL: callTwo ", callTwo );
+
+// SET___________
 list.push('Hello');
 list.push('Bye');
 const callOne = list.get(1);
