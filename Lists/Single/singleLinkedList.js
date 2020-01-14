@@ -139,8 +139,16 @@ class SinglyLinkedList{
   set(index, val) {
     // accept a value and index 
     // use get function to find the specific node 
+    let targetNode = this.get(index);
     // if no node is found return false
+    if(!targetNode) {
+      return false;
+    }
+    else{
     // if node is found set the value of the node to be the value of the passsed ot function and return true. 
+      targetNode.val = val; 
+      return true;
+    }
   }
 }
 
@@ -187,10 +195,10 @@ const list = new SinglyLinkedList();
 // SET___________
 list.push('Hello');
 list.push('Bye');
-const callOne = list.get(1);
+const callOne = list.set(1, 'STAY');
 console.log("TCL: callOne ", callOne );
-const callTwo = list.get(0);
-console.log("TCL: callTwo ", callTwo );
+// const callTwo = list.get(0);
+// console.log("TCL: callTwo ", callTwo );
 
 console.log('LIST ', list);
 
