@@ -179,6 +179,7 @@ class SinglyLinkedList{
     beforeTargetNode.next = newNode;
     // increment the length
     this.length++;
+    console.log('NEW NODE ', newNode);
     // return true.
     return true;
   }
