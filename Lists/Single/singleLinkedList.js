@@ -209,6 +209,13 @@ class SinglyLinkedList{
     // return the value of the removedNode
     return targetNode;
   }
+
+  // Reversing the linked list in place
+  reverse() {
+    // Swap the head and tail.
+    // Create a variable called next.
+    // Create a varaible called prev.
+  }
 }
 
 
