@@ -213,24 +213,35 @@ class SinglyLinkedList{
   // Reversing the linked list in place
   reverse() {
     // Swap the head and tail.
+    let temp = this.head;
     this.head = this.tail;
-    this.tail = this.head; 
+    this.tail = temp;
+
     // Create a variable called next.
     let next = null;
     // Create a varaible called prev.
     let prev = null;
     // Creat a variable called current intialized to the head prop. 
-    let current = this.tail;
+    let current = this.head;
     // loop through the list. 
-    while(current.next) {
+    console.log(" HEAD", this.head);
+    console.log(" TAIL ", this.tail);
+  
+    while(current) {
+      console.log(" Current is  ", current);
+      console.log("Curent.next is ", current.next);
     // Set next to be the next property on whatever node is. 
       next = current.next;
+      console.log('Next is ', next);
     // Set the next property on the node to be whateve prev is. 
       current.next = prev;
+      console.log("Curent.next is now ", current.next);
     // Set the prev to be the value of the node variable. 
       prev = current;
+      console.log("prev is ", prev);
     // Set the node variable to be the value of the next variable. 
       current = next;
+      console.log('Current will be >>>>> ', current);
     }
   }
 }
@@ -304,9 +315,11 @@ const list = new SinglyLinkedList();
 // console.log("TCL: callThree ", callThree );
 
 // REVERSE___________
-list.push('Hello');
-list.push('Bye');
-list.push('HEY');
+list.push(22);
+list.push(77);
+list.push(33);
+list.push(99);
+console.log('LIST ', list);
 list.reverse();
 // const callOne = list.remove(1);
 // console.log("TCL: callOne ", callOne );
