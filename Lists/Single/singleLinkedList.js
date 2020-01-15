@@ -215,6 +215,7 @@ class SinglyLinkedList{
     // Swap the head and tail.
     // Create a variable called next.
     // Create a varaible called prev.
+    // Creat a variable called current 
   }
 }
 
