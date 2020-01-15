@@ -222,7 +222,7 @@ class SinglyLinkedList{
     // Create a varaible called prev.
     let prev = null;
     // Creat a variable called current intialized to the head prop. 
-    let current = this.head;
+    let current = this.tail;
     // loop through the list. 
     console.log(" HEAD", this.head);
     console.log(" TAIL ", this.tail);
