@@ -213,14 +213,25 @@ class SinglyLinkedList{
   // Reversing the linked list in place
   reverse() {
     // Swap the head and tail.
+    this.head = this.tail;
+    this.tail = this.head; 
     // Create a variable called next.
+    let next = null;
     // Create a varaible called prev.
+    let prev = null;
     // Creat a variable called current intialized to the head prop. 
+    let current = this.tail;
     // loop through the list. 
+    while(current.next) {
     // Set next to be the next property on whatever node is. 
+      next = current.next;
     // Set the next property on the node to be whateve prev is. 
+      current.next = prev;
     // Set the prev to be the value of the node variable. 
+      prev = current;
     // Set the node variable to be the value of the next variable. 
+      current = next;
+    }
   }
 }
 
@@ -282,15 +293,27 @@ const list = new SinglyLinkedList();
 // console.log("TCL: callTwo ", callTwo );
 
 // REMOVE___________
+// list.push('Hello');
+// list.push('Bye');
+// list.push('HEY');
+// const callOne = list.remove(1);
+// console.log("TCL: callOne ", callOne );
+// const callTwo = list.remove(7);
+// console.log("TCL: callTwo ", callTwo );
+// const callThree = list.remove(-1);
+// console.log("TCL: callThree ", callThree );
+
+// REVERSE___________
 list.push('Hello');
 list.push('Bye');
 list.push('HEY');
-const callOne = list.remove(1);
-console.log("TCL: callOne ", callOne );
-const callTwo = list.remove(7);
-console.log("TCL: callTwo ", callTwo );
-const callThree = list.remove(-1);
-console.log("TCL: callThree ", callThree );
+list.reverse();
+// const callOne = list.remove(1);
+// console.log("TCL: callOne ", callOne );
+// const callTwo = list.remove(7);
+// console.log("TCL: callTwo ", callTwo );
+// const callThree = list.remove(-1);
+// console.log("TCL: callThree ", callThree );
 
 console.log('LIST ', list);
 
