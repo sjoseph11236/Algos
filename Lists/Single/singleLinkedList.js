@@ -224,24 +224,21 @@ class SinglyLinkedList{
     // Creat a variable called current intialized to the head prop. 
     let current = this.tail;
     // loop through the list. 
-    console.log(" HEAD", this.head);
-    console.log(" TAIL ", this.tail);
-  
     while(current) {
-      console.log(" Current is  ", current);
-      console.log("Curent.next is ", current.next);
+      // console.log(" Current is  ", current);
+      // console.log("Curent.next is ", current.next);
     // Set next to be the next property on whatever node is. 
       next = current.next;
-      console.log('Next is ', next);
+      // console.log('Next is ', next);
     // Set the next property on the node to be whateve prev is. 
       current.next = prev;
-      console.log("Curent.next is now ", current.next);
+      // console.log("Curent.next is now ", current.next);
     // Set the prev to be the value of the node variable. 
       prev = current;
-      console.log("prev is ", prev);
+      // console.log("prev is ", prev);
     // Set the node variable to be the value of the next variable. 
       current = next;
-      console.log('Current will be >>>>> ', current);
+      // console.log('Current will be >>>>> ', current);
     }
   }
 }
