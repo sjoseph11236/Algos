@@ -143,35 +143,7 @@ class SinglyLinkedList {
 
   // Adding a node to the linked list at a specific position
   insert(index, val) {
-    // check if the index less than zero ang greater than the length.
-    if(index < 0 || index > this.length) {
-      return false;
-    }
-    // if the index is the same as length use push.
-    if(index === this.length){
-      this.push(val);
-      return true;
-    }
-    // if the index is zero use unshift. 
-    if(index === 0) {
-      this.unshift(val);
-      return true;
-    }
-    // get the node at the target position
-    let targetNode = this.get(index);
-    // find the node before the target index.
-    let beforeTargetNode = this.get(index - 1);
-    // Create new Node  with val. 
-    let newNode = new Node(val);
-    // set the next prop on the node be the new node. 
-    newNode.next = targetNode;
-    // set the before target node next prop to the new Node. 
-    beforeTargetNode.next = newNode;
-    // increment the length
-    this.length++;
-    console.log('NEW NODE ', newNode);
-    // return true.
-    return true;
+    
   }
 
   // Remove a node from the linked list at a specific position.
