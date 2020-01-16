@@ -175,29 +175,24 @@ class SinglyLinkedList {
   }
 
   // Remove a node from the linked list at a specific position.
-  remove(index) {
-    // accept an index.
-    // check if the index is less than zero greate than the length and return undefined. 
-    if(index < 0 || index > this.length) { 
-      return undefined;
-    }
-    // if this index is the same as the length - -1 pop
-    if(index === this.length - 1 ) { 
-      return this.pop();
-    }
-    // if the index is 0 shift. 
-    if(index === 0) {
-      return this.shift();
-    }
-    // get the node before the target index. 
-    let beforeTargetNode = this.get(index - 1);
-    // set the nedxt prop to the beforeNode  to the next of the removednNode. 
-    let targetNode = this.get(index);
-    beforeTargetNode.next = targetNode.next;
-    // Decrement the length
-    this.length--;
-    // return the value of the removedNode
-    return targetNode;
+  remove() {
+    // Accept an index argument. 
+    // Check if the index is less than or greater that this.length.
+    // return undefined. 
+    // Check if the index is equal to the first value.
+    // return the shift method.
+    // Check if the index is equal to the last value. 
+    // call the pop method.
+    // Create a counter set to zero.
+    // Create a targetNode variable set to the head. 
+    // Create a prev variable set as null. 
+    // create a while loop that checks for count to eqaul idx. 
+    // prev is set to targetNode.
+    // targetNode is set targetNode.next.
+    // increment the counter. 
+    // set prev.next to targetNode.next. 
+    // decrement the length
+    // return the targetNode;
   }
 
   // Reversing the linked list in place
@@ -305,28 +300,25 @@ const list = new SinglyLinkedList();
 // console.log("TCL: callTwo ", callTwo );
 
 // REMOVE___________
-// list.push('Hello');
-// list.push('Bye');
-// list.push('HEY');
-// const callOne = list.remove(1);
-// console.log("TCL: callOne ", callOne );
-// const callTwo = list.remove(7);
-// console.log("TCL: callTwo ", callTwo );
-// const callThree = list.remove(-1);
-// console.log("TCL: callThree ", callThree );
+list.push('Hello');
+list.push('Bye');
+list.push('HEY');
+const callOne = list.remove(1);
+console.log("TCL: callOne ", callOne );
+const callTwo = list.remove(7);
+console.log("TCL: callTwo ", callTwo );
+const callThree = list.remove(-1);
+console.log("TCL: callThree ", callThree );
 
 // REVERSE___________
-list.push(22);
-list.push(77);
-list.push(33);
-list.push(99);
-console.log('LIST ', list);
-const callOne = list.reverse();
-console.log("TCL: callOne ", callOne );
-// const callTwo = list.remove(7);
-// console.log("TCL: callTwo ", callTwo );
-// const callThree = list.remove(-1);
-// console.log("TCL: callThree ", callThree );
+// list.push(22);
+// list.push(77);
+// list.push(33);
+// list.push(99);
+// console.log('LIST ', list);
+// const callOne = list.reverse();
+// console.log("TCL: callOne ", callOne );
+
 
 
 
