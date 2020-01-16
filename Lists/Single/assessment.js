@@ -212,7 +212,7 @@ class SinglyLinkedList {
     // Create a next variabele set to null. 
     let next = null; 
     // Set a current variable to the tail. 
-    let  current = this.head;
+    let  current = this.tail;
     // Create a while loop that checks for current. 
     while(current) {
     // update next with the next vaule from current. 
