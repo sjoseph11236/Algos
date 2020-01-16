@@ -175,24 +175,44 @@ class SinglyLinkedList {
   }
 
   // Remove a node from the linked list at a specific position.
-  remove() {
+  remove(idx) {
     // Accept an index argument. 
     // Check if the index is less than or greater that this.length.
+    if(idx < 0 || idx > this.length) {
     // return undefined. 
+      return undefined;
+    }
     // Check if the index is equal to the first value.
+    if(idx === 0 ) {
     // return the shift method.
+      return this.shift();
+    }
     // Check if the index is equal to the last value. 
+    if(idx === this.length - 1) {
     // call the pop method.
+      return this.pop();
+    }
     // Create a counter set to zero.
+    let counter = 0;
     // Create a targetNode variable set to the head. 
+    let targetNode = this.head;
     // Create a prev variable set as null. 
+    let prev = null;
     // create a while loop that checks for count to eqaul idx. 
+    while(counter !== idx) {
     // prev is set to targetNode.
+      prev = targetNode;
     // targetNode is set targetNode.next.
+      targetNode = targetNode.next;
     // increment the counter. 
+      counter++;
+    }
     // set prev.next to targetNode.next. 
+    prev.next = targetNode.next;
     // decrement the length
+    this.length--;
     // return the targetNode;
+    return targetNode;
   }
 
   // Reversing the linked list in place
