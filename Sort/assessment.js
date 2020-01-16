@@ -81,25 +81,66 @@ function getDigit(num, place) {
   return Math.floor(Math.abs(num) / Math.pow(10, place) % 10);
 }
 
-// GETDIGIT _________
+// // GETDIGIT _________
+// console.log(
+//     getDigit(12345, 0), //5 
+//     getDigit(12345, 1), //4
+//     getDigit(12345, 2), //3 
+//     getDigit(12345, 3), //2 
+//     getDigit(12345, 4), //1 
+//     getDigit(12345, 5) //0
+// );
+
+// helper function to determine the length of a digit. 
+function digitCount(num) { 
+  // Create a length set to zero.
+  let length = 0; 
+  // Create a counter set 1
+  let counter = 1;
+  // Create a while loop that check if num is less than or equal to absolute value of num. 
+  while(counter <= Math.abs(num)) {
+  // increment the length.
+    length++;
+  // multiply the counter by 10. 
+    counter *= 10;
+  }
+  // return length.
+  return length;
+}
+
+// // DIGITCOUNT______________
+// console.log(
+//   digitCount(1), //1
+//   digitCount(25), // 2
+//   digitCount(314),// 3
+//   digitCount(-314),// 3
+//   digitCount(314000), // 6
+//   digitCount(-314000) // 6
+// );
+
+// helper function to determine the length of the longest digit in the arr.  
+function mostDigits(arr) { 
+  // Set mostDigit to zero. 
+  let mostDigit = 0;
+  // create a for each. 
+  arr.forEach(num => {
+  // call the digitcount function on each num
+    let curr = digitCount(num);
+    // check if curr is more than the mostDigit.
+    if(curr > mostDigit) {
+      mostDigit = curr;
+    }
+  });
+  // return mostDigit.
+  return mostDigit;
+}
+// MOSTDIGITS______________
 console.log(
-    getDigit(12345, 0), //5 
-    getDigit(12345, 1), //4
-    getDigit(12345, 2), //3 
-    getDigit(12345, 3), //2 
-    getDigit(12345, 4), //1 
-    getDigit(12345, 5) //0
+  mostDigits([1234, 56, 7]), //4
+  mostDigits([1, 1, 11111, 1]), //5
+  mostDigits([12, 34, 56, 78]), //2
+  mostDigits([23, 567, 89, 122312451, 90]) //9
 );
-
-// // helper function to determine the length of a digit. 
-// function digitCount(num) { 
-
-// }
-
-// // helper function to determine the length of the longest digit in the arr.  
-// function mostDigits(arr) { 
-
-// }
 
 // // function to flatten the bucket 
 // function bucketFlattener(arr) { 
