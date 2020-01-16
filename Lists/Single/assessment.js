@@ -10,86 +10,222 @@ class SinglyLinkedList {
     // Set length to zero.  
     this.length = 0; 
   }
-
+  // add node to the list
   push(val) {
-    // create a new node with value. 
+    // Create a new node with Node constructor.
     let node = new Node(val);
-    // check if there is no head. 
-    if(!this.head) {
-    // set the head and tail to the new node. 
+    // Check for head. if not add the node as head and tail;s
+    if(!this.head){
       this.head = node; 
       this.tail = node; 
     }
-    else{ 
-    // set this tail.next to new node. 
+    else { 
+      // Else set the next prop on the tail to be the new Node and reassign the tail to be the new Node.
       this.tail.next = node; 
-    // else set the tail to new node. 
-      this.tail = node;
+      this.tail = node; 
     }
-    // increse the length by 1. 
-    this.length++;
+    // increment length by one. 
+    this.length++; 
   }
 
+  // remove node from the end of the linked list
   pop() {
-    //check if therer is head. 
-    if(!this.head) {
-    // return undefined
+    // check if no nodes to return undefined. 
+    if(!this.head){
       return undefined;
     }
-    // crete a vairable called renove set to the head.
-    let remove = this.head;
-    // create a prev variable.  set to null.
-    let prev = null; 
-    // create a while loop checking for remove.next
-    while(remove.next) {
-    // update prev to be remove. 
-      prev = remove;
-    // remove update to remove.next. 
-      remove = remove.next;
+    // Loop through the list until you reach the tail. 
+    let current = this.head; 
+    // set the next property of the 2nd to last node to be null.  
+    let newTail = null; 
+    while(current.next) {
+    // set the tail to be the 2nd to last node.  
+      newTail = current;
+      current = current.next; 
     }
-    // set the tail to prev.
-    this.tail = prev;
-    // reset tail.next to null.
-    if(this.tail) { 
+
+    this.tail = newTail;
+    //rest tail to null
+    if(this.tail){
       this.tail.next = null;
     }
-    // decrease the length by; 
-    this.length--;
-    // check if the lenght is 1
-    if(!this.length){
-    // set the tail the same as the head.   
-      this.head = null;
-      this. tail = null;
-    }
-    // return remove
-    return remove;
-  }
-
-  shift() {
-    // check if there is length
+    // Decrement the length of the list by 1. 
+    this.length --;
+    // Return the value od the node removed. 
     if(!this.length) {
-    // return undefined; 
-      return undefined;      
-    }
-    // store the head in result variable, 
-    const result = this.head; 
-    // update the head as th current tail.
-    this.head = result.next; 
-    // reduce the length by 1. 
-    this.length--;  
-
-    // check for no length
-    // update head and tail to null; 
-    if(!this.length) {
+      this.head = null; 
       this.tail = null;
     }
-    // return result
-    return result;
+    return current;
+  }
+
+
+  // remove a node from the beginning the linked list
+  shift() { 
+    // check if there is length.
+    if(!this.length){
+      return undefined;
+    }
+    // store the current head in target variable.
+    const oldHead = this.head; 
+    // set the head prop. the currents next prop.
+    this.head = oldHead.next;
+    // decrement the lenght by 1. 
+    this.length--;
+    // check ig lenght is zero.
+    if(!this.length) {
+      // 
+      this.tail = null;
+    }
+    // return the target.
+    return oldHead;
   }
 
   // Adding a new node to the beginning of the Linked List
-  unshift() {
+  unshift(val) {
+    // accepts a value
+    // create a new node.
+    let newHead = new Node(val);
+    // if no head set head and tail to be new node. 
+    if(!this.head) {
+      this.head = newHead;
+      this.tail = newHead;
+    }
+    else{
+    // set the new node next prop to the current head prop
+      newHead.next = this.head; 
+      // set the head prop on the list to be the new node
+      this.head = newHead;
+    }
 
+
+    // incremenet the length by 1. 
+    this.length++;
+    // return the linked list.
+    return this;
+  }
+
+  // Retriving a node by its position in the linked list. 
+  get(index) {
+    // accept an index
+    // check if the index is less than zero or greater than or equal to the length of the list, return null
+    if(index < 0 || index >= this.length) {
+      return null;
+    }
+    // loop through the list for until you reach the index and return the node at the specific index. 
+    let count = 0;
+    let result = this.head;
+
+    while(count !== index) {
+      result = result.next;
+      // increment counter
+      count++;
+    }
+
+    return result;
+  }
+
+  // changing the value of a node based on it's position in the linked list
+  set(index, val) {
+    // accept a value and index 
+    // use get function to find the specific node 
+    let targetNode = this.get(index);
+    // if no node is found return false
+    if(!targetNode) {
+      return false;
+    }
+    else{
+    // if node is found set the value of the node to be the value of the passsed ot function and return true. 
+      targetNode.val = val; 
+      return true;
+    }
+  }
+
+  // Adding a node to the linked list at a specific position
+  insert(index, val) {
+    // check if the index less than zero ang greater than the length.
+    if(index < 0 || index > this.length) {
+      return false;
+    }
+    // if the index is the same as length use push.
+    if(index === this.length){
+      this.push(val);
+      return true;
+    }
+    // if the index is zero use unshift. 
+    if(index === 0) {
+      this.unshift(val);
+      return true;
+    }
+    // get the node at the target position
+    let targetNode = this.get(index);
+    // find the node before the target index.
+    let beforeTargetNode = this.get(index - 1);
+    // Create new Node  with val. 
+    let newNode = new Node(val);
+    // set the next prop on the node be the new node. 
+    newNode.next = targetNode;
+    // set the before target node next prop to the new Node. 
+    beforeTargetNode.next = newNode;
+    // increment the length
+    this.length++;
+    console.log('NEW NODE ', newNode);
+    // return true.
+    return true;
+  }
+
+  // Remove a node from the linked list at a specific position.
+  remove(index) {
+    // accept an index.
+    // check if the index is less than zero greate than the length and return undefined. 
+    if(index < 0 || index > this.length) { 
+      return undefined;
+    }
+    // if this index is the same as the length - -1 pop
+    if(index === this.length - 1 ) { 
+      return this.pop();
+    }
+    // if the index is 0 shift. 
+    if(index === 0) {
+      return this.shift();
+    }
+    // get the node before the target index. 
+    let beforeTargetNode = this.get(index - 1);
+    // set the nedxt prop to the beforeNode  to the next of the removednNode. 
+    let targetNode = this.get(index);
+    beforeTargetNode.next = targetNode.next;
+    // Decrement the length
+    this.length--;
+    // return the value of the removedNode
+    return targetNode;
+  }
+
+  // Reversing the linked list in place
+  reverse() {
+    // Create a temp varaible to hold the head. 
+    let temp = this.head;
+    // Swap the head and tail. 
+    this.head = this.tail;
+    this.tail = temp;
+    // create a prev varaible set to null. 
+    let prev = null; 
+    // Create a next variabele set to null. 
+    let next = null; 
+    // Set a current variable to the tail. 
+    let  current = this.head;
+    // Create a while loop that checks for current. 
+    while(current) {
+    // update next with the next vaule from current. 
+      next = current.next; 
+    // update the current's next to prev. 
+      current.next = prev;
+    // update prev to be current.
+      prev = current;
+    // update current to be next.
+      current = next;
+    }
+    // return the updated list. 
+    return this;
   }
 }
 
@@ -110,7 +246,6 @@ const list = new SinglyLinkedList();
 // list.push('TWO');
 // list.push('THREE');
 // console.log('LIST ', list);
-
 
 // // POP__________
 // list.push('ONE');
@@ -143,6 +278,55 @@ const list = new SinglyLinkedList();
 // console.log("TCL: callOne ", callOne );
 // const callTwo = list.unshift('WHO');
 // console.log("TCL: callTwo ", callTwo );
+
+// GET___________
+// list.push('Hello');
+// list.push('Bye');
+// const callOne = list.get(1);
+// console.log("TCL: callOne ", callOne );
+// const callTwo = list.get(0);
+// console.log("TCL: callTwo ", callTwo );
+
+// SET___________
+// list.push('Hello');
+// list.push('Bye');
+// const callOne = list.set(1, 'STAY');
+// console.log("TCL: callOne ", callOne );
+// const callTwo = list.set(3, 'FOR');
+// console.log("TCL: callTwo ", callTwo );
+
+// INSERT___________
+// list.push('Hello');
+// list.push('Bye');
+// list.push('HEY');
+// const callOne = list.insert(1, 'STAY');
+// console.log("TCL: callOne ", callOne );
+// const callTwo = list.insert(7, 'FOR');
+// console.log("TCL: callTwo ", callTwo );
+
+// REMOVE___________
+// list.push('Hello');
+// list.push('Bye');
+// list.push('HEY');
+// const callOne = list.remove(1);
+// console.log("TCL: callOne ", callOne );
+// const callTwo = list.remove(7);
+// console.log("TCL: callTwo ", callTwo );
+// const callThree = list.remove(-1);
+// console.log("TCL: callThree ", callThree );
+
+// REVERSE___________
+list.push(22);
+list.push(77);
+list.push(33);
+list.push(99);
+console.log('LIST ', list);
+const callOne = list.reverse();
+console.log("TCL: callOne ", callOne );
+// const callTwo = list.remove(7);
+// console.log("TCL: callTwo ", callTwo );
+// const callThree = list.remove(-1);
+// console.log("TCL: callThree ", callThree );
 
 
 
