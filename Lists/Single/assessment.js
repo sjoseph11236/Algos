@@ -307,13 +307,13 @@ const list = new SinglyLinkedList();
 // console.log("TCL: callTwo ", callTwo );
 
 // SET___________
-list.push('Hello');
-list.push('Bye');
-list.push('HEY');
-const callOne = list.set(1, 'STAY'); //true
-console.log("TCL: callOne ", callOne );
-const callTwo = list.set(4, 'FOR'); // false
-console.log("TCL: callTwo ", callTwo );
+// list.push('Hello');
+// list.push('Bye');
+// list.push('HEY');
+// const callOne = list.set(1, 'STAY'); //true
+// console.log("TCL: callOne ", callOne );
+// const callTwo = list.set(4, 'FOR'); // false
+// console.log("TCL: callTwo ", callTwo );
 
 // // INSERT___________
 // list.push('Hello');
@@ -328,18 +328,18 @@ console.log("TCL: callTwo ", callTwo );
 // const callFour = list.insert(5, 'FOREVER');//true
 // console.log("TCL: callFour ", callFour );
 
-// REMOVE___________
+// // REMOVE___________
 // list.push('Hello');
 // list.push('Bye');
 // list.push('HEY');
-// const callOne = list.remove(1);
+// const callOne = list.remove(1); // 'Bye'
 // console.log("TCL: callOne ", callOne );
-// const callTwo = list.remove(7);
+// const callTwo = list.remove(7); // undefined
 // console.log("TCL: callTwo ", callTwo );
-// const callThree = list.remove(-1);
+// const callThree = list.remove(-1); // undefined
 // console.log("TCL: callThree ", callThree );
 
-// REVERSE___________
+// // REVERSE___________
 // list.push(22);
 // list.push(77);
 // list.push(33);
