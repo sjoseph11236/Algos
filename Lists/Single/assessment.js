@@ -268,6 +268,7 @@ const list = new SinglyLinkedList();
 // SHIFT__________
 // list.push('Hello');
 // list.push('Bye');
+// list.push('HEY');
 // const callOne = list.shift();
 // console.log("TCL: callOne ", callOne );
 // const callTwo = list.shift();
@@ -277,6 +278,7 @@ const list = new SinglyLinkedList();
 // UNSHIFT____________
 // list.push('Hello');
 // list.push('Bye');
+// list.push('HEY');
 // const callOne = list.unshift('WHAT');
 // console.log("TCL: callOne ", callOne );
 // const callTwo = list.unshift('WHO');
@@ -285,31 +287,33 @@ const list = new SinglyLinkedList();
 // GET___________
 // list.push('Hello');
 // list.push('Bye');
+// list.push('HEY');
 // const callOne = list.get(1);
 // console.log("TCL: callOne ", callOne );
 // const callTwo = list.get(0);
 // console.log("TCL: callTwo ", callTwo );
 
 // SET___________
-// list.push('Hello');
-// list.push('Bye');
-// const callOne = list.set(1, 'STAY');
-// console.log("TCL: callOne ", callOne );
-// const callTwo = list.set(3, 'FOR');
-// console.log("TCL: callTwo ", callTwo );
-
-// INSERT___________
 list.push('Hello');
 list.push('Bye');
 list.push('HEY');
-const callOne = list.insert(1, 'STAY'); //true 
+const callOne = list.set(1, 'STAY');
 console.log("TCL: callOne ", callOne );
-const callTwo = list.insert(7, 'FOR'); // false 
+const callTwo = list.set(3, 'FOR');
 console.log("TCL: callTwo ", callTwo );
-const callThree = list.insert(0, 'FIRST'); //true
-console.log("TCL: callThree ", callThree );
-const callFour = list.insert(5, 'FOREVER');//true
-console.log("TCL: callFour ", callFour );
+
+// // INSERT___________
+// list.push('Hello');
+// list.push('Bye');
+// list.push('HEY');
+// const callOne = list.insert(1, 'STAY'); //true 
+// console.log("TCL: callOne ", callOne );
+// const callTwo = list.insert(7, 'FOR'); // false 
+// console.log("TCL: callTwo ", callTwo );
+// const callThree = list.insert(0, 'FIRST'); //true
+// console.log("TCL: callThree ", callThree );
+// const callFour = list.insert(5, 'FOREVER');//true
+// console.log("TCL: callFour ", callFour );
 
 // REMOVE___________
 // list.push('Hello');
