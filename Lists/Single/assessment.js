@@ -127,8 +127,21 @@ class SinglyLinkedList {
 
   // changing the value of a node based on it's position in the linked list
   set(index, val) {
-
+    // call the get method to get the target node. 
+    let target = this.get(index);
+    // check if the node exisits 
+    if(!target) {
+    // return false. 
+      return false;
+    }
+    else{
+      // update node
+      target.val = val;
+      // return true. 
+        return true;
+    }
   }
+
 
   // Adding a node to the linked list at a specific position
   insert(index, val) {
@@ -297,9 +310,9 @@ const list = new SinglyLinkedList();
 list.push('Hello');
 list.push('Bye');
 list.push('HEY');
-const callOne = list.set(1, 'STAY');
+const callOne = list.set(1, 'STAY'); //true
 console.log("TCL: callOne ", callOne );
-const callTwo = list.set(3, 'FOR');
+const callTwo = list.set(4, 'FOR'); // false
 console.log("TCL: callTwo ", callTwo );
 
 // // INSERT___________
