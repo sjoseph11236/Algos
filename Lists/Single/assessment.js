@@ -127,18 +127,7 @@ class SinglyLinkedList {
 
   // changing the value of a node based on it's position in the linked list
   set(index, val) {
-    // accept a value and index 
-    // use get function to find the specific node 
-    let targetNode = this.get(index);
-    // if no node is found return false
-    if(!targetNode) {
-      return false;
-    }
-    else{
-    // if node is found set the value of the node to be the value of the passsed ot function and return true. 
-      targetNode.val = val; 
-      return true;
-    }
+
   }
 
   // Adding a node to the linked list at a specific position
@@ -313,10 +302,14 @@ const list = new SinglyLinkedList();
 list.push('Hello');
 list.push('Bye');
 list.push('HEY');
-const callOne = list.insert(1, 'STAY');
+const callOne = list.insert(1, 'STAY'); //true 
 console.log("TCL: callOne ", callOne );
-const callTwo = list.insert(7, 'FOR');
+const callTwo = list.insert(7, 'FOR'); // false 
 console.log("TCL: callTwo ", callTwo );
+const callThree = list.insert(0, 'FIRST'); //true
+console.log("TCL: callThree ", callThree );
+const callFour = list.insert(5, 'FOREVER');//true
+console.log("TCL: callFour ", callFour );
 
 // REMOVE___________
 // list.push('Hello');
