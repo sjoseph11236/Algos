@@ -144,14 +144,33 @@ class SinglyLinkedList {
   // Adding a node to the linked list at a specific position
   insert(index, val) {
     // check if the index is less than zero or greater than the length. 
+    if(index < 0 || index > this.length) {
+      return false;
+    }
+    // check if the index is the same as the length and push.
+    if(index === this.length) {
+      this.push(val);
+      return true;
+    }
+    // check if the index is the  same as the first element and unshift. 
+    if(index === 0) {
+      this.unshift(val);
+      return true;
+    }
     // Create the new Node
+    let newNode = new Node(val);
     // call the get function to get the value before the targetIdx. 
+    let prev = this.get(index - 1);
     // call the get function to get the element at the index
-    // store the next value of the taragetNode. 
-    // set the next value of the newNode to next
-    // set the prev next value to the newNode. 
+    let target = this.get(index);
+    // set the newNode.next to target. 
+    newNode.next  = target;
+    // set the next value of prev to newNode. 
+    prev.next = newNode;
     // incremenet the length. 
+    this.length++;
     // return true. 
+    return true;
   }
 
   // Remove a node from the linked list at a specific position.
