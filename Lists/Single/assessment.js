@@ -143,7 +143,15 @@ class SinglyLinkedList {
 
   // Adding a node to the linked list at a specific position
   insert(index, val) {
-    
+    // check if the index is less than zero or greater than the length. 
+    // Create the new Node
+    // call the get function to get the value before the targetIdx. 
+    // call the get function to get the element at the index
+    // store the next value of the taragetNode. 
+    // set the next value of the newNode to next
+    // set the prev next value to the newNode. 
+    // incremenet the length. 
+    // return true. 
   }
 
   // Remove a node from the linked list at a specific position.
@@ -283,24 +291,24 @@ const list = new SinglyLinkedList();
 // console.log("TCL: callTwo ", callTwo );
 
 // INSERT___________
-// list.push('Hello');
-// list.push('Bye');
-// list.push('HEY');
-// const callOne = list.insert(1, 'STAY');
-// console.log("TCL: callOne ", callOne );
-// const callTwo = list.insert(7, 'FOR');
-// console.log("TCL: callTwo ", callTwo );
-
-// REMOVE___________
 list.push('Hello');
 list.push('Bye');
 list.push('HEY');
-const callOne = list.remove(1);
+const callOne = list.insert(1, 'STAY');
 console.log("TCL: callOne ", callOne );
-const callTwo = list.remove(7);
+const callTwo = list.insert(7, 'FOR');
 console.log("TCL: callTwo ", callTwo );
-const callThree = list.remove(-1);
-console.log("TCL: callThree ", callThree );
+
+// REMOVE___________
+// list.push('Hello');
+// list.push('Bye');
+// list.push('HEY');
+// const callOne = list.remove(1);
+// console.log("TCL: callOne ", callOne );
+// const callTwo = list.remove(7);
+// console.log("TCL: callTwo ", callTwo );
+// const callThree = list.remove(-1);
+// console.log("TCL: callThree ", callThree );
 
 // REVERSE___________
 // list.push(22);
