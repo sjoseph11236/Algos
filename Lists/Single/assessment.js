@@ -344,9 +344,9 @@ console.log("TCL: callTwo ", callTwo );
 // list.push(77);
 // list.push(33);
 // list.push(99);
-// console.log('LIST ', list);
+// console.log('LIST ', list); // 22 --> 77 --> 33 --> 99
 // const callOne = list.reverse();
-// console.log("TCL: callOne ", callOne );
+// console.log("TCL: callOne ", callOne ); // 99 --> 33 --> 77 --> 22
 
 
 
