@@ -12,20 +12,7 @@ class SinglyLinkedList {
   }
   // add node to the list
   push(val) {
-    // Create a new node with Node constructor.
-    let node = new Node(val);
-    // Check for head. if not add the node as head and tail;s
-    if(!this.head){
-      this.head = node; 
-      this.tail = node; 
-    }
-    else { 
-      // Else set the next prop on the tail to be the new Node and reassign the tail to be the new Node.
-      this.tail.next = node; 
-      this.tail = node; 
-    }
-    // increment length by one. 
-    this.length++; 
+
   }
 
   // remove node from the end of the linked list
