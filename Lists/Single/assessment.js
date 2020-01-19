@@ -25,6 +25,7 @@ class SinglyLinkedList {
       this.tail.next = newNode; 
     // set  the newNode as the tail
       this.tail = newNode;
+
     }
     // increment the length. 
     this.length++;
@@ -261,8 +262,8 @@ const list = new SinglyLinkedList();
 
 // // // PUSH_________
 list.push('ONE');
-list.push('TWO');
-list.push('THREE');
+// list.push('TWO');
+// list.push('THREE');
 
 
 // // POP__________
