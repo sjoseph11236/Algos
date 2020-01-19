@@ -12,7 +12,22 @@ class SinglyLinkedList {
   }
   // add node to the list
   push(val) {
-
+    // Create the node
+    let newNode = new Node(val);
+    // check if there is a head. 
+    if(!this.head) {
+    // set the head and tail to the node. 
+      this.head = newNode; 
+      this.tail = newNode; 
+    }
+    else { 
+    // set the next of this tail to be newNode
+      this.tail.next = newNode; 
+    // set  the newNode as the tail
+      this.tail = newNode;
+    }
+    // increment the length. 
+    this.length++;
   }
 
   // remove node from the end of the linked list
@@ -245,10 +260,10 @@ class Node {
 const list = new SinglyLinkedList();
 
 // // // PUSH_________
-// list.push('ONE');
-// list.push('TWO');
-// list.push('THREE');
-// console.log('LIST ', list);
+list.push('ONE');
+list.push('TWO');
+list.push('THREE');
+
 
 // // POP__________
 // list.push('ONE');
