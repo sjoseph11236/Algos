@@ -33,6 +33,14 @@ class SinglyLinkedList {
 
   // remove node from the end of the linked list
   pop() {
+    // Cheack if there is a head return undfined. 
+    // decrement the length. 
+    // Create a variable called OldNode.
+    // Create a variable clleed prev. 
+    // update the prev.next to equal null. 
+    // cheack if the length is 1. 
+    // if so, reset the head as the tail too. 
+    // return the oldNOde. 
   }
 
 
@@ -234,25 +242,25 @@ class Node {
 const list = new SinglyLinkedList();
 
 // // // PUSH_________
-list.push('ONE');
-list.push('TWO');
-list.push('THREE');
+// list.push('ONE');
+// list.push('TWO');
+// list.push('THREE');
 
 
 // // POP__________
-// list.push('ONE');
-// list.push('TWO');
-// const callOne = list.pop(); 
-// console.log("TCL: callOne", callOne);// 'TWO'
-// list.push('TWO');
-// list.push('THREE');
-// const callTwo =list.pop();
-// console.log("TCL: callTwo", callTwo); //'THREE'
-// list.pop();
-// const callThree =list.pop();
-// const callFour =list.pop();
-// console.log("TCL: callThree ", callThree );//'ONE'
-// console.log("TCL: callFour", callFour); // undefined
+list.push('ONE');
+list.push('TWO');
+const callOne = list.pop(); 
+console.log("TCL: callOne", callOne);// 'TWO'
+list.push('TWO');
+list.push('THREE');
+const callTwo =list.pop();
+console.log("TCL: callTwo", callTwo); //'THREE'
+list.pop();
+const callThree =list.pop();
+const callFour =list.pop();
+console.log("TCL: callThree ", callThree );//'ONE'
+console.log("TCL: callFour", callFour); // undefined
 
 // SHIFT__________
 // list.push('Hello');
