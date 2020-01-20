@@ -48,16 +48,22 @@ class SinglyLinkedList {
     // OldNode is set to OldNode.next.     
       oldNode = oldNode.next;
     }
-    // update the prev.next to equal null. 
-    prev.next  = null; 
+
+    this.tail = prev;
+    // reset tail to null 
+    if(this.tail) {
+      this.tail.next = null;
+    }
+
+    // decrement the length. 
+    this.length--;
     // cheack if the length is 1. 
+
     if(!this.length) {
     // if so, reset the head and taill to null. 
       this.head = null; 
       this.tail = null;
     }
-    // decrement the length. 
-    this.length--;
     // return the oldNOde. 
     return oldNode;
   }
