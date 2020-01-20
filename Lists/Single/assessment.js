@@ -33,33 +33,6 @@ class SinglyLinkedList {
 
   // remove node from the end of the linked list
   pop() {
-    // check if no nodes to return undefined. 
-    if(!this.head){
-      return undefined;
-    }
-    // Loop through the list until you reach the tail. 
-    let current = this.head; 
-    // set the next property of the 2nd to last node to be null.  
-    let newTail = null; 
-    while(current.next) {
-    // set the tail to be the 2nd to last node.  
-      newTail = current;
-      current = current.next; 
-    }
-
-    this.tail = newTail;
-    //rest tail to null
-    if(this.tail){
-      this.tail.next = null;
-    }
-    // Decrement the length of the list by 1. 
-    this.length --;
-    // Return the value od the node removed. 
-    if(!this.length) {
-      this.head = null; 
-      this.tail = null;
-    }
-    return current;
   }
 
 
@@ -262,8 +235,8 @@ const list = new SinglyLinkedList();
 
 // // // PUSH_________
 list.push('ONE');
-// list.push('TWO');
-// list.push('THREE');
+list.push('TWO');
+list.push('THREE');
 
 
 // // POP__________
