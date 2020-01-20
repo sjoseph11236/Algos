@@ -34,13 +34,32 @@ class SinglyLinkedList {
   // remove node from the end of the linked list
   pop() {
     // Cheack if there is a head return undfined. 
-    // decrement the length. 
+    if(!this.head)  { 
+      return undefined;
+    }
     // Create a variable called OldNode.
+    let oldNode = this.head; 
     // Create a variable clleed prev. 
+    let prev = null;
+    // Create a while loop that check for a next val. 
+    while(oldNode.next) {
+    // prev is set to OldNode
+      prev = oldNode;
+    // OldNode is set to OldNode.next.     
+      oldNode = oldNode.next;
+    }
     // update the prev.next to equal null. 
+    prev.next  = null; 
     // cheack if the length is 1. 
-    // if so, reset the head as the tail too. 
+    if(!this.length) {
+    // if so, reset the head and taill to null. 
+      this.head = null; 
+      this.tail = null;
+    }
+    // decrement the length. 
+    this.length--;
     // return the oldNOde. 
+    return oldNode;
   }
 
 
