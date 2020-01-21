@@ -42,6 +42,34 @@ class DoublyLinkedList {
     // return this
     return this;
   }
+
+  // Remove the last item of the list
+  pop() {
+    // Check if there is head. 
+    if(!this.head) {
+      return undefined;  
+    }
+    // Store the current tail in a variable to return later
+    let oldTail = this.tail;
+    // if the length is 1, set the head and tail to be null; 
+    if(this.length === 1) { 
+      this.head = null; 
+      this.tail = null; 
+    }
+    else { 
+    // update the tail to be the previous Node. 
+      this.tail = oldTail.prev;
+    // Set the newTail's next to null. 
+      this.tail.next = null;
+    // Set the oldTail's previous to be null. 
+      oldTail.prev = null;
+
+    }
+    // decrement the length. 
+    this.length--;
+    // return the old tail. 
+    return oldTail;
+  }
 }
 
 
