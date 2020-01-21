@@ -34,11 +34,13 @@ class DoublyLinkedList {
       // Set the next prop on the current tail to be the node 
     this.tail.next = newNode; 
     // Set the prev prop on the newly create node to be the tail. 
-    newNode.prv = this.tail; 
+    newNode.prev = this.tail; 
     // update the tail to be the newNode. 
     this.tail = newNode;
     // Increment the length. 
     this.length++;
+    // return this
+    return this
   }
 }
 
@@ -46,8 +48,12 @@ class DoublyLinkedList {
 const List = new DoublyLinkedList();
 
 // PUSH_________________
-List.push(1);
-List.push(5);
-List.push(8);
+const callOne = List.push(1);
+console.log("TCL: callOne", callOne); 
+const callTwo = List.push(5);
+console.log("TCL: callTwo", callTwo);
+const callThree = List.push(8);
+console.log("TCL: callThree", callThree);
+
 
 console.log('>>>> ', List);
