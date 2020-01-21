@@ -45,4 +45,9 @@ class DoublyLinkedList {
 
 const doublyLinkedList = new DoublyLinkedList();
 
+// PUSH_________________
+doublyLinkedList.push(1);
+doublyLinkedList.push(5);
+doublyLinkedList.push(8);
+
 console.log('>>>> ', doublyLinkedList);
