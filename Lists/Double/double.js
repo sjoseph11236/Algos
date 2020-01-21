@@ -40,7 +40,7 @@ class DoublyLinkedList {
     // Increment the length. 
     this.length++;
     // return this
-    return this
+    return this;
   }
 }
 
