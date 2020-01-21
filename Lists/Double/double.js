@@ -43,11 +43,11 @@ class DoublyLinkedList {
 }
 
 
-const doublyLinkedList = new DoublyLinkedList();
+const List = new DoublyLinkedList();
 
 // PUSH_________________
-doublyLinkedList.push(1);
-doublyLinkedList.push(5);
-doublyLinkedList.push(8);
+List.push(1);
+List.push(5);
+List.push(8);
 
-console.log('>>>> ', doublyLinkedList);
+console.log('>>>> ', List);
