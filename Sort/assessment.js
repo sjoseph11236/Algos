@@ -1,12 +1,12 @@
-// // sort by moving the larger values to the end of the arr. 
-// function bubbleSort(arr) {
+// sort by moving the larger values to the end of the arr. 
+function bubbleSort(arr) {
 
-// }
+}
 
-// console.log(
-//   'BUBBLE ', 
-//   bubbleSort([5, 3, 4, 1, 2])// [1, 2, 3, 4, 5]
-// );
+console.log(
+  'BUBBLE ', 
+  bubbleSort([5, 3, 4, 1, 2])// [1, 2, 3, 4, 5]
+);
 
 //------Merge Sort-----//
 
@@ -72,14 +72,14 @@
 // );
 
 //------Radix Sort-----//
-// helper function to determine what number is in certina place. 
-function getDigit(num, place) { 
-  // Need to round down 
-  // find the absolute value of the num
-  // Find the modulo 
-  // divide by the place to the power of 10. 
-  return Math.floor(Math.abs(num) / Math.pow(10, place) % 10);
-}
+// // helper function to determine what number is in certina place. 
+// function getDigit(num, place) { 
+//   // Need to round down 
+//   // find the absolute value of the num
+//   // Find the modulo 
+//   // divide by the place to the power of 10. 
+//   return Math.floor(Math.abs(num) / Math.pow(10, place) % 10);
+// }
 
 // // GETDIGIT _________
 // console.log(
@@ -91,22 +91,22 @@ function getDigit(num, place) {
 //     getDigit(12345, 5) //0
 // );
 
-// helper function to determine the length of a digit. 
-function digitCount(num) { 
-  // Create a length set to zero.
-  let length = 0; 
-  // Create a counter set 1
-  let counter = 1;
-  // Create a while loop that check if num is less than or equal to absolute value of num. 
-  while(counter <= Math.abs(num)) {
-  // increment the length.
-    length++;
-  // multiply the counter by 10. 
-    counter *= 10;
-  }
-  // return length.
-  return length;
-}
+// // helper function to determine the length of a digit. 
+// function digitCount(num) { 
+//   // Create a length set to zero.
+//   let length = 0; 
+//   // Create a counter set 1
+//   let counter = 1;
+//   // Create a while loop that check if num is less than or equal to absolute value of num. 
+//   while(counter <= Math.abs(num)) {
+//   // increment the length.
+//     length++;
+//   // multiply the counter by 10. 
+//     counter *= 10;
+//   }
+//   // return length.
+//   return length;
+// }
 
 // // DIGITCOUNT______________
 // console.log(
@@ -118,29 +118,29 @@ function digitCount(num) {
 //   digitCount(-314000) // 6
 // );
 
-// helper function to determine the length of the longest digit in the arr.  
-function mostDigits(arr) { 
-  // Set mostDigit to zero. 
-  let mostDigit = 0;
-  // create a for each. 
-  arr.forEach(num => {
-  // call the digitcount function on each num
-    let curr = digitCount(num);
-    // check if curr is more than the mostDigit.
-    if(curr > mostDigit) {
-      mostDigit = curr;
-    }
-  });
-  // return mostDigit.
-  return mostDigit;
-}
-// MOSTDIGITS______________
-console.log(
-  mostDigits([1234, 56, 7]), //4
-  mostDigits([1, 1, 11111, 1]), //5
-  mostDigits([12, 34, 56, 78]), //2
-  mostDigits([23, 567, 89, 122312451, 90]) //9
-);
+// // helper function to determine the length of the longest digit in the arr.  
+// function mostDigits(arr) { 
+//   // Set mostDigit to zero. 
+//   let mostDigit = 0;
+//   // create a for each. 
+//   arr.forEach(num => {
+//   // call the digitcount function on each num
+//     let curr = digitCount(num);
+//     // check if curr is more than the mostDigit.
+//     if(curr > mostDigit) {
+//       mostDigit = curr;
+//     }
+//   });
+//   // return mostDigit.
+//   return mostDigit;
+// }
+// // MOSTDIGITS______________
+// console.log(
+//   mostDigits([1234, 56, 7]), //4
+//   mostDigits([1, 1, 11111, 1]), //5
+//   mostDigits([12, 34, 56, 78]), //2
+//   mostDigits([23, 567, 89, 122312451, 90]) //9
+// );
 
 // // function to flatten the bucket 
 // function bucketFlattener(arr) { 
