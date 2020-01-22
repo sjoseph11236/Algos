@@ -70,6 +70,35 @@ class DoublyLinkedList {
     // return the old tail. 
     return oldTail;
   }
+
+  // remove a node from the beginning of the list.
+  shift() {
+    if(!this.length) {
+    // If the length is 0 return undfirned.
+      return undefined;
+    }
+    // Store the current head prop in the variable 
+    let oldHead = this.head;
+    // Check if the length is 1
+    if(this.length === 1) {
+    // set the head and tail to null. 
+      this.head = null; 
+      this.tail = null; 
+    }
+    else { 
+    // Update the head to be the next of the oldHead. 
+      this.head =  oldHead.next;
+    // Set the head's prev to null.
+      this.head.prev = null;
+    // Set the oldHeads next to null
+      oldHead.next = null;
+    }
+
+    // Decrement the length. 
+    this.length--;
+    // reeturn the oldHead. 
+    return oldHead;
+  }
 }
 
 
@@ -83,15 +112,26 @@ const list = new DoublyLinkedList();
 // const callThree = List.push(8);
 // console.log("TCL: callThree", callThree);
 
-// POP_________________
+// // POP_________________
+// list.push(1);
+// list.push(5);
+// list.push(8);
+// const callOne = list.pop(); // 8
+// console.log("TCL: callOne", callOne); 
+// const callTwo =  list.pop();
+// console.log("TCL: callTwo", callTwo);
+// const callThree = list.pop();
+// console.log("TCL: callThree", callThree);
+
+// SHIFT_________________
 list.push(1);
+const callOne = list.shift(); // 1
+console.log("TCL: callOne", callOne); 
+const callTwo =  list.shift();
+console.log("TCL: callTwo", callTwo); // undefined
 list.push(5);
 list.push(8);
-const callOne = list.pop(); // 8
-console.log("TCL: callOne", callOne); 
-const callTwo =  list.pop();
-console.log("TCL: callTwo", callTwo);
-const callThree = list.pop();
+const callThree = list.shift(); // 5
 console.log("TCL: callThree", callThree);
 
 
