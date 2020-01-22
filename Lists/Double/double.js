@@ -126,17 +126,17 @@ const list = new DoublyLinkedList();
 // SHIFT_________________
 list.push(1);
 const callOne = list.shift(); // 1
-console.log("TCL: callOne", callOne); 
+console.log("TCL: callOne", callOne, callOne.val === 1 ); //1 
 const callTwo =  list.shift();
-console.log("TCL: callTwo", callTwo); // undefined
+console.log("TCL: callTwo", callTwo, callTwo === undefined); // undefined
 list.push(5);
 list.push(8);
-const callThree = list.shift(); // 5
-console.log("TCL: callThree", callThree);
+const callThree = list.shift(); 
+console.log("TCL: callThree", callThree, callThree.val === 5);// 5
 list.push(1);
 list.push(5);
 list.push(8);
-const callFour = list.shift(); // 1
-console.log("TCL: callFour", callFour);
+const callFour = list.shift(); 
+console.log("TCL: callFour", callFour, callFour.val === 8);// 8
 
 console.log('>>>> ', list);
