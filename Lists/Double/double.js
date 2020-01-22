@@ -133,6 +133,10 @@ list.push(5);
 list.push(8);
 const callThree = list.shift(); // 5
 console.log("TCL: callThree", callThree);
-
+list.push(1);
+list.push(5);
+list.push(8);
+const callFour = list.shift(); // 1
+console.log("TCL: callFour", callFour);
 
 console.log('>>>> ', list);
