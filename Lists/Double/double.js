@@ -112,31 +112,33 @@ const list = new DoublyLinkedList();
 // const callThree = List.push(8);
 // console.log("TCL: callThree", callThree);
 
-// // POP_________________
+// POP_________________
+list.push(1);
+list.push(5);
+list.push(8);
+const callOne = list.pop(); 
+console.log("TCL: callOne", callOne, callOne.val === 8); // 8
+const callTwo =  list.pop();
+console.log("TCL: callTwo", callTwo, callTwo.val === 5); //5
+const callThree = list.pop();
+console.log("TCL: callThree", callThree, callThree.val === 1); // 1
+const callFour = list.pop(); 
+console.log("TCL: callFour", callFour, callFour === undefined);// undefined
+
+// // SHIFT_________________
+// list.push(1);
+// const callOne = list.shift(); // 1
+// console.log("TCL: callOne", callOne, callOne.val === 1 ); //1 
+// const callTwo =  list.shift();
+// console.log("TCL: callTwo", callTwo, callTwo === undefined); // undefined
+// list.push(5);
+// list.push(8);
+// const callThree = list.shift(); 
+// console.log("TCL: callThree", callThree, callThree.val === 5);// 5
 // list.push(1);
 // list.push(5);
 // list.push(8);
-// const callOne = list.pop(); // 8
-// console.log("TCL: callOne", callOne); 
-// const callTwo =  list.pop();
-// console.log("TCL: callTwo", callTwo);
-// const callThree = list.pop();
-// console.log("TCL: callThree", callThree);
-
-// SHIFT_________________
-list.push(1);
-const callOne = list.shift(); // 1
-console.log("TCL: callOne", callOne, callOne.val === 1 ); //1 
-const callTwo =  list.shift();
-console.log("TCL: callTwo", callTwo, callTwo === undefined); // undefined
-list.push(5);
-list.push(8);
-const callThree = list.shift(); 
-console.log("TCL: callThree", callThree, callThree.val === 5);// 5
-list.push(1);
-list.push(5);
-list.push(8);
-const callFour = list.shift(); 
-console.log("TCL: callFour", callFour, callFour.val === 8);// 8
+// const callFour = list.shift(); 
+// console.log("TCL: callFour", callFour, callFour.val === 8);// 8
 
 console.log('>>>> ', list);
