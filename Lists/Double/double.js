@@ -99,6 +99,31 @@ class DoublyLinkedList {
     // reeturn the oldHead. 
     return oldHead;
   }
+
+  // add a node to the beginning of the list
+  unshift(val) {
+    // Accepts a value.
+    // Create a newNode.
+    let newNode = new Node(val);
+    // check if there is head
+    if(!this.head) {
+    // Set newNode as head and tail 
+      this.head = newNode;
+      this.tail = newNode;
+    }
+    else {
+    // set newNode next to head.
+      newNode.next = this.head;
+    // set head prev to newNode.
+      this.head.prev = newNode;
+    // Set newNode as head. 
+      this.head = newNode;
+    }
+    // Increment the length. 
+    this.length++;
+    // return the list. 
+    return list;
+  }
 }
 
 
@@ -140,5 +165,13 @@ const list = new DoublyLinkedList();
 // list.push(8);
 // const callFour = list.shift(); 
 // console.log("TCL: callFour", callFour, callFour.val === 8);// 8
+
+// // UNSHIFT_________________
+// const callOne = list.unshift(1);
+// console.log("TCL: callOne", callOne); 
+// const callTwo = list.unshift(5);
+// console.log("TCL: callTwo", callTwo);
+// const callThree = list.unshift(8);
+// console.log("TCL: callThree", callThree);
 
 console.log('>>>> ', list);
