@@ -165,6 +165,19 @@ class DoublyLinkedList {
   } 
 
   // Replacing the value of node  in the list.
+  set(val, idx) {
+    // Accept val, idx.
+    // Create a result and cal the get method at specified idx
+    let result = this.get(idx);
+    // Check if result is not null. set the val to the node 
+    if(!result) {
+      result.val  = val;
+    // return true.
+      return true;
+    }
+    // return false.
+    return false;
+  }
 }
 
 
@@ -226,15 +239,15 @@ const list = new DoublyLinkedList();
 // const callThree = list.get(8);
 // console.log("TCL: callThree", callThree, callThree === null); //null
 
-// GET_________________
+// SET_________________
 list.push(1);
 list.push(5);
 list.push(8);
-const callOne = list.get(2);
-console.log("TCL: callOne", callOne, callOne.val === 8); 
-const callTwo = list.get(-1);
+const callOne = list.set(9, 2);
+console.log("TCL: callOne", callOne, callOne === true); 
+const callTwo = list.set(9, -1);
 console.log("TCL: callTwo", callTwo, callTwo === null);
-const callThree = list.get(8);
+const callThree = list.set(9, 8);
 console.log("TCL: callThree", callThree, callThree === null);
 
 console.log('>>>> ', list);
