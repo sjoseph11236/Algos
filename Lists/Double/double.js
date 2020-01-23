@@ -187,15 +187,15 @@ const list = new DoublyLinkedList();
 // const callThree = list.unshift(8);
 // console.log("TCL: callThree", callThree);
 
-// // GET_________________
-// list.push(1);
-// list.push(5);
-// list.push(8);
-// const callOne = list.unshift(1);
-// console.log("TCL: callOne", callOne); 
-// const callTwo = list.unshift(5);
-// console.log("TCL: callTwo", callTwo);
-// const callThree = list.unshift(8);
-// console.log("TCL: callThree", callThree);
+// GET_________________
+list.push(1);
+list.push(5);
+list.push(8);
+const callOne = list.get(2);
+console.log("TCL: callOne", callOne, callOne.val === 8); 
+const callTwo = list.get(-1);
+console.log("TCL: callTwo", callTwo, callTwo === null);
+const callThree = list.get(8);
+console.log("TCL: callThree", callThree, callThree === null);
 
 console.log('>>>> ', list);
