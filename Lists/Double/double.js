@@ -163,6 +163,8 @@ class DoublyLinkedList {
     // return node. 
     return target;
   } 
+
+  // Replacing the value of node  in the list.
 }
 
 
@@ -212,6 +214,17 @@ const list = new DoublyLinkedList();
 // console.log("TCL: callTwo", callTwo);
 // const callThree = list.unshift(8);
 // console.log("TCL: callThree", callThree);
+
+// // GET_________________
+// list.push(1);
+// list.push(5);
+// list.push(8);
+// const callOne = list.get(2); 
+// console.log("TCL: callOne", callOne, callOne.val === 8); //8 
+// const callTwo = list.get(-1);
+// console.log("TCL: callTwo", callTwo, callTwo === null); //null
+// const callThree = list.get(8);
+// console.log("TCL: callThree", callThree, callThree === null); //null
 
 // GET_________________
 list.push(1);
