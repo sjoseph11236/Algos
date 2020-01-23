@@ -126,16 +126,43 @@ class DoublyLinkedList {
   }
 
   // Get a node a at specific index. 
-  get() {
+  get(idx) {
     // Accepts an idx. 
     // Check if the idx is less than 0  or greater than or eqaul to the length
     // return null. 
+    if(idx < 0 || idx >= this.length) return null;
+    // Find the midpoint.
+    const midpoint = Math.floor( this.length / 2);
+    // Create a counter.
+    let count  = 0; 
+    // Create a target varaible set null;
+    let target = this.head;
     // Check if the idx is less than or equal to half the length of the list 
-    // loop through the list starting grom the head and loop towards the middle
+    if(idx  <= midpoint) {
+    // loop through the list starting from the head and loop towards the middle      
+      while(count < idx) {
+        // updated target as target.hext.
+        target = target.next;
+    // Increment count.
+        count++;
+      }
     // return node once its found. 
-    // Check if the idx is greater than half the length 
-    // Loop through the list starting from the tail and loop towards the middle. 
+      return target;
+    }
+    else{
+    // set count to last index. 
+      count = this.length - 1;
+    // targe set to tail. 
+      target = this.tail;
+    // Loop through the list starting from the tail and loop towards the middle.       
+      while( count > idx) {
+        target = target.prev;
+      // decrement count. 
+        count--;
+      }
     // return node. 
+      return target;
+    }
   } 
 }
 
