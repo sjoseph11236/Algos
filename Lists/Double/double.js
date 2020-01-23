@@ -146,8 +146,6 @@ class DoublyLinkedList {
     // Increment count.
         count++;
       }
-    // return node once its found. 
-      return target;
     }
     else{
     // set count to last index. 
@@ -160,9 +158,10 @@ class DoublyLinkedList {
       // decrement count. 
         count--;
       }
-    // return node. 
-      return target;
     }
+
+    // return node. 
+    return target;
   } 
 }
 
