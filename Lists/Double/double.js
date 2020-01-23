@@ -169,14 +169,28 @@ class DoublyLinkedList {
     // Accept val, idx.
     // Create a result and cal the get method at specified idx
     let result = this.get(idx);
+
     // Check if result is not null. set the val to the node 
-    if(!result) {
+    if(result) {
       result.val  = val;
     // return true.
       return true;
     }
     // return false.
     return false;
+  }
+
+  // adding a node in the list at a certian position
+  insert() {
+    // Accept val and idx
+    // Create a newNode with val. 
+    // Create a foundNode call get with idx.
+    // store foundNode.next in next variable. 
+    // Set newNode next to foundNode
+    // Set foundNode.next to newNode. 
+    // Set NewNode.prev to foundNode
+    // Set NowNOde.next.prev to newNode.
+    // return true.
   }
 }
 
@@ -239,15 +253,26 @@ const list = new DoublyLinkedList();
 // const callThree = list.get(8);
 // console.log("TCL: callThree", callThree, callThree === null); //null
 
-// SET_________________
+// // SET_________________
+// list.push(1);
+// list.push(5);
+// list.push(8);
+// const callOne = list.set(9, 2);
+// console.log("TCL: callOne", callOne, callOne === true); 
+// const callTwo = list.set(9, -1);
+// console.log("TCL: callTwo", callTwo, callTwo === null);
+// const callThree = list.set(9, 8);
+// console.log("TCL: callThree", callThree, callThree === null);
+
+// // INSERT_________________
 list.push(1);
 list.push(5);
 list.push(8);
-const callOne = list.set(9, 2);
+const callOne = list.insert(9, 2);
 console.log("TCL: callOne", callOne, callOne === true); 
-const callTwo = list.set(9, -1);
+const callTwo = list.insert(9, -1);
 console.log("TCL: callTwo", callTwo, callTwo === null);
-const callThree = list.set(9, 8);
+const callThree = list.insert(9, 8);
 console.log("TCL: callThree", callThree, callThree === null);
 
 console.log('>>>> ', list);
