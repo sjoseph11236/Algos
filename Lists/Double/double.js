@@ -124,6 +124,19 @@ class DoublyLinkedList {
     // return the list. 
     return list;
   }
+
+  // Get a node a at specific index. 
+  get() {
+    // Accepts an idx. 
+    // Check if the idx is less than 0  or greater than or eqaul to the length
+    // return null. 
+    // Check if the idx is less than or equal to half the length of the list 
+    // loop through the list starting grom the head and loop towards the middle
+    // return node once its found. 
+    // Check if the idx is greater than half the length 
+    // Loop through the list starting from the tail and loop towards the middle. 
+    // return node. 
+  } 
 }
 
 
@@ -167,6 +180,17 @@ const list = new DoublyLinkedList();
 // console.log("TCL: callFour", callFour, callFour.val === 8);// 8
 
 // // UNSHIFT_________________
+// const callOne = list.unshift(1);
+// console.log("TCL: callOne", callOne); 
+// const callTwo = list.unshift(5);
+// console.log("TCL: callTwo", callTwo);
+// const callThree = list.unshift(8);
+// console.log("TCL: callThree", callThree);
+
+// // GET_________________
+// list.push(1);
+// list.push(5);
+// list.push(8);
 // const callOne = list.unshift(1);
 // console.log("TCL: callOne", callOne); 
 // const callTwo = list.unshift(5);
