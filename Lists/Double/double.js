@@ -216,6 +216,21 @@ class DoublyLinkedList {
     // return true.
     return true;
   }
+
+  // removing a node at a cetain position
+  remove() { 
+    // Accept idx
+    // validate idx is not less than 0 or greater than or eqal to this.length. 
+    // Set foundNode to the call with passed idx. 
+    // Set prevNode to foundNode.prev 
+    // Set afterNode to foundNode.next
+    // Update the foundNode.next to null
+    // Update the foundNode.prev to null. 
+    // Update the prevNode.next to afterNode.
+    // Update the afterNode.prev to prevNode. 
+    // decrement the length. 
+    // return foundNode. 
+  }
 }
 
 
@@ -288,7 +303,20 @@ const list = new DoublyLinkedList();
 // const callThree = list.set(9, 8);
 // console.log("TCL: callThree", callThree, callThree === null);
 
-// // INSERT_________________
+// // // INSERT_________________
+// list.push(1);
+// list.push(5);
+// list.push(8);
+// const callOne = list.insert(9, 2);
+// console.log("TCL: callOne", callOne, callOne === true); 
+// const callTwo = list.insert(9, -1);
+// console.log("TCL: callTwo", callTwo, callTwo === null);
+// const callThree = list.insert(9, 8);
+// console.log("TCL: callThree", callThree, callThree === null);
+// const callFour = list.insert(10, 4);
+// console.log("TCL: callFour", callFour, callFour === true);
+
+// // REMOVE_________________
 list.push(1);
 list.push(5);
 list.push(8);
