@@ -185,7 +185,7 @@ class DoublyLinkedList {
     // Accept val and idx
     // Check if the idx is valid: less than zero or greater than or eqaul to this.length
     // return false. 
-    if(idx < 0 || idx >= this.length) return false;
+    if(idx < 0 || idx > this.length) return false;
     // if the index is 0.
     if(idx === 0) {
     // call unshift.
@@ -194,7 +194,7 @@ class DoublyLinkedList {
       return true;
     }
     // if index is the same as the length -1 push. 
-    if(idx === this.length - 1) {
+    if(idx === this.length ) {
       this.push(val);
       return true;
     }
@@ -202,7 +202,7 @@ class DoublyLinkedList {
     let newNode = new Node(val);
     // Create a foundNode call get with idx.
     let foundNode = this.get(idx - 1);
-  // Set newNode next to foundNode
+    // Set newNode next to foundNode
     newNode.next = foundNode.next;
 
     // Set foundNode.next to newNode. 
@@ -298,5 +298,7 @@ const callTwo = list.insert(9, -1);
 console.log("TCL: callTwo", callTwo, callTwo === null);
 const callThree = list.insert(9, 8);
 console.log("TCL: callThree", callThree, callThree === null);
+const callFour = list.insert(10, 4);
+console.log("TCL: callFour", callFour, callFour === true);
 
 console.log('>>>> ', list);
