@@ -202,13 +202,13 @@ class DoublyLinkedList {
     let newNode = new Node(val);
     // Create a foundNode call get with idx.
     let foundNode = this.get(idx - 1);
-    // store foundNode.next in next variable. 
+  // Set newNode next to foundNode
     newNode.next = foundNode.next;
-    // Set newNode next to foundNode
-    foundNode.next = newNode;
+
     // Set foundNode.next to newNode. 
-    newNode.prev  = foundNode;
+    foundNode.next = newNode;
     // Set NewNode.prev to foundNode
+    newNode.prev  = foundNode;
     // Set NowNOde.next.prev to newNode.
     newNode.next.prev = newNode;
     // increment length
