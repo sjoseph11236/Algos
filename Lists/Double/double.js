@@ -341,5 +341,7 @@ const callTwo = list.insert(-1);
 console.log("TCL: callTwo", callTwo, callTwo === undefined);
 const callThree = list.insert(8);
 console.log("TCL: callThree", callThree, callThree === undefined);
+const callFour = list.insert(1);
+console.log("TCL: callFour", callFour, callFour.val === 8);
 
 console.log('>>>> ', list);
