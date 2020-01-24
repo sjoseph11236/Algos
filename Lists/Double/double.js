@@ -287,13 +287,15 @@ const list = new DoublyLinkedList();
 // const callFour = list.shift(); 
 // console.log("TCL: callFour", callFour, callFour.val === 8);// 8
 
-// // UNSHIFT_________________
-// const callOne = list.unshift(1);
-// console.log("TCL: callOne", callOne); 
-// const callTwo = list.unshift(5);
-// console.log("TCL: callTwo", callTwo);
-// const callThree = list.unshift(8);
-// console.log("TCL: callThree", callThree);
+// UNSHIFT_________________
+const callOne = list.unshift(1);
+console.log("TCL: callOne", callOne); 
+const callTwo = list.unshift(5);
+console.log("TCL: callTwo", callTwo);
+const callThree = list.unshift(8);
+console.log("TCL: callThree", callThree);
+console.log('This list head is ', list.head.val === 8);
+console.log('This list tail is ', list.tail.val === 1);
 
 // // GET_________________
 // list.push(1);
@@ -311,11 +313,11 @@ const list = new DoublyLinkedList();
 // list.push(5);
 // list.push(8);
 // const callOne = list.set(9, 2);
-// console.log("TCL: callOne", callOne, callOne === true); 
+// console.log("TCL: callOne", callOne); //true 
 // const callTwo = list.set(9, -1);
-// console.log("TCL: callTwo", callTwo, callTwo === null);
+// console.log("TCL: callTwo", callTwo); //false
 // const callThree = list.set(9, 8);
-// console.log("TCL: callThree", callThree, callThree === null);
+// console.log("TCL: callThree", callThree); //false
 
 // // // INSERT_________________
 // list.push(1);
@@ -330,17 +332,17 @@ const list = new DoublyLinkedList();
 // const callFour = list.insert(10, 4);
 // console.log("TCL: callFour", callFour); //true  
 
-// // REMOVE_________________
-list.push(1);
-list.push(5);
-list.push(8);
-const callOne = list.remove(1);
-console.log("TCL: callOne", callOne, callOne.val === 5); //true 
-const callTwo = list.remove(-1);
-console.log("TCL: callTwo", callTwo, callTwo === undefined); //undefined
-const callThree = list.remove(8);
-console.log("TCL: callThree", callThree, callThree === undefined); //undfined
-const callFour = list.remove(1);
-console.log("TCL: callFour", callFour, callFour.val === 8); //true
+// // // REMOVE_________________
+// list.push(1);
+// list.push(5);
+// list.push(8);
+// const callOne = list.remove(1);
+// console.log("TCL: callOne", callOne, callOne.val === 5); //true 
+// const callTwo = list.remove(-1);
+// console.log("TCL: callTwo", callTwo, callTwo === undefined); //undefined
+// const callThree = list.remove(8);
+// console.log("TCL: callThree", callThree, callThree === undefined); //undfined
+// const callFour = list.remove(1);
+// console.log("TCL: callFour", callFour, callFour.val === 8); //true
 
 console.log('>>>> ', list);
