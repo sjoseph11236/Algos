@@ -250,15 +250,15 @@ class DoublyLinkedList {
 
 const list = new DoublyLinkedList();
 
-// PUSH_________________
-const callOne = list.push(1);
-console.log("TCL: callOne", callOne); 
-const callTwo = list.push(5);
-console.log("TCL: callTwo", callTwo);
-const callThree = list.push(8);
-console.log("TCL: callThree", callThree);
-console.log('This list head is ', list.head.val === 1);
-console.log('This list tail is ', list.tail.val === 8);
+// // PUSH_________________
+// const callOne = list.push(1);
+// console.log("TCL: callOne", callOne); 
+// const callTwo = list.push(5);
+// console.log("TCL: callTwo", callTwo);
+// const callThree = list.push(8);
+// console.log("TCL: callThree", callThree);
+// console.log('This list head is ', list.head.val === 1);
+// console.log('This list tail is ', list.tail.val === 8);
 
 // // POP_________________
 // list.push(1);
@@ -271,7 +271,7 @@ console.log('This list tail is ', list.tail.val === 8);
 // const callThree = list.pop();
 // console.log("TCL: callThree", callThree, callThree.val === 1); // 1
 // const callFour = list.pop(); 
-// console.log("TCL: callFour", callFour); // undefined
+// console.log("TCL: callFour", callFour, callFour  === undefined); // undefined
 
 // // SHIFT_________________
 // list.push(1);
@@ -334,17 +334,21 @@ console.log('This list tail is ', list.tail.val === 8);
 // const callFour = list.insert(10, 4);
 // console.log("TCL: callFour", callFour); //true  
 
-// // // REMOVE_________________
-// list.push(1);
-// list.push(5);
-// list.push(8);
-// const callOne = list.remove(1);
-// console.log("TCL: callOne", callOne, callOne.val === 5); //true 
-// const callTwo = list.remove(-1);
-// console.log("TCL: callTwo", callTwo, callTwo === undefined); //undefined
-// const callThree = list.remove(8);
-// console.log("TCL: callThree", callThree, callThree === undefined); //undfined
-// const callFour = list.remove(1);
-// console.log("TCL: callFour", callFour, callFour.val === 8); //true
+// // REMOVE_________________
+list.push(1);
+list.push(5);
+list.push(8);
+const callOne = list.remove(1);
+console.log("TCL: callOne", callOne, callOne.val === 5); //true 
+console.log('CallOne has a NEXT of ', callOne.next, callOne.next === null); //null
+console.log('CallOne has a PREV of ', callOne.prev, callOne.prev === null); //null
+const callTwo = list.remove(-1);
+console.log("TCL: callTwo", callTwo, callTwo === undefined); //undefined
+const callThree = list.remove(8);
+console.log("TCL: callThree", callThree, callThree === undefined); //undfined
+const callFour = list.remove(1);
+console.log("TCL: callFour", callFour, callFour.val === 8); //true
+console.log('CallFour has a NEXT of ', callOne.next, callOne.next === null); //null
+console.log('CallFour has a PREV of ', callOne.prev, callOne.prev === null); //null
 
 console.log('>>>> ', list);
