@@ -218,18 +218,33 @@ class DoublyLinkedList {
   }
 
   // removing a node at a cetain position
-  remove() { 
+  remove(idx) { 
     // Accept idx
     // validate idx is not less than 0 or greater than or eqal to this.length. 
+    // return undefined
+    if(idx < 0 || idx >= this.length) return undefined;
+    // if idx  is zero use shift
+    if(idx === 0 ) return this.shift();
+    // if idx  is equal to this.length -1 use pop
+    if( idx === this.length - 1) return this.pop();
     // Set foundNode to the call with passed idx. 
+    let foundNode = this.get(idx);
     // Set prevNode to foundNode.prev 
+    let prevNode = foundNode.prev; 
     // Set afterNode to foundNode.next
+    let afterNode = foundNode.next;
     // Update the foundNode.next to null
+    foundNode.next = null; 
     // Update the foundNode.prev to null. 
+    foundNode.prev = null; 
     // Update the prevNode.next to afterNode.
+    prevNode.next = afterNode;
     // Update the afterNode.prev to prevNode. 
+    afterNode.prev = prevNode;
     // decrement the length. 
+    this.length--;
     // return foundNode. 
+    return foundNode;
   }
 }
 
@@ -320,13 +335,11 @@ const list = new DoublyLinkedList();
 list.push(1);
 list.push(5);
 list.push(8);
-const callOne = list.insert(9, 2);
-console.log("TCL: callOne", callOne, callOne === true); 
-const callTwo = list.insert(9, -1);
-console.log("TCL: callTwo", callTwo, callTwo === null);
-const callThree = list.insert(9, 8);
-console.log("TCL: callThree", callThree, callThree === null);
-const callFour = list.insert(10, 4);
-console.log("TCL: callFour", callFour, callFour === true);
+const callOne = list.remove(1);
+console.log("TCL: callOne", callOne, callOne.val === 5); 
+const callTwo = list.insert(-1);
+console.log("TCL: callTwo", callTwo, callTwo === undefined);
+const callThree = list.insert(8);
+console.log("TCL: callThree", callThree, callThree === undefined);
 
 console.log('>>>> ', list);
