@@ -181,16 +181,40 @@ class DoublyLinkedList {
   }
 
   // adding a node in the list at a certian position
-  insert() {
+  insert(val, idx) {
     // Accept val and idx
+    // Check if the idx is valid: less than zero or greater than or eqaul to this.length
+    // return false. 
+    if(idx < 0 || idx >= this.length) return false;
+    // if the index is 0.
+    if(idx === 0) {
+    // call unshift.
+    this.unshift(val);
+    // return true.
+      return true;
+    }
+    // if index is the same as the length -1 push. 
+    if(idx === this.length - 1) {
+      this.push(val);
+      return true;
+    }
     // Create a newNode with val. 
+    let newNode = new Node(val);
     // Create a foundNode call get with idx.
+    let foundNode = this.get(idx - 1);
     // store foundNode.next in next variable. 
+    newNode.next = foundNode.next;
     // Set newNode next to foundNode
+    foundNode.next = newNode;
     // Set foundNode.next to newNode. 
+    newNode.prev  = foundNode;
     // Set NewNode.prev to foundNode
     // Set NowNOde.next.prev to newNode.
+    newNode.next.prev = newNode;
+    // increment length
+    this.length++;
     // return true.
+    return true;
   }
 }
 
