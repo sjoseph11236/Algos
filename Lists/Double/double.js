@@ -204,7 +204,6 @@ class DoublyLinkedList {
     let foundNode = this.get(idx - 1);
     // Set newNode next to foundNode
     newNode.next = foundNode.next;
-
     // Set foundNode.next to newNode. 
     foundNode.next = newNode;
     // Set NewNode.prev to foundNode
@@ -323,25 +322,25 @@ const list = new DoublyLinkedList();
 // list.push(5);
 // list.push(8);
 // const callOne = list.insert(9, 2);
-// console.log("TCL: callOne", callOne, callOne === true); 
+// console.log("TCL: callOne", callOne); //true
 // const callTwo = list.insert(9, -1);
-// console.log("TCL: callTwo", callTwo, callTwo === null);
+// console.log("TCL: callTwo", callTwo); //false
 // const callThree = list.insert(9, 8);
-// console.log("TCL: callThree", callThree, callThree === null);
+// console.log("TCL: callThree", callThree); //false
 // const callFour = list.insert(10, 4);
-// console.log("TCL: callFour", callFour, callFour === true);
+// console.log("TCL: callFour", callFour); //true  
 
 // // REMOVE_________________
 list.push(1);
 list.push(5);
 list.push(8);
 const callOne = list.remove(1);
-console.log("TCL: callOne", callOne, callOne.val === 5); 
-const callTwo = list.insert(-1);
-console.log("TCL: callTwo", callTwo, callTwo === undefined);
-const callThree = list.insert(8);
-console.log("TCL: callThree", callThree, callThree === undefined);
-const callFour = list.insert(1);
-console.log("TCL: callFour", callFour, callFour.val === 8);
+console.log("TCL: callOne", callOne, callOne.val === 5); //true 
+const callTwo = list.remove(-1);
+console.log("TCL: callTwo", callTwo, callTwo === undefined); //undefined
+const callThree = list.remove(8);
+console.log("TCL: callThree", callThree, callThree === undefined); //undfined
+const callFour = list.remove(1);
+console.log("TCL: callFour", callFour, callFour.val === 8); //true
 
 console.log('>>>> ', list);
