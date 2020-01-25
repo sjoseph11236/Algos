@@ -53,15 +53,15 @@ class DoublyLinkedList {
 
 const list = new DoublyLinkedList();
 
-// PUSH_________________
-const callOne = list.push(1);
-console.log("TCL: callOne", callOne); 
-const callTwo = list.push(5);
-console.log("TCL: callTwo", callTwo);
-const callThree = list.push(8);
-console.log("TCL: callThree", callThree);
-console.log('This list head is ', list.head.val === 1);
-console.log('This list tail is ', list.tail.val === 8);
+// // PUSH_________________
+// const callOne = list.push(1);
+// console.log("TCL: callOne", callOne); 
+// const callTwo = list.push(5);
+// console.log("TCL: callTwo", callTwo);
+// const callThree = list.push(8);
+// console.log("TCL: callThree", callThree);
+// console.log('This list head is ', list.head.val === 1);
+// console.log('This list tail is ', list.tail.val === 8);
 
 // // POP_________________
 // list.push(1);
