@@ -366,38 +366,5 @@ console.log('LIST ', list);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// -------------ASSESSMENT TEMPLATE FOR COPYING TO ABOVE ONLY ---------------------------\\\
-// class SinglyLinkedList { 
-//   constructor() { 
-
-//   }
-
-//   push() {
-
-//   }
-
-//   pop() {
-    
-//   }
-// }
 
 
-// class Node { 
-//   constructor() {
-
-//   }
-// }
-
-
-// const list = new SinglyLinkedList();
-// list.push('ONE');
-// list.push('TWO');
-// list.pop(); // 'TWO'
-// console.log('LIST CALL 1 ', list);//length  = 1 
-// list.push('TWO');
-// list.push('THREE');
-// list.pop(); //'THREE'
-// console.log('LIST CALL 2 ', list);//length  = 2 
-// list.pop();
-// list.pop();//undefined
-// console.log('LIST  CALL 3 ', list); //length = 0;
