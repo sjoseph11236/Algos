@@ -1,17 +1,41 @@
 class Node { 
   constructor(val) {
-
+    this.val = val;
+    this.next = null;
+    this.prev = null;
   }
 }
 
 class DoublyLinkedList {
   constructor() {
-
+    this.head = null; 
+    this.tail = null;
+    this.length = 0;
   }
 
   // Adding a node to the end of the Doubly Linked List
   push(val) {
-
+    // Accept a val. 
+    // Create a newNode. 
+    let newNode = new Node(val);
+    // check  for head. 
+    // If no head set newNode to head.
+    if(!this.head) {
+      this.head = newNode; 
+      this.tail = newNode; 
+    }
+    else {  
+    // Else, set this.tail.next to newNode.
+      this.tail.next = newNode; 
+    // Set newNode.prev to  this.tail. 
+      newNode.prev = newNode;
+    // Set this.tail to newNode. 
+      this.tail = newNode;
+    }
+    // Increament the length. 
+    this.length++; 
+    // return this
+    return this;
   }
 
   // Remove the last item of the list
@@ -53,15 +77,15 @@ class DoublyLinkedList {
 
 const list = new DoublyLinkedList();
 
-// // PUSH_________________
-// const callOne = list.push(1);
-// console.log("TCL: callOne", callOne); 
-// const callTwo = list.push(5);
-// console.log("TCL: callTwo", callTwo);
-// const callThree = list.push(8);
-// console.log("TCL: callThree", callThree);
-// console.log('This list head is ', list.head.val === 1);
-// console.log('This list tail is ', list.tail.val === 8);
+// PUSH_________________
+const callOne = list.push(1);
+console.log("TCL: callOne", callOne); 
+const callTwo = list.push(5);
+console.log("TCL: callTwo", callTwo);
+const callThree = list.push(8);
+console.log("TCL: callThree", callThree);
+console.log('This list head is ', list.head.val === 1);
+console.log('This list tail is ', list.tail.val === 8);
 
 // // POP_________________
 // list.push(1);
