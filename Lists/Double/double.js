@@ -31,12 +31,15 @@ class DoublyLinkedList {
       this.head = newNode; 
       this.tail = newNode;
     }
+    else {
       // Set the next prop on the current tail to be the node 
-    this.tail.next = newNode; 
-    // Set the prev prop on the newly create node to be the tail. 
-    newNode.prev = this.tail; 
-    // update the tail to be the newNode. 
-    this.tail = newNode;
+      this.tail.next = newNode; 
+      // Set the prev prop on the newly create node to be the tail. 
+      newNode.prev = this.tail; 
+      // update the tail to be the newNode. 
+      this.tail = newNode;
+    }
+
     // Increment the length. 
     this.length++;
     // return this
@@ -94,7 +97,6 @@ class DoublyLinkedList {
       oldHead.next = null;
     }
 
-    console.log("OLD HEAD >>>>>>>>>> ", oldHead)
     // Decrement the length. 
     this.length--;
     // reeturn the oldHead. 
@@ -280,19 +282,19 @@ const callOne = list.shift(); // 1
 console.log("TCL: callOne", callOne, callOne.val === 1 ); //1 
 console.log('CallFour has a NEXT of ', callOne.next, callOne.next === null); //true
 console.log('CallFour has a PREV of ', callOne.prev, callOne.prev === null); //true 
-// const callTwo =  list.shift();
-// console.log("TCL: callTwo", callTwo, callTwo === undefined); // undefined
-// list.push(5);
-// list.push(8);
-// const callThree = list.shift(); 
-// console.log("TCL: callThree", callThree, callThree.val === 5);// 5
-// list.push(1);
-// list.push(5);
-// list.push(8);
-// const callFour = list.shift(); 
-// console.log("TCL: callFour", callFour, callFour.val === 8);// 8
-// console.log('CallFour has a NEXT of ', callFour.next, callFour.next === null); //null
-// console.log('CallFour has a PREV of ', callFour.prev, callFour.prev === null); //null
+const callTwo =  list.shift();
+console.log("TCL: callTwo", callTwo, callTwo === undefined); // undefined
+list.push(5);
+list.push(8);
+const callThree = list.shift(); 
+console.log("TCL: callThree", callThree, callThree.val === 5);// 5
+list.push(1);
+list.push(5);
+list.push(8);
+const callFour = list.shift(); 
+console.log("TCL: callFour", callFour, callFour.val === 8);// 8
+console.log('CallFour has a NEXT of ', callFour.next, callFour.next === null); //null
+console.log('CallFour has a PREV of ', callFour.prev, callFour.prev === null); //null
 
 // // UNSHIFT_________________
 // const callOne = list.unshift(1);
