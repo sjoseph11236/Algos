@@ -1,15 +1,22 @@
 class Node { 
   constructor(val) {
-
+    this.val = val; 
+    this.prev = null; 
+    this.next = null; 
   }
 }
 
 class SinglyLinkedList { 
   constructor() { 
-
+    this.head = null; 
+    this.tail = null; 
+    this.length = 0; 
   }
   // add node to the list
   push(val) {
+    //Accepts a val
+    // Create a newNode. 
+    // Cheak if 
 
   }
 
