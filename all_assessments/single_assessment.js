@@ -15,14 +15,25 @@ class SinglyLinkedList {
   push(val) {
     //Accepts a val
     // Create a newNode. 
+    let newNode = new Node(val);
     // Cheak if there is head
+    if(!this.head) { 
     // Set newNode to head 
+      this.head = newNode;
     // Set newNode to tail
+      this.tail = newNode;
+    }
+    else{ 
     // Else set the tail next to the newNode. 
+      this.tail.next = newNode;
     // Update tail to be the newNode. 
-    // Inceremnt the length
-    // return this
+      this.tail = newNode;
+    }
 
+    // Inceremnt the length
+    this.length++;
+    // return this
+    return this;
   }
 
   // remove node from the end of the linked list
@@ -73,9 +84,23 @@ class SinglyLinkedList {
 const list = new SinglyLinkedList();
 
 // // // PUSH_________
-list.push('ONE');
-list.push('TWO');
-list.push('THREE');
+const callOne = list.push('ONE');
+console.log("TCL: CallOne", callOne);
+console.log('The VAL is ', callOne.head.val, callOne.head.val === 'ONE');
+console.log('The VAL is ', callOne.tail.val, callOne.tail.val === 'ONE');
+console.log('The VAL is ', callOne.tail.next, callOne.tail.next === null);
+
+const callTwo =list.push('TWO');
+console.log("TCL: CallTwo", callTwo);
+console.log('The VAL is ', callTwo.head.val, callTwo.head.val === 'ONE');
+console.log('The VAL is ', callTwo.tail.val, callTwo.tail.val === 'TWO');
+console.log('The VAL is ', callTwo.tail.next, callTwo.tail.next === null);
+
+const callThree = list.push('THREE');
+console.log("TCL: CallThree", callThree);
+console.log('The VAL is ', callThree.head.val, callThree.head.val === 'ONE');
+console.log('The VAL is ', callThree.tail.val, callThree.tail.val === 'THREE');
+console.log('The VAL is ', callTwo.tail.next, callTwo.tail.next === null);
 
 
 // // // POP__________
