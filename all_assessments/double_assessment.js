@@ -40,7 +40,29 @@ class DoublyLinkedList {
 
   // Remove the last item of the list
   pop() {
-
+    // Check if there is a head.
+    // Return undefined. 
+    if(!this.head) return undefined;
+    // Store the tail in targetNode
+    let targetNode = this.tail;
+    // Check if the length is 1
+    if(this.length == 1) { 
+    // set head and tail to null
+      this.head = null;
+      this.tail = null;
+    }
+    else {
+    // Update tail to targetNOde.prev 
+      this.tail = targetNode.prev;    
+    // set tail.next to null
+      this.tail.next = null;
+    // Update the targetNode prev to be null. 
+      targetNode.prev = null; 
+    }
+    // Decrement the length
+    this.length--;
+    // Return targetNode
+    return targetNode;
   }
 
   // remove a node from the beginning of the list.
@@ -77,28 +99,28 @@ class DoublyLinkedList {
 
 const list = new DoublyLinkedList();
 
-// PUSH_________________
-const callOne = list.push(1);
-console.log("TCL: callOne", callOne); 
-const callTwo = list.push(5);
-console.log("TCL: callTwo", callTwo);
-const callThree = list.push(8);
-console.log("TCL: callThree", callThree);
-console.log('This list head is ', list.head.val === 1);
-console.log('This list tail is ', list.tail.val === 8);
+// // PUSH_________________
+// const callOne = list.push(1);
+// console.log("TCL: callOne", callOne); 
+// const callTwo = list.push(5);
+// console.log("TCL: callTwo", callTwo);
+// const callThree = list.push(8);
+// console.log("TCL: callThree", callThree);
+// console.log('This list head is ', list.head.val === 1);
+// console.log('This list tail is ', list.tail.val === 8);
 
-// // POP_________________
-// list.push(1);
-// list.push(5);
-// list.push(8);
-// const callOne = list.pop(); 
-// console.log("TCL: callOne", callOne, callOne.val === 8); // 8
-// const callTwo =  list.pop();
-// console.log("TCL: callTwo", callTwo, callTwo.val === 5); //5
-// const callThree = list.pop();
-// console.log("TCL: callThree", callThree, callThree.val === 1); // 1
-// const callFour = list.pop(); 
-// console.log("TCL: callFour", callFour, callFour  === undefined); // undefined
+// POP_________________
+list.push(1);
+list.push(5);
+list.push(8);
+const callOne = list.pop(); 
+console.log("TCL: callOne", callOne, callOne.val === 8); // 8
+const callTwo =  list.pop();
+console.log("TCL: callTwo", callTwo, callTwo.val === 5); //5
+const callThree = list.pop();
+console.log("TCL: callThree", callThree, callThree.val === 1); // 1
+const callFour = list.pop(); 
+console.log("TCL: callFour", callFour, callFour  === undefined); // undefined
 
 // // SHIFT_________________
 // list.push(1);

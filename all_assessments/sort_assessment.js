@@ -29,7 +29,9 @@ function mergeSort(arr){
 //------Radix Sort-----//
 // helper function to determine what number is in certina place. 
 function getDigit(num, place) { 
-
+  // Round Down
+  // Get the remainder
+  // USe Math.pow
 }
 
 // // GETDIGIT _________
@@ -90,7 +92,7 @@ function radixSort(arr) {
 //------Selection Sort-----//
 // sort by moving the smallest value to front of on each pass.
 function selectionSort(arr) {
-
+  // 
 }
 
 // console.log(
