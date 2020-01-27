@@ -83,24 +83,24 @@ class SinglyLinkedList {
 
 const list = new SinglyLinkedList();
 
-// // // PUSH_________
-const callOne = list.push('ONE');
-console.log("TCL: CallOne", callOne);
-console.log('The VAL is ', callOne.head.val, callOne.head.val === 'ONE');
-console.log('The VAL is ', callOne.tail.val, callOne.tail.val === 'ONE');
-console.log('The VAL is ', callOne.tail.next, callOne.tail.next === null);
+//  // PUSH_________
+// const callOne = list.push('ONE');
+// console.log("TCL: CallOne", callOne);
+// console.log('The VAL is ', callOne.head.val, callOne.head.val === 'ONE');
+// console.log('The VAL is ', callOne.tail.val, callOne.tail.val === 'ONE');
+// console.log('The VAL is ', callOne.tail.next, callOne.tail.next === null);
 
-const callTwo =list.push('TWO');
-console.log("TCL: CallTwo", callTwo);
-console.log('The VAL is ', callTwo.head.val, callTwo.head.val === 'ONE');
-console.log('The VAL is ', callTwo.tail.val, callTwo.tail.val === 'TWO');
-console.log('The VAL is ', callTwo.tail.next, callTwo.tail.next === null);
+// const callTwo =list.push('TWO');
+// console.log("TCL: CallTwo", callTwo);
+// console.log('The VAL is ', callTwo.head.val, callTwo.head.val === 'ONE');
+// console.log('The VAL is ', callTwo.tail.val, callTwo.tail.val === 'TWO');
+// console.log('The VAL is ', callTwo.tail.next, callTwo.tail.next === null);
 
-const callThree = list.push('THREE');
-console.log("TCL: CallThree", callThree);
-console.log('The VAL is ', callThree.head.val, callThree.head.val === 'ONE');
-console.log('The VAL is ', callThree.tail.val, callThree.tail.val === 'THREE');
-console.log('The VAL is ', callTwo.tail.next, callTwo.tail.next === null);
+// const callThree = list.push('THREE');
+// console.log("TCL: CallThree", callThree);
+// console.log('The VAL is ', callThree.head.val, callThree.head.val === 'ONE');
+// console.log('The VAL is ', callThree.tail.val, callThree.tail.val === 'THREE');
+// console.log('The VAL is ', callTwo.tail.next, callTwo.tail.next === null);
 
 
 // // // POP__________
