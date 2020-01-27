@@ -1,7 +1,6 @@
 class Node { 
   constructor(val) {
     this.val = val; 
-    this.prev = null; 
     this.next = null; 
   }
 }
@@ -16,7 +15,13 @@ class SinglyLinkedList {
   push(val) {
     //Accepts a val
     // Create a newNode. 
-    // Cheak if 
+    // Cheak if there is head
+    // Set newNode to head 
+    // Set newNode to tail
+    // Else set the tail next to the newNode. 
+    // Update tail to be the newNode. 
+    // Inceremnt the length
+    // return this
 
   }
 
@@ -68,9 +73,9 @@ class SinglyLinkedList {
 const list = new SinglyLinkedList();
 
 // // // PUSH_________
-// list.push('ONE');
-// list.push('TWO');
-// list.push('THREE');
+list.push('ONE');
+list.push('TWO');
+list.push('THREE');
 
 
 // // // POP__________
