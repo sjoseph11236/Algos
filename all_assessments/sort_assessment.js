@@ -88,31 +88,66 @@ function mostDigits(arr) {
   // retunr mostDigit. 
   return mostDigit;
 }
-// MOSTDIGITS______________
-console.log(
-  mostDigits([1234, 56, 7]), //4
-  mostDigits([1, 1, 11111, 1]), //5
-  mostDigits([12, 34, 56, 78]), //2
-  mostDigits([23, 567, 89, 122312451, 90]) //9
-);
+// // MOSTDIGITS______________
+// console.log(
+//   mostDigits([1234, 56, 7]), //4
+//   mostDigits([1, 1, 11111, 1]), //5
+//   mostDigits([12, 34, 56, 78]), //2
+//   mostDigits([23, 567, 89, 122312451, 90]) //9
+// );
 
 // function to flatten the bucket 
 function bucketFlattener(arr) { 
-  // 
+  console.log("TCL: bucketFlattener -> (arr", arr)
+  // set flattenedArr to empty arr. 
+  let flattenedArr = [];
+  // Execute a forEach
+  arr.forEach(bucket => {
+
+  // concat each bucket with flattenedArr. 
+    flattenedArr.concat(bucket);
+  });
+  // return flattenedArr. 
+  
+  return flattenedArr;
 }
 
 // sorting nimbers by place values.
 function radixSort(arr) {
 
+  // Set larget to value returned from mostDigits
+  let largest = mostDigits(arr);
+  // Create a bucket with 10 empty arrays. 
+  let bucket = [[],[], [], [], [], [],[], [], [],[]];
+  // Set a for loop to run up to largest value
+  for(let i = 0; i < largest; i++) {
+  // Set another for loop iterate through the arr. 
+    for(let j = 0; j < arr.length; j++) {
+  // Get the value placeValue of the current i. 
+      let elem = arr[j];
+
+      let placeValue = getDigit(elem, i);
+  // push the currentElem to the arr at the placeValue
+      bucket[placeValue].push(elem);
+      // console.log("BUCKET ", bucket);
+    }
+    // flatten the bucket  and update the arr. 
+    arr = bucketFlattener(bucket);
+    // empty the bucket 
+    bucket =[[],[], [], [], [], [],[], [], [],[]];
+  }
+
+  // return arr.
+  return arr; 
 }
 
-// console.log(
-//     "RADIX ",
-//   radixSort([215, 16, 31256]), // [16, 215, 31256]
-//   radixSort([10, 5, 7, 4, 3, 2, 1, 8, 6]), // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-//   radixSort([10, 5, 7, 4, 3, 2, 1, 8, 6, 6]), // [1, 2, 3, 4, 5, 6, 6, 7, 8, 9, 10]
-//   radixSort([23, 345, 5467, 12, 2345, 9852]) // [12, 23, 345, 2345, 5467, 9852]
-// );
+console.log(
+    "RADIX ",
+  radixSort([215, 16, 31256]), // [16, 215, 31256]
+  radixSort([10, 5, 7, 4, 3, 2, 1, 8, 6]), // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  radixSort([10, 5, 7, 4, 3, 2, 1, 8, 6, 6]), // [1, 2, 3, 4, 5, 6, 6, 7, 8, 9, 10]
+  radixSort([23, 345, 5467, 12, 2345, 9852]) // [12, 23, 345, 2345, 5467, 9852]
+);
 
 //------Selection Sort-----//
 // sort by moving the smallest value to front of on each pass.
