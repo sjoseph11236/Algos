@@ -30,8 +30,10 @@ function mergeSort(arr){
 // helper function to determine what number is in certina place. 
 function getDigit(num, place) { 
   // Round Down
-  // Get the remainder
-  // USe Math.pow
+  // Divide the absolute of num. 
+  // by Math.pow with base of 10.
+  // Get the remainder when divided by 10.
+  return Math.floor(Math.abs(num) /  Math.pow(10, place) %  10 );
 }
 
 // // GETDIGIT _________
