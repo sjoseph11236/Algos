@@ -64,31 +64,41 @@ function digitCount(num) {
   return length;
 }
 
-// DIGITCOUNT______________
-console.log(
-  digitCount(1), //1
-  digitCount(25), // 2
-  digitCount(314),// 3
-  digitCount(-314),// 3
-  digitCount(314000), // 6
-  digitCount(-314000) // 6
-);
+// // DIGITCOUNT______________
+// console.log(
+//   digitCount(1), //1
+//   digitCount(25), // 2
+//   digitCount(314),// 3
+//   digitCount(-314),// 3
+//   digitCount(314000), // 6
+//   digitCount(-314000) // 6
+// );
 
 // helper function to determine the length of the longest digit in the arr.  
 function mostDigits(arr) { 
-
+  // Set mostDigit to 0. 
+  let mostDigit = 0; 
+  // Execute forEach to pass each elementthe digitCount method. 
+  arr.forEach(digit =>  {
+    let currDigitCount = digitCount(digit);
+  // Check if the current digitCount is larger mostDigit. 
+  // If so, update mostDigit. 
+    if(currDigitCount > mostDigit) mostDigit = currDigitCount;
+  });
+  // retunr mostDigit. 
+  return mostDigit;
 }
-// // MOSTDIGITS______________
-// console.log(
-//   mostDigits([1234, 56, 7]), //4
-//   mostDigits([1, 1, 11111, 1]), //5
-//   mostDigits([12, 34, 56, 78]), //2
-//   mostDigits([23, 567, 89, 122312451, 90]) //9
-// );
+// MOSTDIGITS______________
+console.log(
+  mostDigits([1234, 56, 7]), //4
+  mostDigits([1, 1, 11111, 1]), //5
+  mostDigits([12, 34, 56, 78]), //2
+  mostDigits([23, 567, 89, 122312451, 90]) //9
+);
 
 // function to flatten the bucket 
 function bucketFlattener(arr) { 
-
+  // 
 }
 
 // sorting nimbers by place values.
