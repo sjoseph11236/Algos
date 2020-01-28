@@ -101,33 +101,33 @@ function bucketFlattener(arr) {
 }
 
 // -------MY SOLUTION --------///
-// // Define a functon that accepts list of numbers 
-// function radixSort(arr) {
-//   // Create a varaible to store the largest Digit to determine how many times to loop through the arr. 
-//   const largest = mostDigits(arr);
-//   // Create a bucket of 9 empty arrays; 
-//   let bucket =  [[],[],[],[],[],[],[],[],[], []];
-//   // create for loop for the total amount of times to sort the arr. 
-//   for(let i = 0; i < largest; i++) {
-//     // iterate through the array
-//     for(let j = 0; j < arr.length; j++){
-//       let elem = arr[j];
-//       console.log("TCL: radixSort -> elem ", elem );
-//       // store the value at each place for each element;
-//       let placeValue = getDigit(elem, i);
-//       console.log("TCL: radixSort -> placeValue", placeValue);
-//       let place = placeValue;
-//       bucket[place].push(elem); 
-//       console.log('BUCKET ', bucket);
-//     }
-//     // flatten bucket and reassign array
-//     arr = bucketFlattener(bucket);
-//     // Empty bucket
-//     bucket = [[],[],[],[],[],[],[],[],[],[]];
-//   }
 
-//   return arr; 
-// }
+// Define a functon that accepts list of numbers 
+function radixSort(arr) {
+  // Create a varaible to store the largest Digit to determine how many times to loop through the arr. 
+  const largest = mostDigits(arr);
+  // Create a bucket of 9 empty arrays; 
+  let bucket =  [[],[],[],[],[],[],[],[],[], []];
+  // create for loop for the total amount of times to sort the arr. 
+  for(let i = 0; i < largest; i++) {
+    // iterate through the array
+    for(let j = 0; j < arr.length; j++){
+      let elem = arr[j];
+      console.log("TCL: radixSort -> elem ", elem );
+      // store the value at each place for each element;
+      let placeValue = getDigit(elem, i);
+      console.log("TCL: radixSort -> placeValue", placeValue);
+      let place = placeValue;
+      bucket[place].push(elem); 
+      console.log('BUCKET ', bucket);
+    }
+    // flatten bucket and reassign array
+    arr = bucketFlattener(bucket);
+    // Empty bucket
+    bucket = [[],[],[],[],[],[],[],[],[],[]];
+  }
+  return arr; 
+}
 // figure out how many digits the largeest number has
 // loop the to the total of the largest number of digits 
 // for each iteration of the loop creat buckets fof each 0 to 9 digit
