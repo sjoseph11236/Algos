@@ -3,10 +3,10 @@ function bubbleSort(arr) {
 
 }
 
-console.log(
-  'BUBBLE ', 
-  bubbleSort([5, 3, 4, 1, 2])// [1, 2, 3, 4, 5]
-);
+// console.log(
+//   'BUBBLE ', 
+//   bubbleSort([5, 3, 4, 1, 2])// [1, 2, 3, 4, 5]
+// );
 
 //------Merge Sort-----//
 
@@ -48,18 +48,31 @@ function getDigit(num, place) {
 
 // helper function to determine the length of a digit. 
 function digitCount(num) { 
-
+  // Set length to zero
+  let length = 0; 
+  // Set counter to 1
+  let count = 1;
+  // Create a while loop
+  // check if counter is less than the abs of num. 
+  while(count < Math.abs(num)) { 
+  // if so add one to the length.   
+    length++;
+  // multiply the counter by 10. 
+    count*= 10;
+  }
+  // return length.
+  return length;
 }
 
-// // DIGITCOUNT______________
-// console.log(
-//   digitCount(1), //1
-//   digitCount(25), // 2
-//   digitCount(314),// 3
-//   digitCount(-314),// 3
-//   digitCount(314000), // 6
-//   digitCount(-314000) // 6
-// );
+// DIGITCOUNT______________
+console.log(
+  digitCount(1), //1
+  digitCount(25), // 2
+  digitCount(314),// 3
+  digitCount(-314),// 3
+  digitCount(314000), // 6
+  digitCount(-314000) // 6
+);
 
 // helper function to determine the length of the longest digit in the arr.  
 function mostDigits(arr) { 
