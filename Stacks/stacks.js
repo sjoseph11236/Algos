@@ -39,7 +39,8 @@ class Stack {
   pop(){
     if(!this.first) return null; 
 
-    let temp = this.first
+    let temp = this.first;
+    // edge case for when there is one item in the stack
     if(this.first === this.last){
       this.last = null;
     }
