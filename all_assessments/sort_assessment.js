@@ -123,7 +123,7 @@ function radixSort(arr) {
   // Get the value placeValue of the current i. 
       let elem = arr[j];
 
-      let placeValue = getDigit(elem, i);
+      let placeValue = getDigit(elem, i );
   // push the currentElem to the arr at the placeValue
       bucket[placeValue].push(elem);
       // console.log("BUCKET ", bucket);
