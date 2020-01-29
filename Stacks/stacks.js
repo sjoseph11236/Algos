@@ -78,7 +78,7 @@ stack.push('youtube');
 let callOne = stack.pop();
 console.log("TCL: callOne ", callOne, callOne === 'youtube');
 let callTwo = stack.pop();
-console.log("TCL: callTwo ", callTwo , callTWo === 'instagram');
+console.log("TCL: callTwo ", callTwo , callTwo === 'instagram');
 let callThree = stack.pop();
 console.log("TCL: callThree", callThree, callThree === 'google');
 
