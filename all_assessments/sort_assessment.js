@@ -98,16 +98,13 @@ function mostDigits(arr) {
 
 // function to flatten the bucket 
 function bucketFlattener(arr) { 
-  console.log("TCL: bucketFlattener -> (arr", arr)
   // set flattenedArr to empty arr. 
   let flattenedArr = [];
-  // Execute a forEach
-  arr.forEach(bucket => {
-
-  // concat each bucket with flattenedArr. 
-    flattenedArr.concat(bucket);
-  });
-  // return flattenedArr. 
+  // itetarate through the arr.
+  for(let i = 0; i < arr.length; i++) {
+    let inner = arr[i];
+    flattenedArr.push(...inner);
+  }
   
   return flattenedArr;
 }
@@ -131,6 +128,8 @@ function radixSort(arr) {
       bucket[placeValue].push(elem);
       // console.log("BUCKET ", bucket);
     }
+
+    console.log(`the bukect at ${i} `, bucket);
     // flatten the bucket  and update the arr. 
     arr = bucketFlattener(bucket);
     // empty the bucket 
@@ -160,3 +159,42 @@ function selectionSort(arr) {
 //   selectionSort([5, 3, 4, 1, 2]),//[1, 2, 3, 4, 5];
 //   selectionSort([5, 5, 4, 1, 2]) //[1, 2, 4, 5, 5, 5];
 // );
+
+// // Complete the makeAnagram function below.
+// function makeAnagram(a, b) {
+//   // set a pointer to 0.
+//   let pointer = 0; 
+//   // set a counter to 0.
+//   let counter =  0; 
+
+//   // Find larger str.
+//   let larger; 
+//   if(a.length > b.length) { 
+//       larger = a.length;
+//   }
+//   else { 
+//       larger = b.length; 
+//   }
+//   // while pointer is less than larger str.
+//   while(pointer < larger) { 
+//   // Check if element in string a is not included in string  b.
+//       if(!b.includes(a[pointer]) && a[pointer] !== undefined) { 
+//       console.log("TCL: makeAnagram -> a[pointer]", a[pointer]);
+//   // counter ++
+//           counter++;
+//       }
+//   // Check if element in string b is not included in string a.
+//       if(!a.includes(b[pointer]) && b[pointer] !== undefined) {
+//       console.log("TCL: makeAnagram -> b[pointer]", b[pointer])
+//   // counter ++.
+//           counter++;
+//       }
+
+//       pointer++;
+//   }
+//   // return counter.
+//   return counter;
+// }
+
+
+// console.log(makeAnagram('fcrxzwscanmligyxyvym','jxwtrhvujlmrpdoqbisbwhmgpmeoke'));
