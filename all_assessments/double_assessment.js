@@ -109,18 +109,18 @@ const list = new DoublyLinkedList();
 // console.log('This list head is ', list.head.val === 1);
 // console.log('This list tail is ', list.tail.val === 8);
 
-// POP_________________
-list.push(1);
-list.push(5);
-list.push(8);
-const callOne = list.pop(); 
-console.log("TCL: callOne", callOne, callOne.val === 8); // 8
-const callTwo =  list.pop();
-console.log("TCL: callTwo", callTwo, callTwo.val === 5); //5
-const callThree = list.pop();
-console.log("TCL: callThree", callThree, callThree.val === 1); // 1
-const callFour = list.pop(); 
-console.log("TCL: callFour", callFour, callFour  === undefined); // undefined
+// // POP_________________
+// list.push(1);
+// list.push(5);
+// list.push(8);
+// const callOne = list.pop(); 
+// console.log("TCL: callOne", callOne, callOne.val === 8); // 8
+// const callTwo =  list.pop();
+// console.log("TCL: callTwo", callTwo, callTwo.val === 5); //5
+// const callThree = list.pop();
+// console.log("TCL: callThree", callThree, callThree.val === 1); // 1
+// const callFour = list.pop(); 
+// console.log("TCL: callFour", callFour, callFour  === undefined); // undefined
 
 // // SHIFT_________________
 // list.push(1);
