@@ -1,6 +1,8 @@
 // An abstract collection of data that follows the principal last in first out. 
 // The last element of the stack will be the first element removed from the stack. 
-// changing the values index when using shift and unshift is very inefficent. 
+// changing the values index when using shift and unshift is very inefficent.
+
+// Big O shoulld be constant time 0n
 
 class Node {
   constructor(val) {
@@ -78,16 +80,16 @@ let stack = new Stack();
 // console.log("TCL: callTHREE", stack.last.val , stack.last.val === 'google');
 
 
-// POP
-stack.push('google');
-stack.push('instagram');
-stack.push('youtube');
+// // POP
+// stack.push('google');
+// stack.push('instagram');
+// stack.push('youtube');
 
-let callOne = stack.pop();
-console.log("TCL: callOne ", callOne, callOne === 'youtube');
-let callTwo = stack.pop();
-console.log("TCL: callTwo ", callTwo , callTwo === 'instagram');
-let callThree = stack.pop();
-console.log("TCL: callThree", callThree, callThree === 'google');
+// let callOne = stack.pop();
+// console.log("TCL: callOne ", callOne, callOne === 'youtube');
+// let callTwo = stack.pop();
+// console.log("TCL: callTwo ", callTwo , callTwo === 'instagram');
+// let callThree = stack.pop();
+// console.log("TCL: callThree", callThree, callThree === 'google');
 
 console.log('STACK ', stack);
