@@ -42,16 +42,18 @@ class Stack {
     
     // store the first
     let temp = this.first;
+
     // edge case for when there is one item in the stack
     if(this.first === this.last){
       this.last = null;
     }
   
     // Update the first to be the next.
-    this.fisrt = this.first.next;
+    this.first = this.first.next;
 
     // Decremenet the size.
     this.size--;
+
 
     return temp.val;
   }
