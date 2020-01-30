@@ -37,15 +37,20 @@ class Stack {
   } 
 
   pop(){
+    // Check if the list is empty
     if(!this.first) return null; 
-
+    
+    // store the first
     let temp = this.first;
     // edge case for when there is one item in the stack
     if(this.first === this.last){
       this.last = null;
     }
   
+    // Update the first to be the next.
     this.fisrt = this.first.next;
+
+    // Decremenet the size.
     this.size--;
 
     return temp.val;
