@@ -6,7 +6,7 @@ function knuthMorrisPrattAlgorithm(txt, str) {
 	if(str.length > txt.length) return false; 
   // This slice is On 
   let check = txt.slice(0, str.length);
-  // The check is a loop since under the hood the string is an  arr that has to check eeach idx. 
+  // The check is a loop since under the hood the string is an  arr that has to check eeach idx.
   if(check === str) return true;
   // this slice is On 
   txt = txt.slice(1);
