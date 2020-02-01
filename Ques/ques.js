@@ -35,13 +35,22 @@ class Queue {
     // Create newNode with that val.
     let newNode = new Node(val);
     // if no first
-    if(!this.first)
+    if(!this.first) { 
     // Set first to newNode.
+      this.fist = newNode;
+    // Set last to newNode.      
+      this.last = newNode;
+    }
+    else{ 
+     // Else set the last next to newNode
+      this.last.next = newNode;
     // Set last to newNode.
-    // Else set the last next to newNode
-    // Set last to newNode.
+      this.last = newNode;
+    }
     // Increment the size.
+    this.size++;
     // return the size
+    return this.size;
   }
 
   // remomve from the beginning
