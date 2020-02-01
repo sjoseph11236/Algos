@@ -34,6 +34,7 @@ class Queue {
     // Accepts a val. 
     // Create newNode with that val.
     let newNode = new Node(val);
+    console.log('NEW NODE ', newNode);
     // if no first
     if(!this.first) { 
     // Set first to newNode.
@@ -63,10 +64,10 @@ class Queue {
 let que = new Queue();
 const callOne = que.enqueue(56);
 console.log("TCL: callOne", callOne, callOne === 1);
-console.log('The FIRST should be >>> ', que.first.val,  que.fist.val  === 56);
-console.log('The LAST  should be >>> ', que.last.val,  que.last.val  === 56);
+console.log('The FIRST should be >>> ', que.first,  que.fist  === 56);
+// console.log('The LAST  should be >>> ', que.last.val,  que.last.val  === 56);
 // const callTwo = que.enqueue(32);
 // console.log("TCL: callOne", callTwo, callTwo === 2);
 // const callThree = que.enqueue(17);
 // console.log("TCL: callOne", callThree, callThree === 3);
-// console.log("TCL: Que", que);
+console.log("TCL: Que", que);
