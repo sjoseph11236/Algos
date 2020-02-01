@@ -21,3 +21,14 @@ class Node {
   }
 }
 
+
+class Queue { 
+  constructor() {
+    this.first  = null; 
+    this.last  = null; 
+    this.size  = 0; 
+  }
+}
+
+// Add to the end 
+// remomve from the beginning
