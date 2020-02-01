@@ -26,9 +26,19 @@ class Queue {
   constructor() {
     this.first  = null; 
     this.last  = null; 
-    this.size  = 0; 
+    this.size = 0;
+  }
+
+// Add to the end 
+  enqueue(val) { 
+    
+  }
+  // remomve from the beginning
+  dequeue() {
+
   }
 }
 
-// Add to the end 
-// remomve from the beginning
+
+let Que = new Queue();
+console.log("TCL: Que", Que);
