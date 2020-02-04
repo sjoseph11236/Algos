@@ -12,19 +12,30 @@ function bubbleSort(arr) {
 
 // helper function to sort the two arrs into one new sorted arr. 
 function merge(left, right) {
-
+  // set sorted to empty arr. 
+  // create leftPointer = 
 }
 
 // a function to split the arr. 
 function mergeSort(arr){
-
+  //Check if the length of the arr is less than 1. 
+  // return arr. 
+  if(!arr.length) return arr;
+  // Find the mid
+  const mid = Math.floor(arr.length / 2);
+  // Set left to call of mergeSort with first half as argument.
+  let left = mergeSort(arr.slice(0, mid));
+  // set righh to clall of mergeSort with second half as argument. 
+  let right = mergeSort(arr.slice(mid));
+  // return merge wtih left and right as arguments.
+  return merge(left, right);
 }
 
-// console.log(
-//   'MERGE ',
-//   mergeSort([10, 24, 76, 73, 72, 1, 9]),
-//   mergeSort([10, 24, 76, 73])
-// );
+console.log(
+  'MERGE ',
+  mergeSort([10, 24, 76, 73, 72, 1, 9]),
+  mergeSort([10, 24, 76, 73])
+);
 
 //------Radix Sort-----//
 // helper function to determine what number is in certina place. 
@@ -140,13 +151,13 @@ function radixSort(arr) {
   return arr; 
 }
 
-console.log(
-    "RADIX ",
-  radixSort([215, 16, 31256]), // [16, 215, 31256]
-  radixSort([10, 5, 7, 4, 3, 2, 1, 8, 6]), // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-  radixSort([10, 5, 7, 4, 3, 2, 1, 8, 6, 6]), // [1, 2, 3, 4, 5, 6, 6, 7, 8, 9, 10]
-  radixSort([23, 345, 5467, 12, 2345, 9852]) // [12, 23, 345, 2345, 5467, 9852]
-);
+// console.log(
+//     "RADIX ",
+//   radixSort([215, 16, 31256]), // [16, 215, 31256]
+//   radixSort([10, 5, 7, 4, 3, 2, 1, 8, 6]), // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+//   radixSort([10, 5, 7, 4, 3, 2, 1, 8, 6, 6]), // [1, 2, 3, 4, 5, 6, 6, 7, 8, 9, 10]
+//   radixSort([23, 345, 5467, 12, 2345, 9852]) // [12, 23, 345, 2345, 5467, 9852]
+// );
 
 //------Selection Sort-----//
 // sort by moving the smallest value to front of on each pass.
