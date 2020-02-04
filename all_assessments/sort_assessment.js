@@ -40,6 +40,7 @@ function merge(left, right) {
   if(leftPoint !== left.length)  sorted.push(...left.slice(leftPoint));
   // check if the rightPioint is equal to right length. 
   // Push and spread the remaing valiues. 
+  // slice adds to the time complexity. Refactor to while loops
   if(rightPoint !== right.length) sorted.push(...right.slice(rightPoint));
   // return sorted.
   return sorted;
