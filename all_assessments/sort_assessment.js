@@ -12,8 +12,20 @@ function bubbleSort(arr) {
 
 // helper function to sort the two arrs into one new sorted arr. 
 function merge(left, right) {
-  // set sorted to empty arr. 
-  // create leftPointer = 
+  // Set sorted to empty arr. 
+  // Create leftPoint set to 0.
+  // Create rightPoint set to 0.
+  // Iterate with while loop chick if both pointers are less than length.
+  // check if left value is is less than right. 
+  // Push left value to sorted
+  // Increment the leftPoint. 
+  // Else push the right value.
+  // Increment the rightPoint.
+  // check if leftPoint is equal to left.length. 
+  // Push and spread the remaing values.
+  // check if the rightPioint is equal to right length. 
+  // Push and spread the remaing valiues. 
+  // return sorted.
 }
 
 // a function to split the arr. 
@@ -21,7 +33,7 @@ function mergeSort(arr){
   //Check if the length of the arr is less than 1. 
   // return arr. 
   if(!arr.length) return arr;
-  // Find the mid
+  // Find the mid.
   const mid = Math.floor(arr.length / 2);
   // Set left to call of mergeSort with first half as argument.
   let left = mergeSort(arr.slice(0, mid));
