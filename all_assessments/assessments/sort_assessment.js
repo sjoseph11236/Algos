@@ -12,7 +12,6 @@ function bubbleSort(arr) {
 
 // helper function to sort the two arrs into one new sorted arr. 
 function merge(left, right) {
-
 }
 
 // a function to split the arr. 
