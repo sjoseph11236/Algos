@@ -12,53 +12,12 @@ function bubbleSort(arr) {
 
 // helper function to sort the two arrs into one new sorted arr. 
 function merge(left, right) {
-  // Set sorted to empty arr. 
-  let sorted = [];
-  // Create leftPoint set to 0.
-  let leftPoint = 0;
-  // Create rightPoint set to 0.
-  let rightPoint  = 0;
-  // Iterate with while loop chick if both pointers are less than length.
-  while(leftPoint !== left.length && rightPoint !== right.length) {
-  // check if left value is is less than right. 
-    if(left[leftPoint] < right[rightPoint]) {
-  // Push left value to sorted      
-      sorted.push(left[leftPoint]);
-  // Increment the leftPoint.       
-      leftPoint++;
-    }
-    else{
-  // Else push the right value.
-      sorted.push(right[rightPoint]);
-  // Increment the rightPoint.
-      rightPoint++;
-    }
-  }
 
-  // check if leftPoint is equal to left.length. 
-  // Push and spread the remaing values.
-  if(leftPoint !== left.length)  sorted.push(...left.slice(leftPoint));
-  // check if the rightPioint is equal to right length. 
-  // Push and spread the remaing valiues. 
-  // slice adds to the time complexity. Refactor to while loops
-  if(rightPoint !== right.length) sorted.push(...right.slice(rightPoint));
-  // return sorted.
-  return sorted;
 }
 
 // a function to split the arr. 
 function mergeSort(arr){
-  //Check if the length of the arr is less than 1. 
-  // return arr. 
-  if(arr.length <= 1) return arr;
-  // Find the mid.
-  const mid = Math.floor(arr.length / 2);
-  // Set left to call of mergeSort with first half as argument.
-  let left = mergeSort(arr.slice(0, mid));
-  // set righh to clall of mergeSort with second half as argument. 
-  let right = mergeSort(arr.slice(mid));
-  // return merge wtih left and right as arguments.
-  return merge(left, right);
+
 }
 
 // console.log(
@@ -70,11 +29,7 @@ function mergeSort(arr){
 //------Radix Sort-----//
 // helper function to determine what number is in certina place. 
 function getDigit(num, place) { 
-  // Round Down
-  // Divide the absolute of num. 
-  // by Math.pow with base of 10.
-  // Get the remainder when divided by 10.
-  return Math.floor(Math.abs(num) /  Math.pow(10, place) %  10 );
+
 }
 
 // // GETDIGIT _________

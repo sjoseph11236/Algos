@@ -4,7 +4,7 @@ const { getDigit, mergeSort } = require('../assessments/sort_assessment');
 
 
 describe('Sort', function() {
-  describe('getDigit()', function() {
+  xdescribe('getDigit()', function() {
     it('it should return a type number ', function() {
       let result =  getDigit(12345, 5); //0      
       assert.typeOf(result, 'number');
@@ -43,10 +43,15 @@ describe('Sort', function() {
   });
 
 
-  describe('mergeSort()', function() {
+  xdescribe('mergeSort()', function() {
+    it('returns a sorted array ', function() {
+      let result = mergeSort([10, 24, 76, 73, 72, 1, 9]);
+      assert.sameOrderedMembers(result, [1, 9, 10, 24, 72, 73, 76]);
+    });
+
     it('returns an array ', function() {
       let result = mergeSort([10, 24, 76, 73, 72, 1, 9]);
-      assert.deepEqual(result, [1, 9, 10, 24, 73, 76]);
+      assert.strictEqual(Array.isArray(result), true);    
     });
   });
 });
