@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const { getDigit } = require('../assessments/sort_assessment');
+const { getDigit, mergeSort } = require('../assessments/sort_assessment');
 
 
 
@@ -39,6 +39,14 @@ describe('Sort', function() {
     it('it should return a five ', function() {
       let result = getDigit(12345, 0); //5 
       assert.equal(result, 5);
+    });
+  });
+
+
+  describe('mergeSort()', function() {
+    it('returns an array ', function() {
+      let result = mergeSort([10, 24, 76, 73, 72, 1, 9]);
+      assert.deepEqual(result, [1, 9, 10, 24, 73, 76]);
     });
   });
 });

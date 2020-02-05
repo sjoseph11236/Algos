@@ -202,5 +202,6 @@ function selectionSort(arr) {
 // );
 
 module.exports = { 
-  getDigit
+  getDigit,
+  mergeSort
 }
