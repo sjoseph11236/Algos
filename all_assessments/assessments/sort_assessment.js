@@ -61,11 +61,11 @@ function mergeSort(arr){
   return merge(left, right);
 }
 
-console.log(
-  'MERGE ',
-  mergeSort([10, 24, 76, 73, 72, 1, 9]),
-  mergeSort([10, 24, 76, 73])
-);
+// console.log(
+//   'MERGE ',
+//   mergeSort([10, 24, 76, 73, 72, 1, 9]),
+//   mergeSort([10, 24, 76, 73])
+// );
 
 //------Radix Sort-----//
 // helper function to determine what number is in certina place. 
@@ -201,3 +201,6 @@ function selectionSort(arr) {
 //   selectionSort([5, 5, 4, 1, 2]) //[1, 2, 4, 5, 5, 5];
 // );
 
+module.exports = { 
+  getDigit
+}
