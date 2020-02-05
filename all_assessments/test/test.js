@@ -1,9 +1,16 @@
-const assert = require('chai');
+const assert = require('chai').assert;
 const { getDigit } = require('../assessments/sort_assessment');
 
-console.log('get ', getDigit);
 
 
+describe('Sort', function() {
+  describe('getDigit()', function() {
+    it('it should return a digit ', function() {
+     let callOne = getDigit(12345, 0); //5 
+      assert.equal(callOne, 5);
+    });
+  });
+});
 // // GETDIGIT _________
 // console.log(
 //     getDigit(12345, 0), //5 
