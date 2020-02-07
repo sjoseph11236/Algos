@@ -1,6 +1,29 @@
 // sort by moving the larger values to the end of the arr. 
 function bubbleSort(arr) {
-
+// Create a decrementing for loop that goes the length of the arr. 
+for(let i = arr.length - 1 ; i > 0; i--) {
+  // Set noSwap to true
+      let noSwap = true;
+  // Create another for loop that goes the length of the arr. 
+      for(let j = 0; j < i; j++) {
+  // Set curr
+        let curr = arr[j];
+  // Set next
+        let next = arr[j + 1];
+  // check if curr is greater than next
+        if(curr > next) {
+          // swap
+          let temp  = curr; 
+          arr[j] = arr[ j  + 1];
+          arr[j + 1] = temp; 
+          // update noSwap
+          noSwap = false; 
+        }
+      }
+  // check for noswap to break
+    if(noSwap) break;
+    }
+    return arr;
 }
 
 // console.log(
@@ -146,14 +169,42 @@ function radixSort(arr) {
 //------Selection Sort-----//
 // sort by moving the smallest value to front of on each pass.
 function selectionSort(arr) {
-  // 
+    if(arr.length == 1) return arr;
+  // 	Create an incrementing for loop
+  for(let i = 0; i < arr.length; i++) {
+  // 	set smallestIdx to i.
+  let smallestIdx = i;
+ 
+
+  // 	Creat an incremnting for loop.
+    for(let j = i + 1; j < arr.length; j++) { 
+    // 	Set curr
+      let curr = arr[j];
+
+    //  check if the curr value is smaller than value at smallestId
+      if(curr < arr[smallestIdx]) {
+        smallestIdx = j; 
+
+      }
+
+    }
+  // 	Check if the smallest idx is not i.
+  if(smallestIdx !== i) {
+  // 	swap
+    let temp = arr[smallestIdx];
+    arr[smallestIdx] = arr[i];
+    arr[i] = temp;
+  }
+  }
+  // return arr. 
+  return arr;
 }
 
-// console.log(
-//   "SELECTION ",
-//   selectionSort([5, 3, 4, 1, 2]),//[1, 2, 3, 4, 5];
-//   selectionSort([5, 5, 4, 1, 2]) //[1, 2, 4, 5, 5, 5];
-// );
+console.log(
+  "SELECTION ",
+  selectionSort([5, 3, 4, 1, 2]),//[1, 2, 3, 4, 5];
+  selectionSort([5, 5, 4, 1, 2]) //[1, 2, 4, 5, 5, 5];
+);
 
 module.exports = { 
   getDigit,
