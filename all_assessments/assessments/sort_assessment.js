@@ -200,11 +200,11 @@ function selectionSort(arr) {
   return arr;
 }
 
-console.log(
-  "SELECTION ",
-  selectionSort([5, 3, 4, 1, 2]),//[1, 2, 3, 4, 5];
-  selectionSort([5, 5, 4, 1, 2]) //[1, 2, 4, 5, 5, 5];
-);
+// console.log(
+//   "SELECTION ",
+//   selectionSort([5, 3, 4, 1, 2]),//[1, 2, 3, 4, 5];
+//   selectionSort([5, 5, 4, 1, 2]) //[1, 2, 4, 5, 5, 5];
+// );
 
 module.exports = { 
   getDigit,
