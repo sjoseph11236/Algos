@@ -4,7 +4,7 @@
   "description": "",
   "main": "double_assessment.js",
   "scripts": {
-    "test": "mocha || true"
+    "test": "mocha --watch || true"
   },
   "keywords": [],
   "author": "",

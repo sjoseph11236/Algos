@@ -209,4 +209,4 @@ function selectionSort(arr) {
 module.exports = { 
   getDigit,
   mergeSort
-}
+};
