@@ -52,7 +52,11 @@ function findUniquePairs(arr, k) {
 
   for(let i = 0; i < arr.length; i++) {
     let num = arr[i];
+    hash[ num + k ] = false;
   }
+
+
+  console.log('hash ', hash);
 }
 
 // construct a "super" stack. Your function takes in an array of operations like ['push 4', 'pop', 'push 3',  etc] and you have to console log the top value every time an operation is executed. This one is the hardest one
