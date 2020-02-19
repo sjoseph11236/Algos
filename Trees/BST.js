@@ -82,18 +82,24 @@ class BinarySearchTree {
     let current = this.root; 
     // Set found to false.
     let found = false;
+    // iterate and check if current is truthy and found is truthy.
     while(current && !found) {
+      // check if the value is less than current.
       if( value < current.value){
+        // update current to go left.
         current = current.left;
       }
+      // check if the value is greater than current
       else if(value > current.right) {
+        // update current to go right.
         current = current.right;
       }
       else {
+        // Else return true.
         return true;
       }
     }
-    // return current
+    // return current.
     return false;
   }
 }
