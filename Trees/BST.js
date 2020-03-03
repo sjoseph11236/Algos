@@ -102,6 +102,31 @@ class BinarySearchTree {
     // return current.
     return false;
   }
+
+  bfs() {
+    // Set que to an empty arr. 
+    let queue = [];
+    // Set data to an empty arr.
+    let data = [];
+    // Set node ot this.root;
+    let node = this.root;
+    // Add root to queue.
+    queue.push(node);
+
+    // Check if queue has length to iterate through tree.
+    while(queue.length) {
+      // Remove the first node from the queue. 
+      node = queue.shift();
+      // Add valud of shifted node to the data 
+      data.push(node.value);
+      // Check if there is left and push.
+      if(node.left) queue.push(node.left);
+      // Check if there is right and push. 
+      if(node.right) queue.push(node.right);
+    }
+
+    return data;
+  }
 }
 
 let tree = new BinarySearchTree();
@@ -110,9 +135,9 @@ tree.insert(3);
 tree.insert(15);
 tree.insert(7);
 // console.log('INSERT ', tree.insert(3));
-console.log('FOUND', tree.find(3));
-console.log('CONTAINS', tree.contains(3));
-
+// console.log('FOUND', tree.find(3));
+// console.log('CONTAINS', tree.contains(3));
+console.log('BFS', tree.bfs()); //[10,3,15,7]
 
 
 console.log(tree);

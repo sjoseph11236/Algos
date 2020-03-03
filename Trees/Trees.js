@@ -7,3 +7,7 @@
 // A sibilings are nodes with the same parent. 
 // A leaf is node with no children. 
 // Edge is the connection between one node and another.
+
+
+// Breadth first search is visiting every node by each level
+// Depth first search is visiting every node down a branch
