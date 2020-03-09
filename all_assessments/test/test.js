@@ -1,4 +1,4 @@
-const assert = require('chai').assert;
+const assert = require('chai').assert;.
 const { getDigit, mergeSort } = require('../assessments/sort_assessment');
 
 

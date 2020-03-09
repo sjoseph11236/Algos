@@ -1,0 +1,25 @@
+{
+  "name": "Algos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bigO.js",
+  "scripts": {
+    "test": " mocha --watch || true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sjoseph11236/Algos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sjoseph11236/Algos/issues"
+  },
+  "homepage": "https://github.com/sjoseph11236/Algos#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.1.0",
+    "nodemon": "^2.0.2"
+  }
+}
