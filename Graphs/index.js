@@ -32,6 +32,8 @@ class Graph {
   depthFristSeachRecursion(vertex){ 
     // Accept a vertex.
     // Create a list to store  visited
+    const result  = [];
+    const visited = {};
     // Create am object to store visited verticies.
     // create a helper function with acceps a vetes. 
     // check if vertex is empty
