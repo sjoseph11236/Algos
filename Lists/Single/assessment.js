@@ -12,22 +12,20 @@ class SinglyLinkedList {
   }
   // add node to the list
   push(val) {
-    // Create the node
+    // create a new node;
     let newNode = new Node(val);
-    // check if there is a head. 
-    if(!this.head) {
-    // set the head and tail to the node. 
-      this.head = newNode; 
+    // check if there is head.
+    if(!this.head){
+      this.head = newNode;
+      this.tail = newNode;
+    }
+    else {
+      // set the tails next to newNode
+      this.tail.next = newNode; 
+      // set thail to newNode;
       this.tail = newNode; 
     }
-    else { 
-    // set the next of this tail to be newNode
-      this.tail.next = newNode; 
-    // set  the newNode as the tail
-      this.tail = newNode;
-
-    }
-    // increment the length. 
+    // Increase the length
     this.length++;
   }
 
@@ -266,26 +264,26 @@ class Node {
 
 const list = new SinglyLinkedList();
 
-// // // PUSH_________
-// list.push('ONE');
-// list.push('TWO');
-// list.push('THREE');
-
-
-// // POP__________
+// // PUSH_________
 list.push('ONE');
 list.push('TWO');
-const callOne = list.pop(); 
-console.log("TCL: callOne", callOne);// 'TWO'
-list.push('TWO');
 list.push('THREE');
-const callTwo =list.pop();
-console.log("TCL: callTwo", callTwo); //'THREE'
-list.pop();
-const callThree =list.pop();
-const callFour =list.pop();
-console.log("TCL: callThree ", callThree );//'ONE'
-console.log("TCL: callFour", callFour); // undefined
+
+
+// // // POP__________
+// list.push('ONE');
+// list.push('TWO');
+// const callOne = list.pop(); 
+// console.log("TCL: callOne", callOne);// 'TWO'
+// list.push('TWO');
+// list.push('THREE');
+// const callTwo =list.pop();
+// console.log("TCL: callTwo", callTwo); //'THREE'
+// list.pop();
+// const callThree =list.pop();
+// const callFour =list.pop();
+// console.log("TCL: callThree ", callThree );//'ONE'
+// console.log("TCL: callFour", callFour); // undefined
 
 // SHIFT__________
 // list.push('Hello');
