@@ -118,25 +118,25 @@ const list = new DoublyLinkedList();
 // const callFour = list.pop(); 
 // console.log("TCL: callFour", callFour, callFour  === undefined); // undefined
 
-// // SHIFT_________________
-// list.push(1);
-// const callOne = list.shift(); // 1
-// console.log("TCL: callOne", callOne, callOne.val === 1 ); //1 
-// console.log('CallFour has a NEXT of ', callOne.next, callOne.next === null); //true
-// console.log('CallFour has a PREV of ', callOne.prev, callOne.prev === null); //true 
-// const callTwo =  list.shift();
-// console.log("TCL: callTwo", callTwo, callTwo === undefined); // undefined
-// list.push(5);
-// list.push(8);
-// const callThree = list.shift(); 
-// console.log("TCL: callThree", callThree, callThree.val === 5);// 5
-// list.push(1);
-// list.push(5);
-// list.push(8);
-// const callFour = list.shift(); 
-// console.log("TCL: callFour", callFour, callFour.val === 8);// 8
-// console.log('CallFour has a NEXT of ', callFour.next, callFour.next === null); //null
-// console.log('CallFour has a PREV of ', callFour.prev, callFour.prev === null); //null
+// SHIFT_________________
+list.push(1);
+const callOne = list.shift(); // 1
+console.log("TCL: callOne", callOne, callOne.val === 1 ); //1 
+console.log('CallFour has a NEXT of ', callOne.next, callOne.next === null); //true
+console.log('CallFour has a PREV of ', callOne.prev, callOne.prev === null); //true 
+const callTwo =  list.shift();
+console.log("TCL: callTwo", callTwo, callTwo === undefined); // undefined
+list.push(5);
+list.push(8);
+const callThree = list.shift(); 
+console.log("TCL: callThree", callThree, callThree.val === 5);// 5
+list.push(1);
+list.push(5);
+list.push(8);
+const callFour = list.shift(); 
+console.log("TCL: callFour", callFour, callFour.val === 8);// 8
+console.log('CallFour has a NEXT of ', callFour.next, callFour.next === null); //null
+console.log('CallFour has a PREV of ', callFour.prev, callFour.prev === null); //null
 
 // // UNSHIFT_________________
 // const callOne = list.unshift(1);

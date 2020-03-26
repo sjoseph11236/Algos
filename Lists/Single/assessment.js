@@ -68,23 +68,20 @@ class SinglyLinkedList {
   // remove a node from the beginning the linked list
   shift() { 
     // check if there is length.
-    if(!this.length){
-      return undefined;
-    }
-    // store the current head in target variable.
-    const oldHead = this.head; 
-    // set the head prop. the currents next prop.
-    this.head = oldHead.next;
-    // decrement the lenght by 1. 
+    if(!this.length) return undefined;
+
+    // store the current head 
+    const current = this.head; 
+    // set the head to the current next. 
+    this.head = current.next; 
+    // decrement the length by 1.
     this.length--;
-    // check ig lenght is zero.
-    if(!this.length) {
-      // 
-      this.tail = null;
-    }
-    // return the target.
-    return oldHead;
+    // check if there is length set tail to null.
+    if(!this.length) this.taill = null; 
+
+    return current;
   }
+
 
   // Adding a new node to the beginning of the Linked List
   unshift(val) {
@@ -268,22 +265,22 @@ const list = new SinglyLinkedList();
 // list.push('THREE');
 
 
-// // POP__________
-list.push('ONE');
-list.push('TWO');
-const callOne = list.pop(); 
-console.log("TCL: callOne", callOne);// 'TWO'
-list.push('TWO');
-list.push('THREE');
-const callTwo =list.pop();
-console.log("TCL: callTwo", callTwo); //'THREE'
-list.pop();
-const callThree =list.pop();
-const callFour =list.pop();
-console.log("TCL: callThree ", callThree );//'ONE'
-console.log("TCL: callFour", callFour); // undefined
+// // // POP__________
+// list.push('ONE');
+// list.push('TWO');
+// const callOne = list.pop(); 
+// console.log("TCL: callOne", callOne);// 'TWO'
+// list.push('TWO');
+// list.push('THREE');
+// const callTwo =list.pop();
+// console.log("TCL: callTwo", callTwo); //'THREE'
+// list.pop();
+// const callThree =list.pop();
+// const callFour =list.pop();
+// console.log("TCL: callThree ", callThree );//'ONE'
+// console.log("TCL: callFour", callFour); // undefined
 
-// SHIFT__________
+// // SHIFT__________
 // list.push('Hello');
 // list.push('Bye');
 // list.push('HEY');
@@ -293,14 +290,14 @@ console.log("TCL: callFour", callFour); // undefined
 // console.log("TCL: callTwo ", callTwo );
 
 
-// UNSHIFT____________
-// list.push('Hello');
-// list.push('Bye');
-// list.push('HEY');
-// const callOne = list.unshift('WHAT');
-// console.log("TCL: callOne ", callOne );
-// const callTwo = list.unshift('WHO');
-// console.log("TCL: callTwo ", callTwo );
+// // UNSHIFT____________
+list.push('Hello');
+list.push('Bye');
+list.push('HEY');
+const callOne = list.unshift('WHAT');
+console.log("TCL: callOne ", callOne );
+const callTwo = list.unshift('WHO');
+console.log("TCL: callTwo ", callTwo );
 
 // GET___________
 // list.push('Hello');
