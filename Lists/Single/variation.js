@@ -5,7 +5,7 @@ class singlyLinkedList {
   }
 }
 
-const head = new singlyLinkedList(1);
+const head = new singlyLinkedList("ONE");
 
 const add = (head, val) => {   
   // create node
@@ -25,8 +25,28 @@ const add = (head, val) => {
   prev.next = node; 
   // return head;
   return head;
+};
+
+add(head, "TWO");
+add(head, "THREE");
+
+const reverse = (head) => {
+  // Set current to head. 
+  let current = head; 
+  // Set prev to null. 
+  let prev = null; 
+   //   iterate current
+  while(current) {
+    // set next to current.next.
+    let next = current.next
+    // set current.next to prev
+    current.next = prev;
+    //  prev to current.
+    prev = current; 
+    // set current to next
+    current = next; 
+  }
+  return prev;
 }
 
-console.log('result', add(head, 2));
-console.log('result', add(head, 3));
-console.log('result', add(head, 4));
+console.log('result', reverse(head));
