@@ -31,40 +31,38 @@ class SinglyLinkedList {
 
   // remove node from the end of the linked list
   pop() {
-    // Cheack if there is a head return undfined. 
-    if(!this.head)  { 
+    // check if there is head
+    if(!this.head){ 
       return undefined;
     }
-    // Create a variable called OldNode.
-    let oldNode = this.head; 
-    // Create a variable clleed prev. 
-    let prev = null;
-    // Create a while loop that check for a next val. 
-    while(oldNode.next) {
-    // prev is set to OldNode
-      prev = oldNode;
-    // OldNode is set to OldNode.next.     
-      oldNode = oldNode.next;
+
+    // set current to head. 
+    let current = this.head; 
+    // set newTail to be null.
+    let newTail = null; 
+    // iterate through
+    while(current.next) { 
+      // set newTail to current.
+      newTail = current; 
+
+      // set curretn to next. 
+      current = current.next; 
     }
 
-    this.tail = prev;
-    // reset tail to null 
-    if(this.tail) {
-      this.tail.next = null;
-    }
-
-    // decrement the length. 
+    // set the tail to newtail. 
+    this.tail = newTail;
+    // update next to be null.
+    if(this.tail) this.tail.next = null; 
+    // decrement the length.
     this.length--;
-    // cheack if the length is 1. 
-
-    if(!this.length) {
-    // if so, reset the head and taill to null. 
+    if(!this.length) { 
       this.head = null; 
-      this.tail = null;
+      this.tail = null; 
     }
-    // return the oldNOde. 
-    return oldNode;
+
+    return current; 
   }
+
 
 
   // remove a node from the beginning the linked list
@@ -264,26 +262,26 @@ class Node {
 
 const list = new SinglyLinkedList();
 
-// // PUSH_________
-list.push('ONE');
-list.push('TWO');
-list.push('THREE');
-
-
-// // // POP__________
+// // // PUSH_________
 // list.push('ONE');
 // list.push('TWO');
-// const callOne = list.pop(); 
-// console.log("TCL: callOne", callOne);// 'TWO'
-// list.push('TWO');
 // list.push('THREE');
-// const callTwo =list.pop();
-// console.log("TCL: callTwo", callTwo); //'THREE'
-// list.pop();
-// const callThree =list.pop();
-// const callFour =list.pop();
-// console.log("TCL: callThree ", callThree );//'ONE'
-// console.log("TCL: callFour", callFour); // undefined
+
+
+// // POP__________
+list.push('ONE');
+list.push('TWO');
+const callOne = list.pop(); 
+console.log("TCL: callOne", callOne);// 'TWO'
+list.push('TWO');
+list.push('THREE');
+const callTwo =list.pop();
+console.log("TCL: callTwo", callTwo); //'THREE'
+list.pop();
+const callThree =list.pop();
+const callFour =list.pop();
+console.log("TCL: callThree ", callThree );//'ONE'
+console.log("TCL: callFour", callFour); // undefined
 
 // SHIFT__________
 // list.push('Hello');
