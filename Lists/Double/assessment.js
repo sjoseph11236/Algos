@@ -1,23 +1,64 @@
 class Node { 
   constructor(val) {
     this.val = val; 
-    this.next = null; 
+    this.next = null;
+    this.prev = null; 
   }
 }
 
 class DoublyLinkedList {
   constructor() {
-
+    this.head = null; 
+    this.taill = null; 
+    this.length = 0; 
   }
 
   // Adding a node to the end of the Doubly Linked List
   push(val) {
+    // create the node
+    let node  = new Node(val);
+    if(!this.head){
+      // set the head and tail to node. 
+      this.head = node; 
+      this.tail = node; 
+    }
+    else { 
+      // set the next prop of tail to node. 
+      this.tail.next = node; 
+      // set the prev prop of node to tail. 
+      node.prev = this.tail; 
+      // set tail to node. 
+      this.tail = node;
+    }
 
+    // increment the length 
+    this.length++;
+
+    return this;
   }
 
   // Remove the last item of the list
   pop() {
+    // check if there is a head. 
+    if(!this.head) return undefined;
+    // set old tail to tail 
+    let oldTail = this.tail;
 
+    if(this.length === 1) { 
+      this.head = null; 
+      this.tail = null; 
+    }
+    else { 
+      // set tail to prev 
+      this.tail = oldTail.prev; 
+      // set tail next to null; 
+      this.tail.next = null; 
+      // set the oldTails previous to be null. 
+      oldTail.prev = null; 
+    }
+    // decrement the lengthh 
+    this.length--;
+    return oldTail;
   }
 
   // remove a node from the beginning of the list.
@@ -54,7 +95,7 @@ class DoublyLinkedList {
 
 const list = new DoublyLinkedList();
 
-// // PUSH_________________
+// PUSH_________________
 // const callOne = list.push(1);
 // console.log("TCL: callOne", callOne); 
 // const callTwo = list.push(5);
