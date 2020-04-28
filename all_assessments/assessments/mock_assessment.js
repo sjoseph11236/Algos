@@ -61,9 +61,9 @@ function findUniquePairs(arr, k) {
 
 // construct a "super" stack. Your function takes in an array of operations like ['push 4', 'pop', 'push 3',  etc] and you have to console log the top value every time an operation is executed. This one is the hardest one
 
-function superStack(operations) {
+// function superStack(operations) {
 
-}
+// }
 module.exports = { 
   countUnbalancedPairs,
   findUniquePairs,
